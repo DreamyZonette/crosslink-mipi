@@ -1,0 +1,9 @@
+#Start recording tcl command: 8/10/2026 09:39:30
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design open -dsgn "G:/shita/crosslink/project/theips/theips.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/test"
+source "G:/shita/crosslink/project/theips/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+#Stop recording: 8/10/2026 09:50:48

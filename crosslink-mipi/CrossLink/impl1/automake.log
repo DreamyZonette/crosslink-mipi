@@ -1,0 +1,1206 @@
+
+synthesis -f "mipi_impl1_lattice.synproj"
+synthesis:  version Diamond (64-bit) 3.13.0.56.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Tue Aug 11 17:16:46 2026
+
+
+Command Line:  synthesis -f mipi_impl1_lattice.synproj -gui -msgset D:/project/crosslink/project/promote.xml 
+
+    <postMsg mid="35002000" type="Info"    dynamic="0" navigation="0"  />
+Synthesis options:
+The -a option is LIFMD.
+The -s option is 6.
+The -t option is CKFBGA80.
+The -d option is LIF-MD6000.
+Using package CKFBGA80.
+Using performance grade 6.
+                                                          
+
+##########################################################
+
+### Lattice Family : LIFMD
+
+### Device  : LIF-MD6000
+
+### Package : CKFBGA80
+
+### Speed   : 6
+
+##########################################################
+
+                                                          
+
+    <postMsg mid="35001781" type="Info"    dynamic="0" navigation="0"  />
+Optimization goal = Timing
+Top-level module name = mipi_3ch_top.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p D:/project/crosslink/project (searchpath added)
+-p D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data (searchpath added)
+-p D:/project/crosslink/project/impl1 (searchpath added)
+-p D:/project/crosslink/project (searchpath added)
+-p D:/project/crosslink/project/theips/csi2dsi (searchpath added)
+Verilog design file = D:/project/crosslink/project/mipi_3ch_top.v
+Verilog design file = D:/project/crosslink/project/impl1/source/uart_tx.v
+Verilog design file = D:/project/crosslink/project/impl1/source/uart_send_ctrl.v
+Verilog design file = D:/project/crosslink/project/impl1/source/top_iic.v
+Verilog design file = D:/project/crosslink/project/impl1/source/i2c_drive.v
+Verilog design file = D:/project/crosslink/project/impl1/source/uart_rx.v
+Verilog design file = D:/project/crosslink/project/impl1/source/ov9734_ctrl.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_wrapper.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_soft_dphy_rx_bb.v
+Verilog design file = D:/project/crosslink/project/theips/theips.v
+NGD file = mipi_impl1.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Analyzing Verilog file D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/lifmd.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file d:/project/crosslink/project/mipi_3ch_top.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/uart_tx.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/uart_send_ctrl.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/top_iic.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/i2c_drive.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/uart_rx.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/ov9734_ctrl.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_wrapper.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_soft_dphy_rx_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/theips.v. VERI-1482
+Analyzing Verilog file D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/lifmd.v. VERI-1482
+Top module name (Verilog): mipi_3ch_top
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/mipi_3ch_top.v(5): " arg1="mipi_3ch_top" arg2="d:/project/crosslink/project/mipi_3ch_top.v" arg3="5"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/top_iic.v(2): " arg1="top_iic(IIC_CLK=26&apos;b011000011010100000)" arg2="d:/project/crosslink/project/impl1/source/top_iic.v" arg3="2"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/ov9734_ctrl.v(2): " arg1="ov9734_ctrl" arg2="d:/project/crosslink/project/impl1/source/ov9734_ctrl.v" arg3="2"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/i2c_drive.v(1): " arg1="i2c_drive(IIC_CLK=26&apos;b011000011010100000,DIV_FREQ_FACTOR=26&apos;b0111110100)" arg2="d:/project/crosslink/project/impl1/source/i2c_drive.v" arg3="1"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(8): " arg1="csi2dsi" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v" arg3="8"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v(53): " arg1="csi2dsi_dphy_rx(RX_TYPE=&quot;CSI2&quot;,NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE=&quot;HS_ONLY&quot;,BYTECLK_MHZ=50,FIFO_TYPE=&quot;LUT&quot;)" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v" arg3="53"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v(8): " arg1="csi2dsi_dphy_rx_wrap" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v" arg3="8"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_wrapper.v(75): " arg1="csi2dsi_dphy_wrapper(RX_GEAR=8,WORD_ALIGN=&quot;OFF&quot;,NUM_RX_LANE=1)" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_wrapper.v" arg3="75"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/lifmd.v(1226): " arg1="MIPIDPHYA(HSEL=0,HS_16BIT_EN=0,CN=5&apos;b0,CM=8&apos;b0,CO=2&apos;b0,PLL_TST=4&apos;b1001,ENP_DESER=1&apos;b0)" arg2="D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/lifmd.v" arg3="1226"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v(8): " arg1="csi2dsi_rx_global_ctrl" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v" arg3="8"  />
+    <postMsg mid="35901330" type="Warning" dynamic="4" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v(388): " arg1="1" arg2="2" arg3="lp_hs_state_clk_o" arg4="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v" arg5="388"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v(8): " arg1="csi2dsi_capture_ctrl" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v" arg3="8"  />
+    <postMsg mid="35931002" type="Warning" dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(204): " arg1="lp_d0_tx_en_i" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v" arg3="204"  />
+    <postMsg mid="35931002" type="Warning" dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(205): " arg1="lp_d0_tx_p_i" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v" arg3="205"  />
+    <postMsg mid="35931002" type="Warning" dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(206): " arg1="lp_d0_tx_n_i" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v" arg3="206"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/uart_send_ctrl.v(1): " arg1="uart_send_ctrl" arg2="d:/project/crosslink/project/impl1/source/uart_send_ctrl.v" arg3="1"  />
+    <postMsg mid="35901209" type="Warning" dynamic="3" navigation="2" arg0="d:/project/crosslink/project/impl1/source/uart_send_ctrl.v(38): " arg1="32" arg2="8" arg3="d:/project/crosslink/project/impl1/source/uart_send_ctrl.v" arg4="38"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/uart_tx.v(1): " arg1="uart_tx" arg2="d:/project/crosslink/project/impl1/source/uart_tx.v" arg3="1"  />
+    <postMsg mid="35901018" type="Info"    dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/uart_rx.v(2): " arg1="uart_rx" arg2="d:/project/crosslink/project/impl1/source/uart_rx.v" arg3="2"  />
+Last elaborated design is mipi_3ch_top()
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data/sn5wlib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Top-level module name = mipi_3ch_top.
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="OFE1P3BX"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="OFE1P3DX"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="OFE1P3IX"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="OFE1P3JX"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="ROM16X1"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="ROM32X1"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="ROM64X1"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="ROM128X1"  />
+    <postMsg mid="35001716" type="Warning" dynamic="1" navigation="0" arg0="ROM256X1"  />
+Found mux-orfb->fb :%scam_ready_I_0_139i.v" arg3="204"  />
+    <postMsg mid="35931002" type="Warning" dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(205): " arg1="lp_d0_tx_p_i" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v" arg3="205"  />
+    <postMsg mid="35931002" type="Warning" dynamic="2" navigation="2" arg0="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(206): " arg1="lp_d0_tx_n_i" arg2="d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v" arg3="206"  />
+Found mux-orfb->fb :%scam_ready_I_0_139navigation="0" arg0="\u_uart_tx/bit_cnt" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 0000 -> 0000000000000001
+
+ 0001 -> 0000000000000010
+
+ 0010 -> 0000000000000100
+
+ 0011 -> 0000000000001000
+
+ 0100 -> 0000000000010000
+
+ 0101 -> 0000000000100000
+
+ 0110 -> 0000000001000000
+
+ 0111 -> 0000000010000000
+
+ 1000 -> 0000000100000000
+
+ 1001 -> 0000001000000000
+
+ 1010 -> 0000010000000000
+
+ 1011 -> 0000100000000000
+
+ 1100 -> 0001000000000000
+
+ 1101 -> 0010000000000000
+
+ 1110 -> 0100000000000000
+
+ 1111 -> 1000000000000000
+
+    <postMsg mid="35001774" type="Info"    dynamic="2" navigation="0" arg0="\u_top_iic/inst_ov9734_ctrl/state" arg1="one-hot"  />
+original encoding -> new encoding (one-hot encoding)
+
+ 0000 -> 0000001
+
+ 0001 -> 0000010
+
+ 0010 -> 0000100
+
+ 0011 -> 0001000
+
+ 0100 -> 0010000
+
+ 0110 -> 0100000
+
+ 0111 -> 1000000
+
+
+
+
+Found mux-orfb->fb :%scam_ready_I_0_139Found mux-orfb->fb :%scam_ready_I_0_139    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="14" arg1="\u_top_iic/inst_ov9734_ctrl/frame_count"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="13" arg1="\u_top_iic/inst_ov9734_ctrl/frame_count"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="12" arg1="\u_top_iic/inst_ov9734_ctrl/frame_count"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="11" arg1="\u_top_iic/inst_ov9734_ctrl/frame_count"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="10" arg1="\u_top_iic/inst_ov9734_ctrl/frame_count"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="9" arg1="\u_top_iic/inst_ov9734_ctrl/frame_count"  />
+    <postMsg mid="35001747" type="Warning" dynamic="2" navigation="0" arg0="8" arg1="\u_top_iic/inst_ov9734_ctrl/frame_count"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="mipi_rcp_0"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="mipi_rcn_0"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="mipi_rdp_0"  />
+    <postMsg mid="35001263" type="Warning" dynamic="1" navigation="0" arg0="mipi_rdn_0"  />
+    <postMsg mid="35935013" type="Warning" dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/ov9734_ctrl.v(388): " arg1="\u_top_iic/inst_ov9734_ctrl/rd_byte_num_i3" arg2="d:/project/crosslink/project/impl1/source/ov9734_ctrl.v" arg3="388"  />
+    <postMsg mid="35935013" type="Warning" dynamic="2" navigation="2" arg0="d:/project/crosslink/project/impl1/source/uart_send_ctrl.v(163): " arg1="\u_send_ctrl/field_label_i7" arg2="d:/project/crosslink/project/impl1/source/uart_send_ctrl.v" arg3="163"  />
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcllan13044411fbeaa5d.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcelar131032323288fe06152.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl.ngo'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/data/neoprims.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/data/neomacro.ngl'...
+Applying 200.000000 MHz constraint to all clocks
+
+    <postMsg mid="35001611" type="Warning" dynamic="0" navigation="0"  />
+Results of NGD DRC are available in mipi_3ch_top_drc.log.
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data/sn5wlib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcllan13044411fbeaa5d.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcelar131032323288fe06152.ngo'...
+
+
+Running DRC...
+
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="reset_byte_sync_1" arg2="reset_byte_sync_1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_3" arg2="u_csi2dsi/dphy_rx_inst/bd3_3"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_0" arg2="u_csi2dsi/dphy_rx_inst/bd3_0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_clk_rx_p" arg2="u_csi2dsi/dphy_rx_inst/lp_clk_rx_p"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_clk_rx_n" arg2="u_csi2dsi/dphy_rx_inst/lp_clk_rx_n"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_d1_rx_p_o" arg2="u_csi2dsi/dphy_rx_inst/lp_d1_rx_p_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_d1_rx_n_o" arg2="u_csi2dsi/dphy_rx_inst/lp_d1_rx_n_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_d2_rx_p_o" arg2="u_csi2dsi/dphy_rx_inst/lp_d2_rx_p_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_d2_rx_n_o" arg2="u_csi2dsi/dphy_rx_inst/lp_d2_rx_n_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_d3_rx_p_o" arg2="u_csi2dsi/dphy_rx_inst/lp_d3_rx_p_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/lp_d3_rx_n_o" arg2="u_csi2dsi/dphy_rx_inst/lp_d3_rx_n_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sot_det_w_3" arg2="u_csi2dsi/dphy_rx_inst/d_sot_det_w_3"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sot_det_w_2" arg2="u_csi2dsi/dphy_rx_inst/d_sot_det_w_2"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sot_det_w_1" arg2="u_csi2dsi/dphy_rx_inst/d_sot_det_w_1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sot_det_w_0" arg2="u_csi2dsi/dphy_rx_inst/d_sot_det_w_0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sote_det_w_3" arg2="u_csi2dsi/dphy_rx_inst/d_sote_det_w_3"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sote_det_w_2" arg2="u_csi2dsi/dphy_rx_inst/d_sote_det_w_2"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sote_det_w_1" arg2="u_csi2dsi/dphy_rx_inst/d_sote_det_w_1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/d_sote_det_w_0" arg2="u_csi2dsi/dphy_rx_inst/d_sote_det_w_0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_7" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_7"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_6" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_6"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_5" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_5"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_4" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_4"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_3" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_3"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_2" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_2"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_1" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd1_w_0" arg2="u_csi2dsi/dphy_rx_inst/bd1_w_0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_7" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_7"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_6" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_6"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_5" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_5"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_4" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_4"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_3" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_3"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_2" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_2"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_1" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd2_w_0" arg2="u_csi2dsi/dphy_rx_inst/bd2_w_0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_7" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_7"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_6" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_6"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_5" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_5"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_4" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_4"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_3" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_3"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_2" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_2"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_1" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_1"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/bd3_w_0" arg2="u_csi2dsi/dphy_rx_inst/bd3_w_0"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/sp_en_o" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/sp_en_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/lp_av_en_o" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/lp_av_en_o"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[7]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[7]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[6]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[6]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[5]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[5]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[4]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[4]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[3]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[3]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[2]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[2]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[1]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[1]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[0]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[0]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[1]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[1]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[0]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[0]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[7]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[7]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[6]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[6]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[5]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[5]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[4]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[4]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[3]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[3]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[2]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[2]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[1]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[1]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[0]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[0]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[7]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[7]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[6]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[6]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[5]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[5]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[4]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[4]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[3]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[3]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[2]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[2]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[1]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[1]"  />
+    <postMsg mid="1166052" type="Warning" dynamic="2" navigation="1" arg0="logical" arg1="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]" arg2="u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]"  />
+    <postMsg mid="1163101" type="Warning" dynamic="1" navigation="0" arg0="71"  />
+
+Design Results:
+   2880 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file mipi_impl1.ngd.
+
+################### Begin Area Report (mipi_3ch_top)######################
+Number of register bits => 899 of 6047 (14 % )
+BB => 1
+CCU2C => 198
+FD1P3BX => 6
+FD1P3DX => 400
+FD1S3BX => 8
+FD1S3DX => 485
+GSR => 1
+IB => 3
+L6MUX21 => 1
+LUT4 => 1002
+MIPIDPHYA => 1
+OB => 16
+PDPW8KE => 2
+PFUMX => 70
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 6
+  Net : sys_clk_c, loads : 701
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/csi_clk_byte_hs, loads : 154
+  Net : u_top_iic/inst_i2c_drive/drive_clk, loads : 45
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/csi_clk_byte, loads : 2
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/mipi_rcn_0, loads : 1
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/mipi_rcp_0, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 48
+Top 10 highest fanout Clock Enables:
+  Net : csi_long_packet_count_31__N_384, loads : 54
+  Net : csi_hs_sync_count_31__N_349, loads : 32
+  Net : u_send_ctrl/sys_clk_c_enable_151, loads : 32
+  Net : sys_clk_c_enable_225, loads : 26
+  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_91, loads : 26
+  Net : sys_clk_c_enable_188, loads : 20
+  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_110, loads : 20
+  Net : sys_clk_c_enable_207, loads : 20
+  Net : u_uart_tx/bit_flag, loads : 19
+  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_55, loads : 18
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : sys_rst_n_N_472, loads : 652
+  Net : reset_byte_fr_sync_1__N_129, loads : 152
+  Net : led_c_2, loads : 96
+  Net : u_send_ctrl/field_index_0, loads : 90
+  Net : csi_long_packet_count_31__N_384, loads : 54
+  Net : u_send_ctrl/field_index_1, loads : 51
+  Net : u_send_ctrl/tx_state_1, loads : 48
+  Net : u_top_iic/inst_i2c_drive/cnt_scl_2, loads : 44
+  Net : u_top_iic/inst_i2c_drive/current_state_6, loads : 44
+  Net : u_top_iic/inst_ov9734_ctrl/state_3__N_622, loads : 41
+################### End Clock Report ##################
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk3 [get_nets                          |             |             |
+\u_top_iic/inst_i2c_drive/drive_clk]    |  200.000 MHz|  101.543 MHz|    10 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk2 [get_nets csi_clk_byte]            |  200.000 MHz|  341.064 MHz|     2  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk1 [get_nets csi_clk_byte_hs]         |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets sys_clk_c]               |  200.000 MHz|  109.637 MHz|     7 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+2 constraints not met.
+
+
+Peak Memory Usage: 98.313  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 2.422  secs
+--------------------------------------------------------------
+
+map -a "LIFMD" -p LIF-MD6000 -t CKFBGA80 -s 6 -oc Industrial   "mipi_impl1.ngd" -o "mipi_impl1_map.ncd" -pr "mipi_impl1.prf" -mp "mipi_impl1.mrp" -lpf "D:/project/crosslink/project/impl1/mipi_impl1.lpf" -lpf "D:/project/crosslink/project/mipi.lpf"             
+map:  version Diamond (64-bit) 3.13.0.56.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+   Process the file: mipi_impl1.ngd
+   Picdevice="LIF-MD6000"
+
+   Pictype="CKFBGA80"
+
+   Picspeed=6
+
+   Remove unused logic
+
+   Do not produce over sized NCDs.
+
+Part used: LIF-MD6000CKFBGA80, Performance used: 6.
+
+    <postMsg mid="1100679" type="Warning" dynamic="2" navigation="2" arg0="D:/project/crosslink/project/mipi.lpf(49): Semantic error in &quot;LOCATE COMP &quot;u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst&quot; SITE &quot;MIPIDPHY0&quot; ;&quot;: " arg1="u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst" arg2="D:/project/crosslink/project/mipi.lpf" arg3="49"  />
+Loading device for application map from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Running general design DRC...
+
+Removing unused logic...
+
+Optimizing...
+
+1032 CCU2 constant inputs absorbed.
+
+    <postMsg mid="51001030" type="Warning" dynamic="1" navigation="0" arg0="sys_rst_n_N_472"  />
+    <postMsg mid="51001051" type="Warning" dynamic="1" navigation="0" arg0="u_top_iic/inst_ov9734_ctrl/mux_272"  />
+    <postMsg mid="51001051" type="Warning" dynamic="1" navigation="0" arg0="u_top_iic/inst_ov9734_ctrl/mux_273"  />
+
+
+
+Design Summary:
+   Number of registers:   1173 out of  6047 (19%)
+      PFU registers:         1173 out of  5936 (20%)
+      PIO registers:            0 out of   111 (0%)
+   Number of SLICEs:      1220 out of  2968 (41%)
+      SLICEs as Logic/ROM:   1217 out of  2968 (41%)
+      SLICEs as RAM:            3 out of  2226 (0%)
+      SLICEs as Carry:        266 out of  2968 (9%)
+   Number of LUT4s:        1744 out of  5936 (29%)
+      Number used as logic LUTs:        1206
+      Number used as distributed RAM:     6
+      Number used as ripple logic:      532
+      Number used as shift registers:     0
+   Number of PIO sites used: 20 out of 37 (54%)
+   Number of block RAMs:  3 out of 20 (15%)
+   Number of GSRs:  1 out of 1 (100%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   DTR used :   No
+   Number of Power Management Unit (PMU):  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 2 (0%)
+   Number of Dynamic Bank Controller (BCLVDSOB):  0 out of 2 (0%)
+   Number of DCC:  0 out of 14 (0%)
+   Number of DCS:  0 out of 1 (0%)
+   Number of PLLs:  0 out of 1 (0%)
+   Number of DDRDLLs:  0 out of 2 (0%)
+   Number of CLKDIV:  0 out of 4 (0%)
+   Number of ECLKSYNC:  0 out of 4 (0%)
+   Number of MIPIDPHY:  1 out of 2 (50%)
+   Number of I2C:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and ripple logic.
+   Number of clocks:  6
+     Net sys_clk_c: 385 loads, 385 rising, 0 falling (Driver: PIO sys_clk )
+     Net u_top_iic/inst_i2c_drive/drive_clk: 28 loads, 28 rising, 0 falling (Driver: u_top_iic/inst_i2c_drive/drive_clk_255 )
+     Net csi_clk_byte_hs: 212 loads, 212 rising, 0 falling (Driver: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy )
+     Net csi_clk_byte: 36 loads, 36 rising, 0 falling (Driver: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy )
+     Net mipi_rcn_0: 0 loads, 0 rising, 0 falling (No Driver)
+     Net mipi_rcp_0: 0 loads, 0 rising, 0 falling (No Driver)
+   Number of Clock Enables:  57
+     Net u_uart_tx/bit_flag: 1 loads, 1 LSLICEs
+     Net u_uart_tx/sys_clk_c_enable_59: 9 loads, 9 LSLICEs
+     Net xshutdn_r: 1 loads, 1 LSLICEs
+     Net csi_long_packet_count_31__N_384: 28 loads, 28 LSLICEs
+     Net sys_clk_c_enable_225: 13 loads, 13 LSLICEs
+     Net csi_dt_c_4: 17 loads, 17 LSLICEs
+     Net sys_clk_c_enable_38: 1 loads, 1 LSLICEs
+     Net csi_hs_sync_count_31__N_349: 17 loads, 17 LSLICEs
+     Net sys_clk_c_enable_188: 11 loads, 11 LSLICEs
+     Net sys_clk_c_enable_207: 11 loads, 11 LSLICEs
+     Net drive_clk_enable_22: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117: 4 loads, 4 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_37: 6 loads, 6 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_110: 10 loads, 10 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_26: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_91: 13 loads, 13 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_66: 5 loads, 5 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_55: 9 loads, 9 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_28: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_163: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_20: 2 loads, 2 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_18: 4 loads, 4 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_3: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_4: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_5: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_10: 2 loads, 2 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_7: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_21: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_31: 5 loads, 5 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_19: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_32: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_33: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_34: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/sys_clk_c_enable_226: 1 loads, 1 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_151: 25 loads, 25 LSLICEs
+     Net u_send_ctrl/tx_flag_N_1429: 4 loads, 4 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_161: 2 loads, 2 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_159: 2 loads, 2 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_158: 2 loads, 2 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_156: 3 loads, 3 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_120: 3 loads, 3 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_160: 1 loads, 1 LSLICEs
+     Net u_uart_rx/rx_data_7__N_1537: 4 loads, 4 LSLICEs
+     Net u_uart_rx/bit_flag: 2 loads, 2 LSLICEs
+     Net u_uart_rx/rx_flag_adj_1547: 4 loads, 4 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/cycle_cnt_r_15__N_116: 11 loads, 11 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/clk_byte_i_enable_1: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/clk_byte_i_enable_2: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/clk_byte_fr_i_enable_1: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/lp11_ncr: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/term_d0_en_w: 1 loads, 0 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/rxq_pop_r: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wren_i: 6 loads, 6 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/rden_i: 7 loads, 7 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/wren_i: 11 loads, 9 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rden_i: 10 loads, 9 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/d_sot_det_o_3__N_1210: 1 loads, 0 LSLICEs
+   Number of local set/reset loads for net sys_rst_n_N_472 merged into GSR:  650
+   Number of LSRs:  6
+     Net sys_rstn_c: 52 loads, 52 LSLICEs
+     Net n17768: 12 loads, 12 LSLICEs
+     Net reset_byte_fr_sync_1: 230 loads, 228 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/lp11_reset_n: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/hs_entry: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/reset_byte_stb_n_w: 2 loads, 2 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net reset_byte_fr_sync_1: 230 loads
+     Net u_send_ctrl/field_index_0: 90 loads
+     Net sys_rstn_c: 56 loads
+     Net u_send_ctrl/field_index_1: 51 loads
+     Net tx_state_1: 49 loads
+     Net u_top_iic/inst_i2c_drive/cnt_scl_2: 44 loads
+     Net u_top_iic/inst_i2c_drive/current_state_6: 44 loads
+     Net u_top_iic/inst_ov9734_ctrl/state_3__N_622: 41 loads
+     Net u_top_iic/inst_i2c_drive/cnt_scl_1: 38 loads
+     Net u_top_iic/inst_ov9734_ctrl/n51: 38 loads
+ 
+
+   Number of warnings:  4
+   Number of errors:    0
+
+
+
+Total CPU Time: 0 secs  
+Total REAL Time: 0 secs  
+Peak Memory Usage: 70 MB
+
+Dumping design to file mipi_impl1_map.ncd.
+
+ncd2vdb "mipi_impl1_map.ncd" ".vdbs/mipi_impl1_map.vdb"
+
+Loading device for application ncd2vdb from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+
+trce -f "mipi_impl1.mt" -o "mipi_impl1.tw1" "mipi_impl1_map.ncd" "mipi_impl1.prf"
+trce:  version Diamond (64-bit) 3.13.0.56.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application trce from file mipi_impl1_map.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application trce from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:50 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o mipi_impl1.tw1 -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1_map.ncd mipi_impl1.prf 
+Design file:     mipi_impl1_map.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,6
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 11274 paths, 2 nets, and 5571 connections (77.81% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:50 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o mipi_impl1.tw1 -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1_map.ncd mipi_impl1.prf 
+Design file:     mipi_impl1_map.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 134  Score: 6719
+Cumulative negative slack: 6719
+
+Constraints cover 11274 paths, 2 nets, and 5798 connections (80.98% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 0 (setup), 134 (hold)
+Score: 0 (setup), 6719 (hold)
+Cumulative negative slack: 6719 (0+6719)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 67 MB
+
+
+ldbanno "mipi_impl1_map.ncd" -n Verilog -o "mipi_impl1_mapvo.vo" -w -neg
+ldbanno: version Diamond (64-bit) 3.13.0.56.2
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Writing a Verilog netlist using the orca library type based on the mipi_impl1_map design file.
+
+
+Loading design for application ldbanno from file mipi_impl1_map.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application ldbanno from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+Converting design mipi_impl1_map.ncd into .ldb format.
+Writing Verilog netlist to file mipi_impl1_mapvo.vo
+Writing SDF timing to file mipi_impl1_mapvo.sdf
+    <postMsg mid="35400250" type="Info"    dynamic="1" navigation="0" arg0="0"  />
+Total CPU Time: 1 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 80 MB
+
+mpartrce -p "mipi_impl1.p2t" -f "mipi_impl1.p3t" -tf "mipi_impl1.pt" "mipi_impl1_map.ncd" "mipi_impl1.ncd"
+
+---- MParTrce Tool ----
+Removing old design directory at request of -rem command line option to this program.
+Running par. Please wait . . .
+
+Lattice Place and Route Report for Design "mipi_impl1_map.ncd"
+Tue Aug 11 17:16:51 2026
+
+PAR: Place And Route Diamond (64-bit) 3.13.0.56.2.
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset D:/project/crosslink/project/promote.xml -exp parUseNBR=1:parCDP=auto:parCDR=1:parPathBased=OFF:SLVS_MIPI_LVCMOS_OUTPUT=0 mipi_impl1_map.ncd mipi_impl1.dir/5_1.ncd mipi_impl1.prf
+Preference file: mipi_impl1.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file mipi_impl1_map.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application par from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+License checked out.
+
+
+Ignore Preference Error(s):  True
+Device utilization summary:
+
+   PIO (prelim)      20/39           51% used
+                     20/37           54% bonded
+
+   SLICE           1220/2968         41% used
+
+   GSR                1/1           100% used
+   EBR                3/20           15% used
+   MIPIDPHY           1/2            50% used
+   ABPIO              4/20           20% used
+
+
+Number of Signals: 3056
+Number of Connections: 7160
+
+Pin Constraint Summary:
+   20 out of 20 pins locked (100% locked).
+
+The following 4 signals are selected to use the primary clock routing resources:
+    csi_clk_byte (driver: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy, clk/ce/sr load #: 36/0/0)
+    csi_clk_byte_hs (driver: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy, clk/ce/sr load #: 212/0/0)
+    sys_clk_c (driver: sys_clk, clk/ce/sr load #: 385/0/0)
+    u_top_iic/inst_i2c_drive/drive_clk (driver: u_top_iic/inst_i2c_drive/SLICE_709, clk/ce/sr load #: 28/0/0)
+
+
+Signal sys_rst_n_N_472 is selected as Global Set/Reset.
+Starting Placer Phase 0.
+..............
+Finished Placer Phase 0.  REAL time: 0 secs 
+
+Starting Placer Phase 1.
+........................
+Placer score = 312900.
+Finished Placer Phase 1.  REAL time: 4 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  308482
+Finished Placer Phase 2.  REAL time: 5 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clock Resources:
+  CLK_PIN    : 0 out of 6 (0%)
+  GR_PCLK    : 1 out of 2 (50%)
+  PLL        : 0 out of 1 (0%)
+  DCS        : 0 out of 1 (0%)
+  DCC        : 0 out of 14 (0%)
+  CLKDIV     : 0 out of 4 (0%)
+  MIPIDPHY   : 1 out of 2 (50%)
+
+Quadrant TL Clocks:
+
+Quadrant TR Clocks:
+
+Quadrant BL Clocks:
+
+Quadrant BR Clocks:
+
+Edge Clocks:
+
+  No edge clock selected.
+
+
+--------------- End of Clock Report ---------------
+
+
+_
+I/O Usage Summary (final):
+   20 out of 39 (51.3%) PIO sites used.
+   20 out of 37 (54.1%) bonded PIO sites used.
+   Number of PIO comps: 20; differential: 0.
+   Number of Vref pins used: 0.
+
+I/O Bank Usage Summary:
++----------+----------------+------------+------------+------------+
+| I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+----------------+------------+------------+------------+
+| 0        | 0 / 7 (  0%)   | -          | -          | -          |
+| 1        | 6 / 14 ( 42%)  | 1.8V       | -          | -          |
+| 2        | 14 / 16 ( 87%) | 3.3V       | -          | -          |
++----------+----------------+------------+------------+------------+
+
+Total placer CPU time: 4 secs 
+
+Dumping design to file mipi_impl1.dir/5_1.ncd.
+
+0 connections routed; 7160 unrouted.
+Starting router resource preassignment
+
+Completed router resource preassignment. Real time: 5 secs 
+
+Start NBR router at 17:16:56 08/11/26
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in TRCE report. You should always run TRCE to verify  
+      your design.                                               
+*****************************************************************
+
+Start NBR special constraint process at 17:16:56 08/11/26
+
+Start NBR section for initial routing at 17:16:56 08/11/26
+Level 4, iteration 1
+136(0.05%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 10.953ns/0.000ns; real time: 6 secs 
+
+Info: Initial congestion level at 75% usage is 0
+Info: Initial congestion area  at 75% usage is 0 (0.00%)
+
+Start NBR section for normal routing at 17:16:57 08/11/26
+Level 4, iteration 1
+47(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 11.814ns/0.000ns; real time: 6 secs 
+Level 4, iteration 2
+16(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 11.815ns/0.000ns; real time: 6 secs 
+Level 4, iteration 3
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 11.815ns/0.000ns; real time: 6 secs 
+Level 4, iteration 4
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 11.815ns/0.000ns; real time: 6 secs 
+
+Start NBR section for setup/hold timing optimization with effort level 3 at 17:16:57 08/11/26
+Level 4, iteration 0
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<hold >: 0.015ns/0.000ns; real time: 7 secs 
+Level 4, iteration 0
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 8.144ns/0.000ns; real time: 7 secs 
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 8.144ns/0.000ns; real time: 7 secs 
+
+Start NBR section for re-routing at 17:16:58 08/11/26
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 8.164ns/0.000ns; real time: 7 secs 
+
+Start NBR section for post-routing at 17:16:58 08/11/26
+
+End NBR router with 0 unrouted connection
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Number of connections with timing violations : 0 (0.00%)
+  Estimated worst slack<setup> : 11.815ns
+  Timing score<setup> : 0
+-----------
+Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
+
+
+
+Total CPU time 6 secs 
+Total REAL time: 7 secs 
+Completely routed.
+End of route.  7160 routed (100.00%); 0 unrouted.
+
+Hold time timing score: 0, hold timing errors: 0
+
+Timing score: 0 
+
+Dumping design to file mipi_impl1.dir/5_1.ncd.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 11.815
+PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 0.020
+PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  time to completion: 6 secs 
+Total REAL time to completion: 8 secs 
+
+par done!
+
+Note: user must run 'Trace' for timing closure signoff.
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Exiting par with exit code 0
+Exiting mpartrce with exit code 0
+
+trce -f "mipi_impl1.pt" -o "mipi_impl1.twr" "mipi_impl1.ncd" "mipi_impl1.prf"
+trce:  version Diamond (64-bit) 3.13.0.56.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Loading design for application trce from file mipi_impl1.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application trce from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:59 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o mipi_impl1.twr -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1.ncd mipi_impl1.prf 
+Design file:     mipi_impl1.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,6
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 11274 paths, 2 nets, and 5816 connections (81.23% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:59 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o mipi_impl1.twr -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1.ncd mipi_impl1.prf 
+Design file:     mipi_impl1.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 11274 paths, 2 nets, and 5816 connections (81.23% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 68 MB
+
+
+tmcheck -par "mipi_impl1.par" 
+
+bitgen -w "mipi_impl1.ncd" -f "mipi_impl1.t2b"  "mipi_impl1.prf"
+
+
+BITGEN: Bitstream Generator Diamond (64-bit) 3.13.0.56.2
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Loading design for application Bitgen from file mipi_impl1.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application Bitgen from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Reading Preference File from mipi_impl1.prf.
+    <postMsg mid="1009992" type="Info"    dynamic="1" navigation="0" arg0=" SW_XO3D_SECURITY_ENCRYPTION *NOT* controlled by sn5w00.acd ###"  />
+    <postMsg mid="1009992" type="Info"    dynamic="1" navigation="0" arg0=" SW_XO3D_SECURITY_ENCRYPTION license_securityIP OK"  />
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+|                         RamCfg  |                        Reset**  |
++---------------------------------+---------------------------------+
+|                        DONE_EX  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                     MCCLK_FREQ  |                            6**  |
++---------------------------------+---------------------------------+
+|                             ES  |                           No**  |
++---------------------------------+---------------------------------+
+|                 SLAVE_SPI_PORT  |                       ENABLE**  |
++---------------------------------+---------------------------------+
+|                MASTER_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                       I2C_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                        MY_ASSP  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                     DisableUES  |                        FALSE**  |
++---------------------------------+---------------------------------+
+|                        TRANSFR  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                     CDONE_PORT  |                CDONE_USER_IO**  |
++---------------------------------+---------------------------------+
+|               BOOT_UP_SEQUENCE  |                         NVCM**  |
++---------------------------------+---------------------------------+
+|          ONE_TIME_PROGRAM_SRAM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|          ONE_TIME_PROGRAM_NVCM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SECURITY_SRAM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SECURITY_NVCM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+ 
+Bitstream Status: Final           Version 4.9.
+ 
+Saving bit stream in "mipi_impl1.bit".
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 85 MB
+
+tmcheck -par "mipi_impl1.par" 
+
+bitgen -w "mipi_impl1.ncd" -f "mipi_impl1.t2b" -jedec  "mipi_impl1.prf"
+
+
+BITGEN: Bitstream Generator Diamond (64-bit) 3.13.0.56.2
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+
+Loading design for application Bitgen from file mipi_impl1.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application Bitgen from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Reading Preference File from mipi_impl1.prf.
+    <postMsg mid="1009992" type="Info"    dynamic="1" navigation="0" arg0=" SW_XO3D_SECURITY_ENCRYPTION *NOT* controlled by sn5w00.acd ###"  />
+    <postMsg mid="1009992" type="Info"    dynamic="1" navigation="0" arg0=" SW_XO3D_SECURITY_ENCRYPTION license_securityIP OK"  />
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+|                         RamCfg  |                        Reset**  |
++---------------------------------+---------------------------------+
+|                        DONE_EX  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                     MCCLK_FREQ  |                            6**  |
++---------------------------------+---------------------------------+
+|                             ES  |                           No**  |
++---------------------------------+---------------------------------+
+|                 SLAVE_SPI_PORT  |                       ENABLE**  |
++---------------------------------+---------------------------------+
+|                MASTER_SPI_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                       I2C_PORT  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                        MY_ASSP  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                     DisableUES  |                        FALSE**  |
++---------------------------------+---------------------------------+
+|                        TRANSFR  |                          OFF**  |
++---------------------------------+---------------------------------+
+|                     CDONE_PORT  |                CDONE_USER_IO**  |
++---------------------------------+---------------------------------+
+|               BOOT_UP_SEQUENCE  |                         NVCM**  |
++---------------------------------+---------------------------------+
+|          ONE_TIME_PROGRAM_SRAM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|          ONE_TIME_PROGRAM_NVCM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SECURITY_SRAM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+|                  SECURITY_NVCM  |                      DISABLE**  |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+ 
+Bitstream Status: Final           Version 4.9.
+ 
+Saving bit stream in "mipi_impl1.jed".
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 85 MB

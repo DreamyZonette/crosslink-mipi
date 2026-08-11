@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE		ispXCF	SYSTEM	"IspXCF.dtd" >
+<ispXCF version="3.12">
+	<Comment></Comment>
+	<Chain>
+		<Comm>Slave SPI</Comm>
+		<Device>
+			<SelectedProg value="TRUE"/>
+			<Pos>1</Pos>
+			<Vendor>Lattice</Vendor>
+			<Family>LIFMD</Family>
+			<Name>LIF-MD6000</Name>
+			<IDCode>0x012c0043</IDCode>
+			<Package>All</Package>
+			<PON>LIF-MD6000</PON>
+			<Bypass>
+				<InstrLen>8</InstrLen>
+				<InstrVal>11111111</InstrVal>
+				<BScanLen>1</BScanLen>
+				<BScanVal>0</BScanVal>
+			</Bypass>
+			<File>D:/project/crosslink/project/impl1/mipi_impl1.bit</File>
+			<FileTime>08/11/26 17:17:00</FileTime>
+			<JedecChecksum>0x2E2C</JedecChecksum>
+			<Operation>Fast Program</Operation>
+			<Option>
+				<SVFVendor>JTAG STANDARD</SVFVendor>
+				<IOState>HighZ</IOState>
+				<PreloadLength>39</PreloadLength>
+				<IOVectorData>0xFFFFFFFFFF</IOVectorData>
+				<TCKFrequency>1.000000 MHz</TCKFrequency>
+				<SVFProcessor>SVF Processor</SVFProcessor>
+				<Usercode>0x00000000</Usercode>
+				<AccessMode>SSPI SRAM Programming</AccessMode>
+			</Option>
+		</Device>
+	</Chain>
+	<ProjectOptions>
+		<Program>SEQUENTIAL</Program>
+		<Process>ENTIRED CHAIN</Process>
+		<OperationOverride>No Override</OperationOverride>
+		<StartTAP>TLR</StartTAP>
+		<EndTAP>TLR</EndTAP>
+		<DisableCheckBoard value="TRUE"/>
+		<VerifyUsercode value="FALSE"/>
+		<TCKDelay>1</TCKDelay>
+	</ProjectOptions>
+	<CableOptions>
+		<CableName>USB2</CableName>
+		<PortAdd>FTUSB-0</PortAdd>
+		<USBID>Lattice HW-USBN-2B Ch A Location 0001 Serial VER00001A</USBID>
+	</CableOptions>
+</ispXCF>

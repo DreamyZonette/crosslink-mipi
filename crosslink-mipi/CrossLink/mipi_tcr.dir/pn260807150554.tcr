@@ -1,0 +1,26 @@
+#Start recording tcl command: 8/7/2026 14:33:54
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design new -dsgn "theips" -path "G:/shita/crosslink/project/theips" -device "LIF-MD6000-6KMG80I"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsis"
+source "G:/shita/crosslink/project/theips/csi2dsis/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+prj_src add "G:/shita/crosslink/project/theips/theips.sbx"
+sbp_design gen
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsi"
+source "G:/shita/crosslink/project/theips/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/test"
+source "G:/shita/crosslink/project/theips/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/test"
+source "G:/shita/crosslink/project/theips/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+#Stop recording: 8/7/2026 15:05:54

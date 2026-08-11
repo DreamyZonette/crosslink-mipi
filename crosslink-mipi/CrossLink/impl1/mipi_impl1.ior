@@ -1,0 +1,51 @@
+Loading design for application iotiming from file mipi_impl1.ncd.
+Design name: i2c_pll
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6S
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+Loading design for application iotiming from file mipi_impl1.ncd.
+Design name: i2c_pll
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: M
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+Loading design for application iotiming from file mipi_impl1.ncd.
+Design name: i2c_pll
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: M
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+// Design: i2c_pll
+// Package: CKFBGA80
+// ncd File: mipi_impl1.ncd
+// Version: Diamond (64-bit) 3.12.0.240.2
+// Written on Tue Aug 04 16:11:25 2026
+// M: Minimum Performance Grade
+// iotiming mipi_impl1.ncd mipi_impl1.prf -gui -msgset G:/shita/crosslink/project/promote.xml
+
+I/O Timing Report (All units are in ns)
+
+Worst Case Results across Performance Grades (MS, M, 6S, 6):
+
+// Input Setup and Hold Times
+
+Port  Clock Edge  Setup Performance_Grade  Hold Performance_Grade
+----------------------------------------------------------------------
+(no input setup/hold data)
+
+
+// Clock to Output Delay
+
+Port  Clock Edge  Max_Delay Performance_Grade  Min_Delay Performance_Grade
+------------------------------------------------------------------------
+(no clock to output min/max data)

@@ -1,0 +1,327 @@
+
+Loading design for application trce from file mipi_impl1_map.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application trce from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:50 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o mipi_impl1.tw1 -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1_map.ncd mipi_impl1.prf 
+Design file:     mipi_impl1_map.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,6
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+            189 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 8.127ns (weighted slack = 16.254ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         MIPIDPHYA  Port           u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy(ASIC)  (from csi_clk_byte -)
+   Destination:    DP8KE      Port           u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0(ASIC)  (to csi_clk_byte +)
+
+   Delay:               0.969ns  (40.9% logic, 59.1% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.969ns physical path delay u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0 meets
+     10.000ns delay constraint less
+      0.904ns DATA_SET requirement (totaling 9.096ns) by 8.127ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     0.396 *hy.HSBYTECLKD to *y.D0HSRXDATA6 u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy
+ROUTE         1   e 0.573 *y.D0HSRXDATA6 to *am_0_0_0.DIA6 u_csi2dsi/dphy_rx_inst/bd0_w_6 (to csi_clk_byte)
+                  --------
+                    0.969   (40.9% logic, 59.1% route), 1 logic levels.
+
+Report:  266.951MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 14.288ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         PDPW8KE    Port           u_top_iic/inst_ov9734_ctrl/mux_272(ASIC)  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i9  (to sys_clk_c +)
+
+   Delay:               5.291ns  (78.3% logic, 21.7% route), 3 logic levels.
+
+ Constraint Details:
+
+      5.291ns physical path delay u_top_iic/inst_ov9734_ctrl/mux_272 to u_top_iic/inst_ov9734_ctrl/SLICE_671 meets
+     20.000ns delay constraint less
+      0.421ns DIN_SET requirement (totaling 19.579ns) by 14.288ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/mux_272 to u_top_iic/inst_ov9734_ctrl/SLICE_671:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+C2Q_DEL     ---     3.740 */mux_272.CLKR to *l/mux_272.DO8 u_top_iic/inst_ov9734_ctrl/mux_272 (from sys_clk_c)
+ROUTE         1   e 0.573 *l/mux_272.DO8 to *SLICE_1084.C0 u_top_iic/inst_ov9734_ctrl/reg_cfg_23_N_517_17
+CTOF_DEL    ---     0.202 *SLICE_1084.C0 to *SLICE_1084.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1084
+ROUTE         1   e 0.573 *SLICE_1084.F0 to */SLICE_671.B1 u_top_iic/inst_ov9734_ctrl/addr_15_N_669_9
+CTOF_DEL    ---     0.202 */SLICE_671.B1 to */SLICE_671.F1 u_top_iic/inst_ov9734_ctrl/SLICE_671
+ROUTE         1   e 0.001 */SLICE_671.F1 to *SLICE_671.DI1 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_9 (to sys_clk_c)
+                  --------
+                    5.291   (78.3% logic, 21.7% route), 3 logic levels.
+
+Report:  175.070MHz is the maximum frequency for this preference.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "csi_clk_byte" 50.000000  |             |             |
+MHz ;                                   |   50.000 MHz|  266.951 MHz|   1  
+                                        |             |             |
+FREQUENCY NET "sys_clk_c" 50.000000 MHz |             |             |
+;                                       |   50.000 MHz|  175.070 MHz|   3  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0   Loads: 29
+   No transfer within this clock domain is found
+
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 385
+   Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;   Transfers: 19
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 212
+   No transfer within this clock domain is found
+
+Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 36
+   Covered under: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Not reported because source and destination domains are unrelated.
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 11274 paths, 2 nets, and 5571 connections (77.81% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:50 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o mipi_impl1.tw1 -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1_map.ncd mipi_impl1.prf 
+Design file:     mipi_impl1_map.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+            189 items scored, 13 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 0.114ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/hs_d_en_stb_meta_r_51  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/hs_d_en_stb_r_52  (to csi_clk_byte +)
+
+   Delay:               0.199ns  (70.9% logic, 29.1% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.199ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_595 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_595 exceeds
+      0.313ns M_HLD and
+      0.000ns delay constraint requirement (totaling 0.313ns) by 0.114ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_595 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_595:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141 *SLICE_595.CLK to */SLICE_595.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_595 (from csi_clk_byte)
+ROUTE         1   e 0.058 */SLICE_595.Q1 to */SLICE_595.M0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/hs_d_en_stb_meta_r (to csi_clk_byte)
+                  --------
+                    0.199   (70.9% logic, 29.1% route), 1 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+            4096 items scored, 121 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 0.100ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/flag_done_d1_116  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/flag_done_d2_117  (to sys_clk_c +)
+
+   Delay:               0.200ns  (71.0% logic, 29.0% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.200ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_729 to u_top_iic/inst_ov9734_ctrl/SLICE_729 exceeds
+      0.300ns M_HLD and
+      0.000ns delay constraint requirement (totaling 0.300ns) by 0.100ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_729 to u_top_iic/inst_ov9734_ctrl/SLICE_729:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142 *SLICE_729.CLK to */SLICE_729.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_729 (from sys_clk_c)
+ROUTE         1   e 0.058 */SLICE_729.Q0 to */SLICE_729.M1 u_top_iic/inst_ov9734_ctrl/flag_done_d1 (to sys_clk_c)
+                  --------
+                    0.200   (71.0% logic, 29.0% route), 1 logic levels.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "csi_clk_byte" 50.000000  |             |             |
+MHz ;                                   |     0.000 ns|    -0.114 ns|   1 *
+                                        |             |             |
+FREQUENCY NET "sys_clk_c" 50.000000 MHz |             |             |
+;                                       |     0.000 ns|    -0.100 ns|   1 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+2 preferences(marked by "*" above) not met.
+
+No net is responsible for more than 10% of the timing errors.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0   Loads: 29
+   No transfer within this clock domain is found
+
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 385
+   Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;   Transfers: 19
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 212
+   No transfer within this clock domain is found
+
+Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 36
+   Covered under: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Not reported because source and destination domains are unrelated.
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 134  Score: 6719
+Cumulative negative slack: 6719
+
+Constraints cover 11274 paths, 2 nets, and 5798 connections (80.98% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 0 (setup), 134 (hold)
+Score: 0 (setup), 6719 (hold)
+Cumulative negative slack: 6719 (0+6719)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+

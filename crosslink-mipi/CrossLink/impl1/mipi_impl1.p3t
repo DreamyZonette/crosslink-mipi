@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "mipi_impl1.log"
+-o "mipi_impl1.csv"
+-pr "mipi_impl1.prf"

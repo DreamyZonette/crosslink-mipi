@@ -1,0 +1,219 @@
+// mipi_3ch_top.v
+// Hardware: OV9734 module with onboard 24MHz crystal. MCLK0 pin NOT routed to FPGA.
+// No XVCLK input available — use 50MHz sys_clk with 5ms software margin.
+// TXS0104 OE permanently high (hardwired to DVDD) — MIPI back-drive risk.
+// No PWDN pin available on this board.
+module mipi_3ch_top (
+    input wire sys_clk,            // 50MHz
+    input wire sys_rstn,
+
+    output wire [3:0] led,
+    output wire       uart_txd,
+    input wire        uart_rxd,
+
+    output wire       i2c_sclk_0,
+    inout wire        i2c_sda_0,
+    output wire       xshutdn_0      // RESET0, active high
+);
+
+// ── LED assignments ──
+assign led[1] = cfg_done;
+assign led[2] = ~sys_rstn;
+assign led[0] = error_flag;          // retry exhausted
+
+reg [23:0] blink_cnt;
+reg        blink_toggle;
+always @(posedge sys_clk or negedge sys_rstn) begin
+    if (!sys_rstn) begin
+        blink_cnt    <= 24'd0;
+        blink_toggle <= 1'b0;
+    end
+    else if (blink_cnt == 24'd9999999) begin
+        blink_cnt    <= 24'd0;
+        blink_toggle <= ~blink_toggle;
+    end
+    else begin
+        blink_cnt <= blink_cnt + 1'd1;
+    end
+end
+assign led[3] = blink_toggle;
+
+// ── Power-up & retry FSM ──
+// States:
+//   0: INIT_WAIT — sys_rstn released, wait 100us before XSHUTDN↑
+//   1: PWR_WAIT  — XSHUTDN high, wait 5ms for cam_ready
+//   2: RUN       — normal operation, monitor sensor_id for retry trigger
+//   3: RETRY_LO  — retry: pull XSHUTDN low
+//   4: RETRY_WAIT— retry: wait 100us
+//   5: RETRY_HI  — retry: pull XSHUTDN high, wait 5ms
+reg [2:0]  pwr_state;
+reg        xshutdn_r;
+reg        cam_ready;
+reg [17:0] xshutdn_cnt;
+reg [17:0] cam_cnt;
+reg [1:0]  retry_cnt;
+reg        error_flag;      // 1 = retries exhausted
+wire       iic_rst_n;
+
+always @(posedge sys_clk or negedge sys_rstn) begin
+    if (!sys_rstn) begin
+        pwr_state   <= 3'd0;
+        xshutdn_r   <= 1'b0;
+        cam_ready   <= 1'b0;
+        xshutdn_cnt <= 18'd0;
+        cam_cnt     <= 18'd0;
+        retry_cnt   <= 2'd0;
+        error_flag  <= 1'b0;
+    end
+    else begin
+        case (pwr_state)
+
+            3'd0: begin  // INIT_WAIT: 100us before XSHUTDN↑
+                if (xshutdn_cnt == 18'd4_999) begin
+                    xshutdn_r <= 1'b1;
+                    xshutdn_cnt <= 18'd0;
+                    pwr_state <= 3'd1;
+                end
+                else begin
+                    xshutdn_cnt <= xshutdn_cnt + 1'd1;
+                end
+            end
+
+            3'd1: begin  // PWR_WAIT: 5ms after XSHUTDN↑ → cam_ready
+                if (cam_cnt == 18'd249_999) begin
+                    cam_ready <= 1'b1;
+                    pwr_state <= 3'd2;
+                end
+                else begin
+                    cam_cnt <= cam_cnt + 1'd1;
+                end
+            end
+
+            3'd2: begin  // RUN: monitor for retry trigger
+                // Retry trigger: sensor_id_valid && sensor_id==0xFFFF
+                // with remaining retries available
+                if (sensor_id_valid && sensor_id == 16'hFFFF && retry_cnt < 2'd2) begin
+                    retry_cnt   <= retry_cnt + 2'd1;
+                    xshutdn_r   <= 1'b0;
+                    cam_ready   <= 1'b0;
+                    cam_cnt     <= 18'd0;
+                    xshutdn_cnt <= 18'd0;
+                    pwr_state   <= 3'd3;
+                end
+                else if (sensor_id_valid && sensor_id == 16'hFFFF && retry_cnt >= 2'd2) begin
+                    error_flag <= 1'b1;   // retries exhausted
+                end
+            end
+
+            3'd3: begin  // RETRY_LO: XSHUTDN low, wait 100us
+                if (xshutdn_cnt == 18'd4_999) begin
+                    xshutdn_r   <= 1'b1;
+                    xshutdn_cnt <= 18'd0;
+                    pwr_state   <= 3'd4;
+                end
+                else begin
+                    xshutdn_cnt <= xshutdn_cnt + 1'd1;
+                end
+            end
+
+            3'd4: begin  // RETRY_HI: XSHUTDN high, wait 5ms
+                if (cam_cnt == 18'd249_999) begin
+                    cam_ready <= 1'b1;
+                    pwr_state <= 3'd2;   // back to RUN
+                end
+                else begin
+                    cam_cnt <= cam_cnt + 1'd1;
+                end
+            end
+
+            default: pwr_state <= 3'd0;
+
+        endcase
+    end
+end
+
+assign xshutdn_0 = xshutdn_r;
+assign iic_rst_n = sys_rstn && (pwr_state != 3'd3);  // hold reset during RETRY_LO
+
+// ── I2C ──
+wire        cfg_done;
+wire [15:0] sensor_id;
+wire        sensor_id_valid;
+
+top_iic #(
+    .SLAVE_ADDRESS  (7'b110_1100      ),
+    .SYSTEM_CLK     (26'd50_000_000),
+    .IIC_CLK        (26'd100_000),
+    .ADDR_WIDTH     (1'b1       )
+) u_top_iic (
+    .sys_clk         (sys_clk         ),
+    .sys_rst_n       (iic_rst_n       ),
+    .scl             (i2c_sclk_0      ),
+    .sda             (i2c_sda_0       ),
+    .cfg_done        (cfg_done        ),
+    .sensor_id       (sensor_id       ),
+    .sensor_id_valid (sensor_id_valid ),
+    .cam_ready       (cam_ready       )
+);
+
+// ── UART ──
+wire        tx_flag;
+wire [7:0]  tx_data;
+wire [7:0]  rx_data;
+wire        rx_flag;
+
+uart_send_ctrl u_send_ctrl (
+    .clk     (sys_clk ),
+    .rst_n   (iic_rst_n),
+    .data_in (error_flag ? 16'hEEEE : sensor_id),
+    .tx_flag (tx_flag ),
+    .tx_data (tx_data )
+);
+
+uart_tx #(
+    .UART_BPS(115200),
+    .CLK_FREQ(50_000_000)
+) u_uart_tx (
+    .sys_clk   (sys_clk),
+    .sys_rst_n (iic_rst_n),
+    .pi_data   (tx_data),
+    .pi_flag   (tx_flag),
+    .tx        (uart_txd),
+    .work_en   ()
+);
+
+uart_rx #(
+    .UART_BPS(115200),
+    .CLK_FREQ(50_000_000)
+) u_uart_rx (
+    .sys_clk    (sys_clk),
+    .sys_rst_n  (iic_rst_n),
+    .rx         (uart_rxd),
+    .po_data    (rx_data),
+    .po_flag    (rx_flag)
+);
+
+// ── UART command: 0x66 triggers 1-second I2C soft reset ──
+reg        rst_n_pulse;
+reg [25:0] rst_cnt;
+
+always @(posedge sys_clk or negedge sys_rstn) begin
+    if (!sys_rstn) begin
+        rst_cnt      <= 26'd0;
+        rst_n_pulse  <= 1'b1;
+    end
+    else if (rx_flag && rx_data == 8'h66) begin
+        rst_cnt      <= 26'd0;
+        rst_n_pulse  <= 1'b0;
+    end
+    else if (!rst_n_pulse) begin
+        if (rst_cnt == 26'd49_999_999) begin
+            rst_n_pulse <= 1'b1;
+        end
+        else begin
+            rst_cnt <= rst_cnt + 1'd1;
+        end
+    end
+end
+
+endmodule

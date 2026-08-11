@@ -1,0 +1,409 @@
+--------------------------------------------------------------------------------
+Lattice Synthesis Timing Report, Version  
+Tue Aug 11 17:16:48 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Design:     mipi_3ch_top
+Constraint file:  
+Report level:    verbose report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk3 [get_nets \u_top_iic/inst_i2c_drive/drive_clk]
+            2267 items scored, 1954 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 4.848ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3DX    CK             \u_top_iic/inst_i2c_drive/cnt_scl_i3  (from \u_top_iic/inst_i2c_drive/drive_clk +)
+   Destination:    FD1P3BX    D              \u_top_iic/inst_i2c_drive/sda_transmit_260  (to \u_top_iic/inst_i2c_drive/drive_clk +)
+
+   Delay:                   9.848ns  (0.0% logic, 100.0% route), 10 logic levels.
+
+ Constraint Details:
+
+      9.848ns data_path \u_top_iic/inst_i2c_drive/cnt_scl_i3 to \u_top_iic/inst_i2c_drive/sda_transmit_260 violates
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 4.848ns
+
+ Path Details: \u_top_iic/inst_i2c_drive/cnt_scl_i3 to \u_top_iic/inst_i2c_drive/sda_transmit_260
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              \u_top_iic/inst_i2c_drive/cnt_scl_i3 (from \u_top_iic/inst_i2c_drive/drive_clk)
+Route        33   e 1.819                                  \u_top_iic/inst_i2c_drive/cnt_scl[3]
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_i2c_drive/cnt_scl_9__N_983_9__I_0_304_i12_2_lut_rep_353
+Route        10   e 1.480                                  \u_top_iic/inst_i2c_drive/n18597
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_i2c_drive/i2_2_lut_rep_320_3_lut_3_lut_4_lut
+Route         7   e 1.409                                  \u_top_iic/inst_i2c_drive/n17724
+LUT4        ---     0.000              D to Z              \u_top_iic/inst_i2c_drive/n8943_bdd_4_lut
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n17704
+LUT4        ---     0.000              C to Z              \u_top_iic/inst_i2c_drive/i13629_3_lut_4_lut
+Route         1   e 0.020                                  \u_top_iic/inst_i2c_drive/n3595
+MUXL5       ---     0.000           ALUT to Z              \u_top_iic/inst_i2c_drive/i13344
+Route         1   e 0.020                                  \u_top_iic/inst_i2c_drive/n16556
+MUXL5       ---     0.000             D1 to Z              \u_top_iic/inst_i2c_drive/i13345
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n16557
+LUT4        ---     0.000              C to Z              \u_top_iic/inst_i2c_drive/i1_4_lut_4_lut_adj_188
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n14164
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_i2c_drive/mux_1325_i1_3_lut
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n3965
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_i2c_drive/i13768_3_lut
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n3968
+                  --------
+                    9.848  (0.0% logic, 100.0% route), 10 logic levels.
+
+
+Error:  The following path violates requirements by 4.848ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3DX    CK             \u_top_iic/inst_i2c_drive/cnt_scl_i3  (from \u_top_iic/inst_i2c_drive/drive_clk +)
+   Destination:    FD1P3BX    D              \u_top_iic/inst_i2c_drive/sda_transmit_260  (to \u_top_iic/inst_i2c_drive/drive_clk +)
+
+   Delay:                   9.848ns  (0.0% logic, 100.0% route), 10 logic levels.
+
+ Constraint Details:
+
+      9.848ns data_path \u_top_iic/inst_i2c_drive/cnt_scl_i3 to \u_top_iic/inst_i2c_drive/sda_transmit_260 violates
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 4.848ns
+
+ Path Details: \u_top_iic/inst_i2c_drive/cnt_scl_i3 to \u_top_iic/inst_i2c_drive/sda_transmit_260
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              \u_top_iic/inst_i2c_drive/cnt_scl_i3 (from \u_top_iic/inst_i2c_drive/drive_clk)
+Route        33   e 1.819                                  \u_top_iic/inst_i2c_drive/cnt_scl[3]
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_i2c_drive/cnt_scl_9__N_983_9__I_0_304_i12_2_lut_rep_353
+Route        10   e 1.480                                  \u_top_iic/inst_i2c_drive/n18597
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_i2c_drive/i2_2_lut_rep_320_3_lut_3_lut_4_lut
+Route         7   e 1.409                                  \u_top_iic/inst_i2c_drive/n17724
+LUT4        ---     0.000              D to Z              \u_top_iic/inst_i2c_drive/n8943_bdd_4_lut_14044
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n17703
+LUT4        ---     0.000              C to Z              \u_top_iic/inst_i2c_drive/i13627_3_lut_4_lut
+Route         1   e 0.020                                  \u_top_iic/inst_i2c_drive/n3646
+MUXL5       ---     0.000           ALUT to Z              \u_top_iic/inst_i2c_drive/i13343
+Route         1   e 0.020                                  \u_top_iic/inst_i2c_drive/n16555
+MUXL5       ---     0.000             D0 to Z              \u_top_iic/inst_i2c_drive/i13345
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n16557
+LUT4        ---     0.000              C to Z              \u_top_iic/inst_i2c_drive/i1_4_lut_4_lut_adj_188
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n14164
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_i2c_drive/mux_1325_i1_3_lut
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n3965
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_i2c_drive/i13768_3_lut
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n3968
+                  --------
+                    9.848  (0.0% logic, 100.0% route), 10 logic levels.
+
+
+Error:  The following path violates requirements by 4.815ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3DX    CK             \u_top_iic/inst_i2c_drive/cnt_scl_i4  (from \u_top_iic/inst_i2c_drive/drive_clk +)
+   Destination:    FD1P3BX    D              \u_top_iic/inst_i2c_drive/sda_transmit_260  (to \u_top_iic/inst_i2c_drive/drive_clk +)
+
+   Delay:                   9.815ns  (0.0% logic, 100.0% route), 10 logic levels.
+
+ Constraint Details:
+
+      9.815ns data_path \u_top_iic/inst_i2c_drive/cnt_scl_i4 to \u_top_iic/inst_i2c_drive/sda_transmit_260 violates
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 4.815ns
+
+ Path Details: \u_top_iic/inst_i2c_drive/cnt_scl_i4 to \u_top_iic/inst_i2c_drive/sda_transmit_260
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              \u_top_iic/inst_i2c_drive/cnt_scl_i4 (from \u_top_iic/inst_i2c_drive/drive_clk)
+Route        28   e 1.786                                  \u_top_iic/inst_i2c_drive/cnt_scl[4]
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_i2c_drive/cnt_scl_9__N_983_9__I_0_304_i12_2_lut_rep_353
+Route        10   e 1.480                                  \u_top_iic/inst_i2c_drive/n18597
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_i2c_drive/i2_2_lut_rep_320_3_lut_3_lut_4_lut
+Route         7   e 1.409                                  \u_top_iic/inst_i2c_drive/n17724
+LUT4        ---     0.000              D to Z              \u_top_iic/inst_i2c_drive/n8943_bdd_4_lut_14044
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n17703
+LUT4        ---     0.000              C to Z              \u_top_iic/inst_i2c_drive/i13627_3_lut_4_lut
+Route         1   e 0.020                                  \u_top_iic/inst_i2c_drive/n3646
+MUXL5       ---     0.000           ALUT to Z              \u_top_iic/inst_i2c_drive/i13343
+Route         1   e 0.020                                  \u_top_iic/inst_i2c_drive/n16555
+MUXL5       ---     0.000             D0 to Z              \u_top_iic/inst_i2c_drive/i13345
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n16557
+LUT4        ---     0.000              C to Z              \u_top_iic/inst_i2c_drive/i1_4_lut_4_lut_adj_188
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n14164
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_i2c_drive/mux_1325_i1_3_lut
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n3965
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_i2c_drive/i13768_3_lut
+Route         1   e 1.020                                  \u_top_iic/inst_i2c_drive/n3968
+                  --------
+                    9.815  (0.0% logic, 100.0% route), 10 logic levels.
+
+Warning: 9.848 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk2 [get_nets csi_clk_byte]
+            573 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 2.068ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3DX    CK             reset_byte_fr_sync_i1  (from \u_csi2dsi/dphy_rx_inst/bd3_w[0] +)
+   Destination:    FD1S3DX    CD             csi_byte_clk_count_1912__i31  (to \u_csi2dsi/dphy_rx_inst/bd3_w[0] +)
+
+   Delay:                   2.932ns  (0.0% logic, 100.0% route), 2 logic levels.
+
+ Constraint Details:
+
+      2.932ns data_path reset_byte_fr_sync_i1 to csi_byte_clk_count_1912__i31 meets
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 2.068ns
+
+ Path Details: reset_byte_fr_sync_i1 to csi_byte_clk_count_1912__i31
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              reset_byte_fr_sync_i1 (from \u_csi2dsi/dphy_rx_inst/bd3_w[0])
+Route         4   e 1.397                                  reset_byte_fr_sync[1]
+LUT4        ---     0.000              A to Z              reset_byte_fr_sync_1__I_0_1_lut
+Route       152   e 1.535                                  reset_byte_fr_sync_1__N_129
+                  --------
+                    2.932  (0.0% logic, 100.0% route), 2 logic levels.
+
+
+Passed:  The following path meets requirements by 2.068ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3DX    CK             reset_byte_fr_sync_i1  (from \u_csi2dsi/dphy_rx_inst/bd3_w[0] +)
+   Destination:    FD1S3DX    CD             csi_byte_clk_count_1912__i30  (to \u_csi2dsi/dphy_rx_inst/bd3_w[0] +)
+
+   Delay:                   2.932ns  (0.0% logic, 100.0% route), 2 logic levels.
+
+ Constraint Details:
+
+      2.932ns data_path reset_byte_fr_sync_i1 to csi_byte_clk_count_1912__i30 meets
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 2.068ns
+
+ Path Details: reset_byte_fr_sync_i1 to csi_byte_clk_count_1912__i30
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              reset_byte_fr_sync_i1 (from \u_csi2dsi/dphy_rx_inst/bd3_w[0])
+Route         4   e 1.397                                  reset_byte_fr_sync[1]
+LUT4        ---     0.000              A to Z              reset_byte_fr_sync_1__I_0_1_lut
+Route       152   e 1.535                                  reset_byte_fr_sync_1__N_129
+                  --------
+                    2.932  (0.0% logic, 100.0% route), 2 logic levels.
+
+
+Passed:  The following path meets requirements by 2.068ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3DX    CK             reset_byte_fr_sync_i1  (from \u_csi2dsi/dphy_rx_inst/bd3_w[0] +)
+   Destination:    FD1S3DX    CD             csi_byte_clk_count_1912__i29  (to \u_csi2dsi/dphy_rx_inst/bd3_w[0] +)
+
+   Delay:                   2.932ns  (0.0% logic, 100.0% route), 2 logic levels.
+
+ Constraint Details:
+
+      2.932ns data_path reset_byte_fr_sync_i1 to csi_byte_clk_count_1912__i29 meets
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 2.068ns
+
+ Path Details: reset_byte_fr_sync_i1 to csi_byte_clk_count_1912__i29
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              reset_byte_fr_sync_i1 (from \u_csi2dsi/dphy_rx_inst/bd3_w[0])
+Route         4   e 1.397                                  reset_byte_fr_sync[1]
+LUT4        ---     0.000              A to Z              reset_byte_fr_sync_1__I_0_1_lut
+Route       152   e 1.535                                  reset_byte_fr_sync_1__N_129
+                  --------
+                    2.932  (0.0% logic, 100.0% route), 2 logic levels.
+
+Report: 2.932 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk1 [get_nets csi_clk_byte_hs]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets sys_clk_c]
+            1215 items scored, 1215 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 4.121ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i0  (from sys_clk_c +)
+   Destination:    FD1P3DX    D              \u_top_iic/inst_ov9734_ctrl/start_121  (to sys_clk_c +)
+
+   Delay:                   9.121ns  (0.0% logic, 100.0% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.121ns data_path \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i0 to \u_top_iic/inst_ov9734_ctrl/start_121 violates
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 4.121ns
+
+ Path Details: \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i0 to \u_top_iic/inst_ov9734_ctrl/start_121
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i0 (from sys_clk_c)
+Route         2   e 1.258                                  \u_top_iic/inst_ov9734_ctrl/wait_cnt[0]
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_ov9734_ctrl/i2_2_lut_adj_276
+Route         2   e 1.158                                  \u_top_iic/inst_ov9734_ctrl/n7_adj_1656
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i13281_4_lut
+Route         1   e 1.020                                  \u_top_iic/inst_ov9734_ctrl/n16493
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i1_4_lut_adj_255
+Route        19   e 1.608                                  \u_top_iic/inst_ov9734_ctrl/n33
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i13527_3_lut
+Route        18   e 1.598                                  \u_top_iic/inst_ov9734_ctrl/n17726
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/select_1487_Select_0_i5_2_lut_rep_308_3_lut
+Route         9   e 1.459                                  \u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_ov9734_ctrl/i1_4_lut_adj_252
+Route         1   e 1.020                                  \u_top_iic/inst_ov9734_ctrl/n14659
+                  --------
+                    9.121  (0.0% logic, 100.0% route), 7 logic levels.
+
+
+Error:  The following path violates requirements by 4.121ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i14  (from sys_clk_c +)
+   Destination:    FD1P3DX    D              \u_top_iic/inst_ov9734_ctrl/start_121  (to sys_clk_c +)
+
+   Delay:                   9.121ns  (0.0% logic, 100.0% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.121ns data_path \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i14 to \u_top_iic/inst_ov9734_ctrl/start_121 violates
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 4.121ns
+
+ Path Details: \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i14 to \u_top_iic/inst_ov9734_ctrl/start_121
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i14 (from sys_clk_c)
+Route         2   e 1.258                                  \u_top_iic/inst_ov9734_ctrl/wait_cnt[14]
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i2_2_lut
+Route         2   e 1.158                                  \u_top_iic/inst_ov9734_ctrl/n7
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i1_4_lut_adj_264
+Route         1   e 1.020                                  \u_top_iic/inst_ov9734_ctrl/n15167
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_ov9734_ctrl/i1_4_lut_adj_259
+Route        19   e 1.608                                  \u_top_iic/inst_ov9734_ctrl/n33_adj_1655
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_ov9734_ctrl/i13527_3_lut
+Route        18   e 1.598                                  \u_top_iic/inst_ov9734_ctrl/n17726
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/select_1487_Select_0_i5_2_lut_rep_308_3_lut
+Route         9   e 1.459                                  \u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_ov9734_ctrl/i1_4_lut_adj_252
+Route         1   e 1.020                                  \u_top_iic/inst_ov9734_ctrl/n14659
+                  --------
+                    9.121  (0.0% logic, 100.0% route), 7 logic levels.
+
+
+Error:  The following path violates requirements by 4.121ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i9  (from sys_clk_c +)
+   Destination:    FD1P3DX    D              \u_top_iic/inst_ov9734_ctrl/start_121  (to sys_clk_c +)
+
+   Delay:                   9.121ns  (0.0% logic, 100.0% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.121ns data_path \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i9 to \u_top_iic/inst_ov9734_ctrl/start_121 violates
+      5.000ns delay constraint less
+      0.000ns L_S requirement (totaling 5.000ns) by 4.121ns
+
+ Path Details: \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i9 to \u_top_iic/inst_ov9734_ctrl/start_121
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.000             CK to Q              \u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i9 (from sys_clk_c)
+Route         2   e 1.258                                  \u_top_iic/inst_ov9734_ctrl/wait_cnt[9]
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i2_2_lut_adj_276
+Route         2   e 1.158                                  \u_top_iic/inst_ov9734_ctrl/n7_adj_1656
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i13281_4_lut
+Route         1   e 1.020                                  \u_top_iic/inst_ov9734_ctrl/n16493
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i1_4_lut_adj_255
+Route        19   e 1.608                                  \u_top_iic/inst_ov9734_ctrl/n33
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/i13527_3_lut
+Route        18   e 1.598                                  \u_top_iic/inst_ov9734_ctrl/n17726
+LUT4        ---     0.000              A to Z              \u_top_iic/inst_ov9734_ctrl/select_1487_Select_0_i5_2_lut_rep_308_3_lut
+Route         9   e 1.459                                  \u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117
+LUT4        ---     0.000              B to Z              \u_top_iic/inst_ov9734_ctrl/i1_4_lut_adj_252
+Route         1   e 1.020                                  \u_top_iic/inst_ov9734_ctrl/n14659
+                  --------
+                    9.121  (0.0% logic, 100.0% route), 7 logic levels.
+
+Warning: 9.121 ns is the maximum delay for this constraint.
+
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk3 [get_nets                          |             |             |
+\u_top_iic/inst_i2c_drive/drive_clk]    |     5.000 ns|     9.848 ns|    10 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk2 [get_nets csi_clk_byte]            |     5.000 ns|     2.932 ns|     2  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk1 [get_nets csi_clk_byte_hs]         |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets sys_clk_c]               |     5.000 ns|     9.121 ns|     7 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+2 constraints not met.
+
+--------------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+--------------------------------------------------------------------------------
+\u_top_iic/inst_ov9734_ctrl/n17726      |      18|     864|     27.26%
+                                        |        |        |
+\u_top_iic/inst_ov9734_ctrl/n33         |      19|     441|     13.92%
+                                        |        |        |
+\u_top_iic/inst_ov9734_ctrl/n33_adj_1655|      19|     437|     13.79%
+                                        |        |        |
+--------------------------------------------------------------------------------
+
+
+Timing summary:
+---------------
+
+Timing errors: 3169  Score: 7626291
+
+Constraints cover  20147 paths, 2407 nets, and 6204 connections (86.2% coverage)
+
+
+Peak memory: 102879232 bytes, TRCE: 2473984 bytes, DLYMAN: 0 bytes
+CPU_TIME_REPORT: 0 secs 

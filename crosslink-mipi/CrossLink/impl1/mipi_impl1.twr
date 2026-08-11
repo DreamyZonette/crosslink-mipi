@@ -1,0 +1,2178 @@
+
+Loading design for application trce from file mipi_impl1.ncd.
+Design name: mipi_3ch_top
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LIF-MD6000
+Package:     CKFBGA80
+Performance: 6
+Loading device for application trce from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Performance Hardware Data Status:   Final          Version 41.1.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:59 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o mipi_impl1.twr -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1.ncd mipi_impl1.prf 
+Design file:     mipi_impl1.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,6
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+            189 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 15.557ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_19  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_14  (to csi_clk_byte +)
+
+   Delay:               4.024ns  (34.7% logic, 65.3% route), 5 logic levels.
+
+ Constraint Details:
+
+      4.024ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 15.557ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422     R11C9C.CLK to      R11C9C.Q0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 (from csi_clk_byte)
+ROUTE         3     1.363      R11C9C.Q0 to       R8C9D.B0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_gcount_w22
+CTOF_DEL    ---     0.202       R8C9D.B0 to       R8C9D.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1230
+ROUTE         1     1.265       R8C9D.F0 to      R8C10C.B0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_g2b_xor_cluster_0
+C0TOFCO_DE  ---     0.352      R8C10C.B0 to     R8C10C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_263
+ROUTE         1     0.000     R8C10C.FCO to     R8C10D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co1_3
+FCITOFCO_D  ---     0.057     R8C10D.FCI to     R8C10D.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_264
+ROUTE         1     0.000     R8C10D.FCO to     R8C11A.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d_c
+FCITOF0_DE  ---     0.363     R8C11A.FCI to      R8C11A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265
+ROUTE         1     0.000      R8C11A.F0 to     R8C11A.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d (to csi_clk_byte)
+                  --------
+                    4.024   (34.7% logic, 65.3% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R11C9C.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R8C11A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 15.648ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/hs_en_ncr_77  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_8  (to csi_clk_byte +)
+
+   Delay:               3.933ns  (36.9% logic, 63.1% route), 6 logic levels.
+
+ Constraint Details:
+
+      3.933ns physical path delay u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 15.648ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422      R5C8B.CLK to       R5C8B.Q0 u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 (from csi_clk_byte)
+ROUTE         7     1.397       R5C8B.Q0 to      R6C12C.B0 csi_sp_en_c
+CTOF_DEL    ---     0.202      R6C12C.B0 to      R6C12C.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/SLICE_1235
+ROUTE         9     1.083      R6C12C.F0 to      R6C13A.A1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wren_i
+C1TOFCO_DE  ---     0.352      R6C13A.A1 to     R6C13A.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_244
+ROUTE         1     0.000     R6C13A.FCO to     R6C13B.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/cmp_ci_1
+FCITOFCO_D  ---     0.057     R6C13B.FCI to     R6C13B.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_245
+ROUTE         1     0.000     R6C13B.FCO to     R6C13C.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co0_3
+FCITOFCO_D  ---     0.057     R6C13C.FCI to     R6C13C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_246
+ROUTE         1     0.000     R6C13C.FCO to     R6C13D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full_d_c
+FCITOF0_DE  ---     0.363     R6C13D.FCI to      R6C13D.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247
+ROUTE         1     0.000      R6C13D.F0 to     R6C13D.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full_d (to csi_clk_byte)
+                  --------
+                    3.933   (36.9% logic, 63.1% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to      R5C8B.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R6C13D.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 15.651ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/hs_en_ncr_77  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_8  (to csi_clk_byte +)
+
+   Delay:               3.930ns  (37.0% logic, 63.0% route), 6 logic levels.
+
+ Constraint Details:
+
+      3.930ns physical path delay u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 15.651ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422      R5C8B.CLK to       R5C8B.Q0 u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 (from csi_clk_byte)
+ROUTE         7     1.397       R5C8B.Q0 to      R6C12C.B0 csi_sp_en_c
+CTOF_DEL    ---     0.202      R6C12C.B0 to      R6C12C.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/SLICE_1235
+ROUTE         9     1.080      R6C12C.F0 to      R6C13A.B1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wren_i
+C1TOFCO_DE  ---     0.352      R6C13A.B1 to     R6C13A.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_244
+ROUTE         1     0.000     R6C13A.FCO to     R6C13B.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/cmp_ci_1
+FCITOFCO_D  ---     0.057     R6C13B.FCI to     R6C13B.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_245
+ROUTE         1     0.000     R6C13B.FCO to     R6C13C.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co0_3
+FCITOFCO_D  ---     0.057     R6C13C.FCI to     R6C13C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_246
+ROUTE         1     0.000     R6C13C.FCO to     R6C13D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full_d_c
+FCITOF0_DE  ---     0.363     R6C13D.FCI to      R6C13D.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247
+ROUTE         1     0.000      R6C13D.F0 to     R6C13D.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full_d (to csi_clk_byte)
+                  --------
+                    3.930   (37.0% logic, 63.0% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to      R5C8B.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_247:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R6C13D.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 15.674ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/hs_en_ncr_77  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_14  (to csi_clk_byte +)
+
+   Delay:               3.907ns  (38.6% logic, 61.4% route), 7 logic levels.
+
+ Constraint Details:
+
+      3.907ns physical path delay u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 15.674ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422      R5C8B.CLK to       R5C8B.Q0 u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 (from csi_clk_byte)
+ROUTE         7     1.077       R5C8B.Q0 to      R8C11C.D0 csi_sp_en_c
+CTOF_DEL    ---     0.202      R8C11C.D0 to      R8C11C.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1231
+ROUTE        13     1.320      R8C11C.F0 to      R8C10A.A1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/wren_i
+C1TOFCO_DE  ---     0.352      R8C10A.A1 to     R8C10A.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_261
+ROUTE         1     0.000     R8C10A.FCO to     R8C10B.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/cmp_ci_1
+FCITOFCO_D  ---     0.057     R8C10B.FCI to     R8C10B.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_262
+ROUTE         1     0.000     R8C10B.FCO to     R8C10C.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co0_3
+FCITOFCO_D  ---     0.057     R8C10C.FCI to     R8C10C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_263
+ROUTE         1     0.000     R8C10C.FCO to     R8C10D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co1_3
+FCITOFCO_D  ---     0.057     R8C10D.FCI to     R8C10D.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_264
+ROUTE         1     0.000     R8C10D.FCO to     R8C11A.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d_c
+FCITOF0_DE  ---     0.363     R8C11A.FCI to      R8C11A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265
+ROUTE         1     0.000      R8C11A.F0 to     R8C11A.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d (to csi_clk_byte)
+                  --------
+                    3.907   (38.6% logic, 61.4% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to      R5C8B.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R8C11A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 15.870ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_16  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_14  (to csi_clk_byte +)
+
+   Delay:               3.711ns  (44.5% logic, 55.5% route), 7 logic levels.
+
+ Constraint Details:
+
+      3.711ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 15.870ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.420      R8C8C.CLK to       R8C8C.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 (from csi_clk_byte)
+ROUTE         5     0.828       R8C8C.Q1 to       R8C9C.A0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_gcount_w25
+CTOF_DEL    ---     0.202       R8C9C.A0 to       R8C9C.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1015
+ROUTE         2     0.455       R8C9C.F0 to       R8C9C.D1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rcount_w4
+CTOF_DEL    ---     0.202       R8C9C.D1 to       R8C9C.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1015
+ROUTE         1     0.775       R8C9C.F1 to      R8C10B.A1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rcount_w1
+C1TOFCO_DE  ---     0.352      R8C10B.A1 to     R8C10B.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_262
+ROUTE         1     0.000     R8C10B.FCO to     R8C10C.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co0_3
+FCITOFCO_D  ---     0.057     R8C10C.FCI to     R8C10C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_263
+ROUTE         1     0.000     R8C10C.FCO to     R8C10D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co1_3
+FCITOFCO_D  ---     0.057     R8C10D.FCI to     R8C10D.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_264
+ROUTE         1     0.000     R8C10D.FCO to     R8C11A.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d_c
+FCITOF0_DE  ---     0.363     R8C11A.FCI to      R8C11A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265
+ROUTE         1     0.000      R8C11A.F0 to     R8C11A.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d (to csi_clk_byte)
+                  --------
+                    3.711   (44.5% logic, 55.5% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to      R8C8C.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R8C11A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 15.888ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_17  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_14  (to csi_clk_byte +)
+
+   Delay:               3.693ns  (37.8% logic, 62.2% route), 5 logic levels.
+
+ Constraint Details:
+
+      3.693ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 15.888ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422      R8C8C.CLK to       R8C8C.Q0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 (from csi_clk_byte)
+ROUTE         3     1.032       R8C8C.Q0 to       R8C9D.A0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_gcount_w24
+CTOF_DEL    ---     0.202       R8C9D.A0 to       R8C9D.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1230
+ROUTE         1     1.265       R8C9D.F0 to      R8C10C.B0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_g2b_xor_cluster_0
+C0TOFCO_DE  ---     0.352      R8C10C.B0 to     R8C10C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_263
+ROUTE         1     0.000     R8C10C.FCO to     R8C10D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co1_3
+FCITOFCO_D  ---     0.057     R8C10D.FCI to     R8C10D.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_264
+ROUTE         1     0.000     R8C10D.FCO to     R8C11A.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d_c
+FCITOF0_DE  ---     0.363     R8C11A.FCI to      R8C11A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265
+ROUTE         1     0.000      R8C11A.F0 to     R8C11A.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d (to csi_clk_byte)
+                  --------
+                    3.693   (37.8% logic, 62.2% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to      R8C8C.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R8C11A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 15.911ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_18  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_14  (to csi_clk_byte +)
+
+   Delay:               3.670ns  (38.0% logic, 62.0% route), 5 logic levels.
+
+ Constraint Details:
+
+      3.670ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 15.911ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.420     R11C9C.CLK to      R11C9C.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 (from csi_clk_byte)
+ROUTE         3     1.011      R11C9C.Q1 to       R8C9D.C0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_gcount_w23
+CTOF_DEL    ---     0.202       R8C9D.C0 to       R8C9D.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1230
+ROUTE         1     1.265       R8C9D.F0 to      R8C10C.B0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_g2b_xor_cluster_0
+C0TOFCO_DE  ---     0.352      R8C10C.B0 to     R8C10C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_263
+ROUTE         1     0.000     R8C10C.FCO to     R8C10D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co1_3
+FCITOFCO_D  ---     0.057     R8C10D.FCI to     R8C10D.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_264
+ROUTE         1     0.000     R8C10D.FCO to     R8C11A.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d_c
+FCITOF0_DE  ---     0.363     R8C11A.FCI to      R8C11A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265
+ROUTE         1     0.000      R8C11A.F0 to     R8C11A.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d (to csi_clk_byte)
+                  --------
+                    3.670   (38.0% logic, 62.0% route), 5 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R11C9C.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R8C11A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 16.019ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_17  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_14  (to csi_clk_byte +)
+
+   Delay:               3.562ns  (46.5% logic, 53.5% route), 7 logic levels.
+
+ Constraint Details:
+
+      3.562ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 16.019ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422      R8C8C.CLK to       R8C8C.Q0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567 (from csi_clk_byte)
+ROUTE         3     0.677       R8C8C.Q0 to       R8C9C.C0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_gcount_w24
+CTOF_DEL    ---     0.202       R8C9C.C0 to       R8C9C.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1015
+ROUTE         2     0.455       R8C9C.F0 to       R8C9C.D1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rcount_w4
+CTOF_DEL    ---     0.202       R8C9C.D1 to       R8C9C.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1015
+ROUTE         1     0.775       R8C9C.F1 to      R8C10B.A1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rcount_w1
+C1TOFCO_DE  ---     0.352      R8C10B.A1 to     R8C10B.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_262
+ROUTE         1     0.000     R8C10B.FCO to     R8C10C.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co0_3
+FCITOFCO_D  ---     0.057     R8C10C.FCI to     R8C10C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_263
+ROUTE         1     0.000     R8C10C.FCO to     R8C10D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co1_3
+FCITOFCO_D  ---     0.057     R8C10D.FCI to     R8C10D.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_264
+ROUTE         1     0.000     R8C10D.FCO to     R8C11A.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d_c
+FCITOF0_DE  ---     0.363     R8C11A.FCI to      R8C11A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265
+ROUTE         1     0.000      R8C11A.F0 to     R8C11A.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d (to csi_clk_byte)
+                  --------
+                    3.562   (46.5% logic, 53.5% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_567:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to      R8C8C.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R8C11A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 16.035ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/hs_en_ncr_77  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_32  (to csi_clk_byte +)
+
+   Delay:               3.365ns  (18.5% logic, 81.5% route), 2 logic levels.
+
+ Constraint Details:
+
+      3.365ns physical path delay u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_1039 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.600ns CE_SET requirement (totaling 19.400ns) by 16.035ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_1039:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422      R5C8B.CLK to       R5C8B.Q0 u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 (from csi_clk_byte)
+ROUTE         7     1.397       R5C8B.Q0 to      R6C12C.B0 csi_sp_en_c
+CTOF_DEL    ---     0.202      R6C12C.B0 to      R6C12C.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/SLICE_1235
+ROUTE         9     1.344      R6C12C.F0 to      R5C13A.CE u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wren_i (to csi_clk_byte)
+                  --------
+                    3.365   (18.5% logic, 81.5% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to      R5C8B.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_1039:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R5C13A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 16.064ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_18  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_14  (to csi_clk_byte +)
+
+   Delay:               3.517ns  (47.0% logic, 53.0% route), 7 logic levels.
+
+ Constraint Details:
+
+      3.517ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 16.064ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.420     R11C9C.CLK to      R11C9C.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566 (from csi_clk_byte)
+ROUTE         3     0.857      R11C9C.Q1 to       R8C9A.D0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_gcount_w23
+CTOF_DEL    ---     0.202       R8C9A.D0 to       R8C9A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1016
+ROUTE         2     0.235       R8C9A.F0 to       R8C9A.D1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rcount_w3
+CTOF_DEL    ---     0.202       R8C9A.D1 to       R8C9A.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_1016
+ROUTE         1     0.772       R8C9A.F1 to      R8C10B.B0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rcount_w0
+C0TOFCO_DE  ---     0.352      R8C10B.B0 to     R8C10B.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_262
+ROUTE         1     0.000     R8C10B.FCO to     R8C10C.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co0_3
+FCITOFCO_D  ---     0.057     R8C10C.FCI to     R8C10C.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_263
+ROUTE         1     0.000     R8C10C.FCO to     R8C10D.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co1_3
+FCITOFCO_D  ---     0.057     R8C10D.FCI to     R8C10D.FCO u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_264
+ROUTE         1     0.000     R8C10D.FCO to     R8C11A.FCI u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d_c
+FCITOF0_DE  ---     0.363     R8C11A.FCI to      R8C11A.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265
+ROUTE         1     0.000      R8C11A.F0 to     R8C11A.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/full_d (to csi_clk_byte)
+                  --------
+                    3.517   (47.0% logic, 53.0% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_566:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R11C9C.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_265:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     1.361 *Y0.HSBYTECLKD to     R8C11A.CLK csi_clk_byte
+                  --------
+                    1.361   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report:  225.073MHz is the maximum frequency for this preference.
+
+
+================================================================================
+Preference: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 11.815ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/frame_wait_cnt_i0_i16  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i7  (to sys_clk_c +)
+
+   Delay:               7.764ns  (18.4% logic, 81.6% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.764ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_738 to u_top_iic/inst_ov9734_ctrl/SLICE_670 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.421ns DIN_SET requirement (totaling 19.579ns) by 11.815ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_738 to u_top_iic/inst_ov9734_ctrl/SLICE_670:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422     R7C41D.CLK to      R7C41D.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_738 (from sys_clk_c)
+ROUTE         3     1.553      R7C41D.Q0 to      R6C41C.B0 u_top_iic/inst_ov9734_ctrl/frame_wait_cnt_16
+CTOF_DEL    ---     0.202      R6C41C.B0 to      R6C41C.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1047
+ROUTE         1     0.378      R6C41C.F0 to      R6C41A.C0 u_top_iic/inst_ov9734_ctrl/n15575
+CTOF_DEL    ---     0.202      R6C41A.C0 to      R6C41A.F0 u_top_iic/inst_ov9734_ctrl/SLICE_905
+ROUTE         1     0.750      R6C41A.F0 to      R7C42B.D1 u_top_iic/inst_ov9734_ctrl/n15589
+CTOF_DEL    ---     0.202      R7C42B.D1 to      R7C42B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_892
+ROUTE        38     2.311      R7C42B.F1 to      R7C43D.D0 u_top_iic/inst_ov9734_ctrl/n51
+CTOF_DEL    ---     0.202      R7C43D.D0 to      R7C43D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1024
+ROUTE         9     1.340      R7C43D.F0 to      R8C44A.B1 u_top_iic/inst_ov9734_ctrl/n17715
+CTOF_DEL    ---     0.202      R8C44A.B1 to      R8C44A.F1 u_top_iic/inst_ov9734_ctrl/SLICE_670
+ROUTE         1     0.000      R8C44A.F1 to     R8C44A.DI1 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_7 (to sys_clk_c)
+                  --------
+                    7.764   (18.4% logic, 81.6% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_738:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C41D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_670:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R8C44A.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 11.954ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i10  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i10  (to sys_clk_c +)
+
+   Delay:               7.627ns  (21.4% logic, 78.6% route), 7 logic levels.
+
+ Constraint Details:
+
+      7.627ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_672 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 11.954ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_672:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422    R12C49C.CLK to     R12C49C.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_752 (from sys_clk_c)
+ROUTE         3     1.343     R12C49C.Q0 to     R12C50B.A0 u_top_iic/inst_ov9734_ctrl/wait_cnt_10
+CTOF_DEL    ---     0.202     R12C50B.A0 to     R12C50B.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1104
+ROUTE         1     0.488     R12C50B.F0 to     R12C49D.D0 u_top_iic/inst_ov9734_ctrl/n15337
+CTOF_DEL    ---     0.202     R12C49D.D0 to     R12C49D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_901
+ROUTE         1     0.642     R12C49D.F0 to     R10C49B.C1 u_top_iic/inst_ov9734_ctrl/n15339
+CTOF_DEL    ---     0.202     R10C49B.C1 to     R10C49B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_755
+ROUTE        19     1.196     R10C49B.F1 to     R10C46C.B1 u_top_iic/inst_ov9734_ctrl/n33
+CTOF_DEL    ---     0.202     R10C46C.B1 to     R10C46C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_894
+ROUTE        18     1.289     R10C46C.F1 to      R8C44D.A1 u_top_iic/inst_ov9734_ctrl/n17726
+CTOF_DEL    ---     0.202      R8C44D.A1 to      R8C44D.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1084
+ROUTE         1     1.035      R8C44D.F1 to      R7C45D.B0 u_top_iic/inst_ov9734_ctrl/addr_15_N_669_10
+CTOF_DEL    ---     0.202      R7C45D.B0 to      R7C45D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_672
+ROUTE         1     0.000      R7C45D.F0 to     R7C45D.DI0 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_10 (to sys_clk_c)
+                  --------
+                    7.627   (21.4% logic, 78.6% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_752:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R12C49C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_672:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C45D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.047ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i10  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/start_121  (to sys_clk_c +)
+
+   Delay:               7.534ns  (21.7% logic, 78.3% route), 7 logic levels.
+
+ Constraint Details:
+
+      7.534ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_757 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 12.047ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_757:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422    R12C49C.CLK to     R12C49C.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_752 (from sys_clk_c)
+ROUTE         3     1.343     R12C49C.Q0 to     R12C50B.A0 u_top_iic/inst_ov9734_ctrl/wait_cnt_10
+CTOF_DEL    ---     0.202     R12C50B.A0 to     R12C50B.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1104
+ROUTE         1     0.488     R12C50B.F0 to     R12C49D.D0 u_top_iic/inst_ov9734_ctrl/n15337
+CTOF_DEL    ---     0.202     R12C49D.D0 to     R12C49D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_901
+ROUTE         1     0.642     R12C49D.F0 to     R10C49B.C1 u_top_iic/inst_ov9734_ctrl/n15339
+CTOF_DEL    ---     0.202     R10C49B.C1 to     R10C49B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_755
+ROUTE        19     1.196     R10C49B.F1 to     R10C46C.B1 u_top_iic/inst_ov9734_ctrl/n33
+CTOF_DEL    ---     0.202     R10C46C.B1 to     R10C46C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_894
+ROUTE        18     1.289     R10C46C.F1 to      R8C45D.A1 u_top_iic/inst_ov9734_ctrl/n17726
+CTOF_DEL    ---     0.202      R8C45D.A1 to      R8C45D.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1067
+ROUTE         5     0.942      R8C45D.F1 to      R7C44D.C0 u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117
+CTOF_DEL    ---     0.202      R7C44D.C0 to      R7C44D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_757
+ROUTE         1     0.000      R7C44D.F0 to     R7C44D.DI0 u_top_iic/inst_ov9734_ctrl/n14659 (to sys_clk_c)
+                  --------
+                    7.534   (21.7% logic, 78.3% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_752:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R12C49C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_757:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C44D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.061ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i8  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i10  (to sys_clk_c +)
+
+   Delay:               7.520ns  (21.7% logic, 78.3% route), 7 logic levels.
+
+ Constraint Details:
+
+      7.520ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_751 to u_top_iic/inst_ov9734_ctrl/SLICE_672 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.419ns DIN_SET requirement (totaling 19.581ns) by 12.061ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_751 to u_top_iic/inst_ov9734_ctrl/SLICE_672:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422    R10C49D.CLK to     R10C49D.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_751 (from sys_clk_c)
+ROUTE         3     0.938     R10C49D.Q0 to     R11C50D.C1 u_top_iic/inst_ov9734_ctrl/wait_cnt_8
+CTOF_DEL    ---     0.202     R11C50D.C1 to     R11C50D.F1 u_top_iic/inst_ov9734_ctrl/SLICE_902
+ROUTE         1     0.728     R11C50D.F1 to     R11C50D.B0 u_top_iic/inst_ov9734_ctrl/n15171
+CTOF_DEL    ---     0.202     R11C50D.B0 to     R11C50D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_902
+ROUTE         1     1.044     R11C50D.F0 to     R10C48C.B1 u_top_iic/inst_ov9734_ctrl/n15177
+CTOF_DEL    ---     0.202     R10C48C.B1 to     R10C48C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_896
+ROUTE        19     0.852     R10C48C.F1 to     R10C46C.A1 u_top_iic/inst_ov9734_ctrl/n33_adj_1655
+CTOF_DEL    ---     0.202     R10C46C.A1 to     R10C46C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_894
+ROUTE        18     1.289     R10C46C.F1 to      R8C44D.A1 u_top_iic/inst_ov9734_ctrl/n17726
+CTOF_DEL    ---     0.202      R8C44D.A1 to      R8C44D.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1084
+ROUTE         1     1.035      R8C44D.F1 to      R7C45D.B0 u_top_iic/inst_ov9734_ctrl/addr_15_N_669_10
+CTOF_DEL    ---     0.202      R7C45D.B0 to      R7C45D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_672
+ROUTE         1     0.000      R7C45D.F0 to     R7C45D.DI0 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_10 (to sys_clk_c)
+                  --------
+                    7.520   (21.7% logic, 78.3% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_751:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R10C49D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_672:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C45D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.064ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/frame_wait_cnt_i0_i16  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i1  (to sys_clk_c +)
+
+   Delay:               7.515ns  (19.1% logic, 80.9% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.515ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_738 to u_top_iic/inst_ov9734_ctrl/SLICE_667 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.421ns DIN_SET requirement (totaling 19.579ns) by 12.064ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_738 to u_top_iic/inst_ov9734_ctrl/SLICE_667:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422     R7C41D.CLK to      R7C41D.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_738 (from sys_clk_c)
+ROUTE         3     1.553      R7C41D.Q0 to      R6C41C.B0 u_top_iic/inst_ov9734_ctrl/frame_wait_cnt_16
+CTOF_DEL    ---     0.202      R6C41C.B0 to      R6C41C.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1047
+ROUTE         1     0.378      R6C41C.F0 to      R6C41A.C0 u_top_iic/inst_ov9734_ctrl/n15575
+CTOF_DEL    ---     0.202      R6C41A.C0 to      R6C41A.F0 u_top_iic/inst_ov9734_ctrl/SLICE_905
+ROUTE         1     0.750      R6C41A.F0 to      R7C42B.D1 u_top_iic/inst_ov9734_ctrl/n15589
+CTOF_DEL    ---     0.202      R7C42B.D1 to      R7C42B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_892
+ROUTE        38     2.893      R7C42B.F1 to      R8C45B.B1 u_top_iic/inst_ov9734_ctrl/n51
+CTOF_DEL    ---     0.202      R8C45B.B1 to      R8C45B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1023
+ROUTE         1     0.509      R8C45B.F1 to      R8C45A.B1 u_top_iic/inst_ov9734_ctrl/n13867
+CTOF_DEL    ---     0.202      R8C45A.B1 to      R8C45A.F1 u_top_iic/inst_ov9734_ctrl/SLICE_667
+ROUTE         1     0.000      R8C45A.F1 to     R8C45A.DI1 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_1 (to sys_clk_c)
+                  --------
+                    7.515   (19.1% logic, 80.9% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_738:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C41D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_667:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R8C45A.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.083ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i10  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i15  (to sys_clk_c +)
+
+   Delay:               7.496ns  (21.8% logic, 78.2% route), 7 logic levels.
+
+ Constraint Details:
+
+      7.496ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_674 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.421ns DIN_SET requirement (totaling 19.579ns) by 12.083ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_674:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422    R12C49C.CLK to     R12C49C.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_752 (from sys_clk_c)
+ROUTE         3     1.343     R12C49C.Q0 to     R12C50B.A0 u_top_iic/inst_ov9734_ctrl/wait_cnt_10
+CTOF_DEL    ---     0.202     R12C50B.A0 to     R12C50B.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1104
+ROUTE         1     0.488     R12C50B.F0 to     R12C49D.D0 u_top_iic/inst_ov9734_ctrl/n15337
+CTOF_DEL    ---     0.202     R12C49D.D0 to     R12C49D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_901
+ROUTE         1     0.642     R12C49D.F0 to     R10C49B.C1 u_top_iic/inst_ov9734_ctrl/n15339
+CTOF_DEL    ---     0.202     R10C49B.C1 to     R10C49B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_755
+ROUTE        19     1.196     R10C49B.F1 to     R10C46C.B1 u_top_iic/inst_ov9734_ctrl/n33
+CTOF_DEL    ---     0.202     R10C46C.B1 to     R10C46C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_894
+ROUTE        18     1.289     R10C46C.F1 to      R8C45C.A0 u_top_iic/inst_ov9734_ctrl/n17726
+CTOF_DEL    ---     0.202      R8C45C.A0 to      R8C45C.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1078
+ROUTE         1     0.904      R8C45C.F0 to      R7C43C.C1 u_top_iic/inst_ov9734_ctrl/addr_15_N_669_15
+CTOF_DEL    ---     0.202      R7C43C.C1 to      R7C43C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_674
+ROUTE         1     0.000      R7C43C.F1 to     R7C43C.DI1 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_15 (to sys_clk_c)
+                  --------
+                    7.496   (21.8% logic, 78.2% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_752:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R12C49C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_674:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C43C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.085ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/frame_wait_cnt_i0_i16  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i13  (to sys_clk_c +)
+
+   Delay:               7.494ns  (19.1% logic, 80.9% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.494ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_738 to u_top_iic/inst_ov9734_ctrl/SLICE_673 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.421ns DIN_SET requirement (totaling 19.579ns) by 12.085ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_738 to u_top_iic/inst_ov9734_ctrl/SLICE_673:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422     R7C41D.CLK to      R7C41D.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_738 (from sys_clk_c)
+ROUTE         3     1.553      R7C41D.Q0 to      R6C41C.B0 u_top_iic/inst_ov9734_ctrl/frame_wait_cnt_16
+CTOF_DEL    ---     0.202      R6C41C.B0 to      R6C41C.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1047
+ROUTE         1     0.378      R6C41C.F0 to      R6C41A.C0 u_top_iic/inst_ov9734_ctrl/n15575
+CTOF_DEL    ---     0.202      R6C41A.C0 to      R6C41A.F0 u_top_iic/inst_ov9734_ctrl/SLICE_905
+ROUTE         1     0.750      R6C41A.F0 to      R7C42B.D1 u_top_iic/inst_ov9734_ctrl/n15589
+CTOF_DEL    ---     0.202      R7C42B.D1 to      R7C42B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_892
+ROUTE        38     2.893      R7C42B.F1 to      R8C45B.B0 u_top_iic/inst_ov9734_ctrl/n51
+CTOF_DEL    ---     0.202      R8C45B.B0 to      R8C45B.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1023
+ROUTE         1     0.488      R8C45B.F0 to      R7C45A.D1 u_top_iic/inst_ov9734_ctrl/n13857
+CTOF_DEL    ---     0.202      R7C45A.D1 to      R7C45A.F1 u_top_iic/inst_ov9734_ctrl/SLICE_673
+ROUTE         1     0.000      R7C45A.F1 to     R7C45A.DI1 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_13 (to sys_clk_c)
+                  --------
+                    7.494   (19.1% logic, 80.9% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_738:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C41D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_673:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to     R7C45A.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.135ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i10  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/data_write__i1  (to sys_clk_c +)
+                   FF                        u_top_iic/inst_ov9734_ctrl/data_write__i0
+
+   Delay:               7.265ns  (19.7% logic, 80.3% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.265ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_680 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.600ns CE_SET requirement (totaling 19.400ns) by 12.135ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_680:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422    R12C49C.CLK to     R12C49C.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_752 (from sys_clk_c)
+ROUTE         3     1.343     R12C49C.Q0 to     R12C50B.A0 u_top_iic/inst_ov9734_ctrl/wait_cnt_10
+CTOF_DEL    ---     0.202     R12C50B.A0 to     R12C50B.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1104
+ROUTE         1     0.488     R12C50B.F0 to     R12C49D.D0 u_top_iic/inst_ov9734_ctrl/n15337
+CTOF_DEL    ---     0.202     R12C49D.D0 to     R12C49D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_901
+ROUTE         1     0.642     R12C49D.F0 to     R10C49B.C1 u_top_iic/inst_ov9734_ctrl/n15339
+CTOF_DEL    ---     0.202     R10C49B.C1 to     R10C49B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_755
+ROUTE        19     1.196     R10C49B.F1 to     R10C46C.B1 u_top_iic/inst_ov9734_ctrl/n33
+CTOF_DEL    ---     0.202     R10C46C.B1 to     R10C46C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_894
+ROUTE        18     1.289     R10C46C.F1 to      R8C45D.A1 u_top_iic/inst_ov9734_ctrl/n17726
+CTOF_DEL    ---     0.202      R8C45D.A1 to      R8C45D.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1067
+ROUTE         5     0.875      R8C45D.F1 to     R10C44C.CE u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117 (to sys_clk_c)
+                  --------
+                    7.265   (19.7% logic, 80.3% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_752:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R12C49C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_680:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R10C44C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.135ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i10  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/data_write__i3  (to sys_clk_c +)
+                   FF                        u_top_iic/inst_ov9734_ctrl/data_write__i2
+
+   Delay:               7.265ns  (19.7% logic, 80.3% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.265ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_681 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.600ns CE_SET requirement (totaling 19.400ns) by 12.135ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_681:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422    R12C49C.CLK to     R12C49C.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_752 (from sys_clk_c)
+ROUTE         3     1.343     R12C49C.Q0 to     R12C50B.A0 u_top_iic/inst_ov9734_ctrl/wait_cnt_10
+CTOF_DEL    ---     0.202     R12C50B.A0 to     R12C50B.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1104
+ROUTE         1     0.488     R12C50B.F0 to     R12C49D.D0 u_top_iic/inst_ov9734_ctrl/n15337
+CTOF_DEL    ---     0.202     R12C49D.D0 to     R12C49D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_901
+ROUTE         1     0.642     R12C49D.F0 to     R10C49B.C1 u_top_iic/inst_ov9734_ctrl/n15339
+CTOF_DEL    ---     0.202     R10C49B.C1 to     R10C49B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_755
+ROUTE        19     1.196     R10C49B.F1 to     R10C46C.B1 u_top_iic/inst_ov9734_ctrl/n33
+CTOF_DEL    ---     0.202     R10C46C.B1 to     R10C46C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_894
+ROUTE        18     1.289     R10C46C.F1 to      R8C45D.A1 u_top_iic/inst_ov9734_ctrl/n17726
+CTOF_DEL    ---     0.202      R8C45D.A1 to      R8C45D.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1067
+ROUTE         5     0.875      R8C45D.F1 to     R10C44B.CE u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117 (to sys_clk_c)
+                  --------
+                    7.265   (19.7% logic, 80.3% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_752:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R12C49C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_681:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R10C44B.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 12.135ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_1918__i10  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/data_write__i7  (to sys_clk_c +)
+                   FF                        u_top_iic/inst_ov9734_ctrl/data_write__i6
+
+   Delay:               7.265ns  (19.7% logic, 80.3% route), 6 logic levels.
+
+ Constraint Details:
+
+      7.265ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_683 meets
+     20.000ns delay constraint less
+      0.000ns skew and
+      0.600ns CE_SET requirement (totaling 19.400ns) by 12.135ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_752 to u_top_iic/inst_ov9734_ctrl/SLICE_683:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.422    R12C49C.CLK to     R12C49C.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_752 (from sys_clk_c)
+ROUTE         3     1.343     R12C49C.Q0 to     R12C50B.A0 u_top_iic/inst_ov9734_ctrl/wait_cnt_10
+CTOF_DEL    ---     0.202     R12C50B.A0 to     R12C50B.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1104
+ROUTE         1     0.488     R12C50B.F0 to     R12C49D.D0 u_top_iic/inst_ov9734_ctrl/n15337
+CTOF_DEL    ---     0.202     R12C49D.D0 to     R12C49D.F0 u_top_iic/inst_ov9734_ctrl/SLICE_901
+ROUTE         1     0.642     R12C49D.F0 to     R10C49B.C1 u_top_iic/inst_ov9734_ctrl/n15339
+CTOF_DEL    ---     0.202     R10C49B.C1 to     R10C49B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_755
+ROUTE        19     1.196     R10C49B.F1 to     R10C46C.B1 u_top_iic/inst_ov9734_ctrl/n33
+CTOF_DEL    ---     0.202     R10C46C.B1 to     R10C46C.F1 u_top_iic/inst_ov9734_ctrl/SLICE_894
+ROUTE        18     1.289     R10C46C.F1 to      R8C45D.A1 u_top_iic/inst_ov9734_ctrl/n17726
+CTOF_DEL    ---     0.202      R8C45D.A1 to      R8C45D.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1067
+ROUTE         5     0.875      R8C45D.F1 to     R10C44D.CE u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117 (to sys_clk_c)
+                  --------
+                    7.265   (19.7% logic, 80.3% route), 6 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_752:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R12C49C.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_683:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     2.114       F9.PADDI to    R10C44D.CLK sys_clk_c
+                  --------
+                    2.114   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report:  122.175MHz is the maximum frequency for this preference.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "csi_clk_byte" 50.000000  |             |             |
+MHz ;                                   |   50.000 MHz|  225.073 MHz|   5  
+                                        |             |             |
+FREQUENCY NET "sys_clk_c" 50.000000 MHz |             |             |
+;                                       |   50.000 MHz|  122.175 MHz|   6  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0   Loads: 29
+   No transfer within this clock domain is found
+
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 385
+   Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;   Transfers: 19
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 212
+   No transfer within this clock domain is found
+
+Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 36
+   Covered under: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Not reported because source and destination domains are unrelated.
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+
+Timing summary (Setup):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 11274 paths, 2 nets, and 5816 connections (81.23% coverage)
+
+--------------------------------------------------------------------------------
+Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2
+Tue Aug 11 17:16:59 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 6 -sphld m -o mipi_impl1.twr -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1.ncd mipi_impl1.prf 
+Design file:     mipi_impl1.ncd
+Preference file: mipi_impl1.prf
+Device,speed:    LIF-MD6000,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Preference: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+            189 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.034ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_70  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_70  (to csi_clk_byte +)
+
+   Delay:               0.348ns  (59.8% logic, 40.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.348ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.034ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R8C12D.CLK to      R8C12D.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251 (from csi_clk_byte)
+ROUTE         6     0.140      R8C12D.Q1 to      R8C12D.A1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/wcount_5
+CTOF_DEL    ---     0.067      R8C12D.A1 to      R8C12D.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251
+ROUTE         1     0.000      R8C12D.F1 to     R8C12D.DI1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/iwcount_5 (to csi_clk_byte)
+                  --------
+                    0.348   (59.8% logic, 40.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R8C12D.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_251:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R8C12D.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.035ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_40  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_37  (to csi_clk_byte +)
+
+   Delay:               0.350ns  (59.7% logic, 40.3% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.350ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552 meets
+      0.315ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.315ns) by 0.035ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142     R7C13B.CLK to      R7C13B.Q0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235 (from csi_clk_byte)
+ROUTE         4     0.141      R7C13B.Q0 to      R7C14B.D0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wcount_0
+CTOF_DEL    ---     0.067      R7C14B.D0 to      R7C14B.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552
+ROUTE         1     0.000      R7C14B.F0 to     R7C14B.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/w_gdata_0 (to csi_clk_byte)
+                  --------
+                    0.350   (59.7% logic, 40.3% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R7C13B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R7C14B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.035ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_72  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_72  (to csi_clk_byte +)
+
+   Delay:               0.349ns  (59.6% logic, 40.4% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.349ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.035ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R8C12C.CLK to      R8C12C.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250 (from csi_clk_byte)
+ROUTE         5     0.141      R8C12C.Q1 to      R8C12C.A1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/wcount_3
+CTOF_DEL    ---     0.067      R8C12C.A1 to      R8C12C.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250
+ROUTE         1     0.000      R8C12C.F1 to     R8C12C.DI1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/iwcount_3 (to csi_clk_byte)
+                  --------
+                    0.349   (59.6% logic, 40.4% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R8C12C.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R8C12C.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.039ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_39  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_39  (to csi_clk_byte +)
+
+   Delay:               0.353ns  (58.9% logic, 41.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.353ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.039ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R7C13B.CLK to      R7C13B.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235 (from csi_clk_byte)
+ROUTE         5     0.145      R7C13B.Q1 to      R7C13B.B1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wcount_1
+CTOF_DEL    ---     0.067      R7C13B.B1 to      R7C13B.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235
+ROUTE         1     0.000      R7C13B.F1 to     R7C13B.DI1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/iwcount_1 (to csi_clk_byte)
+                  --------
+                    0.353   (58.9% logic, 41.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R7C13B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_235:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R7C13B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.039ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_74  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_74  (to csi_clk_byte +)
+
+   Delay:               0.353ns  (58.9% logic, 41.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.353ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.039ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R8C12B.CLK to      R8C12B.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249 (from csi_clk_byte)
+ROUTE         5     0.145      R8C12B.Q1 to      R8C12B.B1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/wcount_1
+CTOF_DEL    ---     0.067      R8C12B.B1 to      R8C12B.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249
+ROUTE         1     0.000      R8C12B.F1 to     R8C12B.DI1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/iwcount_1 (to csi_clk_byte)
+                  --------
+                    0.353   (58.9% logic, 41.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R8C12B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_249:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R8C12B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.042ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_33  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_pfu_0_0/RAM0  (to csi_clk_byte +)
+
+   Delay:               0.361ns  (39.1% logic, 60.9% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.361ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_557 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_pfu_0_0 meets
+      0.319ns WAD_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.319ns) by 0.042ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_557 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_pfu_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R7C14D.CLK to      R7C14D.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_557 (from csi_clk_byte)
+ROUTE         1     0.220      R7C14D.Q1 to      R6C14C.B0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wptr_1
+ZERO_DEL    ---     0.000      R6C14C.B0 to   R6C14C.WADO1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_pfu_0_0.0
+ROUTE         1     0.000   R6C14C.WADO1 to    R6C14A.WAD1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_pfu_0_0/WAD1_INT (to csi_clk_byte)
+                  --------
+                    0.361   (39.1% logic, 60.9% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_557:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R7C14D.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_pfu_0_0:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R6C14A.WCK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.047ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_38  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_36  (to csi_clk_byte +)
+
+   Delay:               0.361ns  (57.9% logic, 42.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.361ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_236 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.047ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_236 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142     R7C13C.CLK to      R7C13C.Q0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_236 (from csi_clk_byte)
+ROUTE         6     0.152      R7C13C.Q0 to      R7C14B.C1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wcount_2
+CTOF_DEL    ---     0.067      R7C14B.C1 to      R7C14B.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552
+ROUTE         1     0.000      R7C14B.F1 to     R7C14B.DI1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/w_gdata_1 (to csi_clk_byte)
+                  --------
+                    0.361   (57.9% logic, 42.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_236:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R7C13C.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_552:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R7C14B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.047ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_17  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_11  (to csi_clk_byte +)
+
+   Delay:               0.360ns  (39.2% logic, 60.8% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.360ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_547 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_549 meets
+      0.313ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.313ns) by 0.047ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_547 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_549:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R5C15B.CLK to      R5C15B.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_547 (from csi_clk_byte)
+ROUTE         1     0.219      R5C15B.Q1 to      R5C14B.M0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gcount_w1 (to csi_clk_byte)
+                  --------
+                    0.360   (39.2% logic, 60.8% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_547:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R5C15B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/SLICE_549:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R5C14B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.052ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/lp11_ncr_76  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/hs_en_ncr_77  (to csi_clk_byte +)
+
+   Delay:               0.286ns  (49.7% logic, 50.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.286ns physical path delay u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_601 to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449 meets
+      0.234ns CE_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.234ns) by 0.052ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_601 to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142      R4C8A.CLK to       R4C8A.Q0 u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_601 (from csi_clk_byte)
+ROUTE         1     0.144       R4C8A.Q0 to       R5C8B.CE u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/lp11_ncr (to csi_clk_byte)
+                  --------
+                    0.286   (49.7% logic, 50.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_601:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to      R4C8A.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/SLICE_449:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to      R5C8B.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.053ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_73  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_68  (to csi_clk_byte +)
+
+   Delay:               0.367ns  (56.9% logic, 43.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.367ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_571 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.053ns
+
+ Physical Path Details:
+
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_571:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142     R8C12C.CLK to      R8C12C.Q0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250 (from csi_clk_byte)
+ROUTE         5     0.158      R8C12C.Q0 to     R10C12D.D1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/wcount_2
+CTOF_DEL    ---     0.067     R10C12D.D1 to     R10C12D.F1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_571
+ROUTE         1     0.000     R10C12D.F1 to    R10C12D.DI1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/w_gdata_1 (to csi_clk_byte)
+                  --------
+                    0.367   (56.9% logic, 43.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_250:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to     R8C12C.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/SLICE_571:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE        36     0.442 *Y0.HSBYTECLKD to    R10C12D.CLK csi_clk_byte
+                  --------
+                    0.442   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+================================================================================
+Preference: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.020ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_uart_rx/rx_reg2_76  (from sys_clk_c +)
+   Destination:    FF         Data in        u_uart_rx/start_nedge_78  (to sys_clk_c +)
+
+   Delay:               0.335ns  (62.1% logic, 37.9% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.335ns physical path delay u_uart_rx/SLICE_778 to u_uart_rx/SLICE_781 meets
+      0.315ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.315ns) by 0.020ns
+
+ Physical Path Details:
+
+      Data path u_uart_rx/SLICE_778 to u_uart_rx/SLICE_781:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141    R14C27A.CLK to     R14C27A.Q1 u_uart_rx/SLICE_778 (from sys_clk_c)
+ROUTE         2     0.127     R14C27A.Q1 to     R14C27B.D0 u_uart_rx/rx_reg2
+CTOF_DEL    ---     0.067     R14C27B.D0 to     R14C27B.F0 u_uart_rx/SLICE_781
+ROUTE         1     0.000     R14C27B.F0 to    R14C27B.DI0 u_uart_rx/start_nedge_N_1541 (to sys_clk_c)
+                  --------
+                    0.335   (62.1% logic, 37.9% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_uart_rx/SLICE_778:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R14C27A.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_uart_rx/SLICE_781:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R14C27B.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.020ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_uart_tx/bit_cnt_FSM_i10  (from sys_clk_c +)
+   Destination:    FF         Data in        u_uart_tx/bit_cnt_FSM_i11  (to sys_clk_c +)
+
+   Delay:               0.335ns  (62.1% logic, 37.9% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.335ns physical path delay u_uart_tx/SLICE_792 to u_uart_tx/SLICE_792 meets
+      0.315ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.315ns) by 0.020ns
+
+ Physical Path Details:
+
+      Data path u_uart_tx/SLICE_792 to u_uart_tx/SLICE_792:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141    R13C14A.CLK to     R13C14A.Q1 u_uart_tx/SLICE_792 (from sys_clk_c)
+ROUTE         2     0.127     R13C14A.Q1 to     R13C14A.D0 u_uart_tx/n1963
+CTOF_DEL    ---     0.067     R13C14A.D0 to     R13C14A.F0 u_uart_tx/SLICE_792
+ROUTE         1     0.000     R13C14A.F0 to    R13C14A.DI0 u_uart_tx/n6981 (to sys_clk_c)
+                  --------
+                    0.335   (62.1% logic, 37.9% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_uart_tx/SLICE_792:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R13C14A.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_uart_tx/SLICE_792:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R13C14A.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.022ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/addr_i7  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i7  (to sys_clk_c +)
+
+   Delay:               0.336ns  (61.9% logic, 38.1% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.336ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_670 to u_top_iic/inst_ov9734_ctrl/SLICE_670 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.022ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_670 to u_top_iic/inst_ov9734_ctrl/SLICE_670:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R8C44A.CLK to      R8C44A.Q1 u_top_iic/inst_ov9734_ctrl/SLICE_670 (from sys_clk_c)
+ROUTE         3     0.128      R8C44A.Q1 to      R8C44A.D1 u_top_iic/addr_7
+CTOF_DEL    ---     0.067      R8C44A.D1 to      R8C44A.F1 u_top_iic/inst_ov9734_ctrl/SLICE_670
+ROUTE         1     0.000      R8C44A.F1 to     R8C44A.DI1 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_7 (to sys_clk_c)
+                  --------
+                    0.336   (61.9% logic, 38.1% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_670:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to     R8C44A.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_670:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to     R8C44A.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.023ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_uart_tx/bit_cnt_FSM_i5  (from sys_clk_c +)
+   Destination:    FF         Data in        u_uart_tx/bit_cnt_FSM_i6  (to sys_clk_c +)
+
+   Delay:               0.338ns  (61.5% logic, 38.5% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.338ns physical path delay u_uart_tx/SLICE_794 to u_uart_tx/SLICE_794 meets
+      0.315ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.315ns) by 0.023ns
+
+ Physical Path Details:
+
+      Data path u_uart_tx/SLICE_794 to u_uart_tx/SLICE_794:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141    R13C15C.CLK to     R13C15C.Q1 u_uart_tx/SLICE_794 (from sys_clk_c)
+ROUTE         3     0.130     R13C15C.Q1 to     R13C15C.D0 u_uart_tx/n1968
+CTOF_DEL    ---     0.067     R13C15C.D0 to     R13C15C.F0 u_uart_tx/SLICE_794
+ROUTE         1     0.000     R13C15C.F0 to    R13C15C.DI0 u_uart_tx/n6991 (to sys_clk_c)
+                  --------
+                    0.338   (61.5% logic, 38.5% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_uart_tx/SLICE_794:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R13C15C.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_uart_tx/SLICE_794:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R13C15C.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.025ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_i2c_drive/cnt_div__i1  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_i2c_drive/cnt_div__i1  (to sys_clk_c +)
+
+   Delay:               0.339ns  (61.4% logic, 38.6% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.339ns physical path delay u_top_iic/inst_i2c_drive/SLICE_685 to u_top_iic/inst_i2c_drive/SLICE_685 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.025ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_i2c_drive/SLICE_685 to u_top_iic/inst_i2c_drive/SLICE_685:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141    R16C32C.CLK to     R16C32C.Q1 u_top_iic/inst_i2c_drive/SLICE_685 (from sys_clk_c)
+ROUTE        10     0.131     R16C32C.Q1 to     R16C32C.D1 u_top_iic/inst_i2c_drive/cnt_div_1
+CTOF_DEL    ---     0.067     R16C32C.D1 to     R16C32C.F1 u_top_iic/inst_i2c_drive/SLICE_685
+ROUTE         1     0.000     R16C32C.F1 to    R16C32C.DI1 u_top_iic/inst_i2c_drive/n29_adj_1625 (to sys_clk_c)
+                  --------
+                    0.339   (61.4% logic, 38.6% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_i2c_drive/SLICE_685:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R16C32C.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_i2c_drive/SLICE_685:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R16C32C.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.025ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/state_FSM_i3  (from sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/state_FSM_i3  (to sys_clk_c +)
+
+   Delay:               0.339ns  (61.4% logic, 38.6% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.339ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_744 to u_top_iic/inst_ov9734_ctrl/SLICE_744 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.025ns
+
+ Physical Path Details:
+
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_744 to u_top_iic/inst_ov9734_ctrl/SLICE_744:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141     R7C46B.CLK to      R7C46B.Q1 u_top_iic/inst_ov9734_ctrl/SLICE_744 (from sys_clk_c)
+ROUTE        25     0.131      R7C46B.Q1 to      R7C46B.D1 u_top_iic/inst_ov9734_ctrl/state_3__N_619
+CTOF_DEL    ---     0.067      R7C46B.D1 to      R7C46B.F1 u_top_iic/inst_ov9734_ctrl/SLICE_744
+ROUTE         1     0.000      R7C46B.F1 to     R7C46B.DI1 u_top_iic/inst_ov9734_ctrl/n5460 (to sys_clk_c)
+                  --------
+                    0.339   (61.4% logic, 38.6% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_744:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to     R7C46B.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_top_iic/inst_ov9734_ctrl/SLICE_744:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to     R7C46B.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.025ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_uart_tx/bit_cnt_FSM_i6  (from sys_clk_c +)
+   Destination:    FF         Data in        u_uart_tx/bit_cnt_FSM_i7  (to sys_clk_c +)
+
+   Delay:               0.339ns  (61.7% logic, 38.3% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.339ns physical path delay u_uart_tx/SLICE_794 to u_uart_tx/SLICE_793 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.025ns
+
+ Physical Path Details:
+
+      Data path u_uart_tx/SLICE_794 to u_uart_tx/SLICE_793:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142    R13C15C.CLK to     R13C15C.Q0 u_uart_tx/SLICE_794 (from sys_clk_c)
+ROUTE         3     0.130     R13C15C.Q0 to     R13C15A.D1 u_uart_tx/n1967
+CTOF_DEL    ---     0.067     R13C15A.D1 to     R13C15A.F1 u_uart_tx/SLICE_793
+ROUTE         1     0.000     R13C15A.F1 to    R13C15A.DI1 u_uart_tx/n6989 (to sys_clk_c)
+                  --------
+                    0.339   (61.7% logic, 38.3% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_uart_tx/SLICE_794:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R13C15C.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_uart_tx/SLICE_793:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R13C15A.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.026ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_uart_rx/bit_cnt__i3  (from sys_clk_c +)
+   Destination:    FF         Data in        u_uart_rx/rx_flag_84  (to sys_clk_c +)
+
+   Delay:               0.341ns  (61.3% logic, 38.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.341ns physical path delay u_uart_rx/SLICE_767 to u_uart_rx/SLICE_777 meets
+      0.315ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.315ns) by 0.026ns
+
+ Physical Path Details:
+
+      Data path u_uart_rx/SLICE_767 to u_uart_rx/SLICE_777:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142    R12C27C.CLK to     R12C27C.Q0 u_uart_rx/SLICE_767 (from sys_clk_c)
+ROUTE         6     0.132     R12C27C.Q0 to     R12C27B.D0 u_uart_rx/bit_cnt_3
+CTOF_DEL    ---     0.067     R12C27B.D0 to     R12C27B.F0 u_uart_rx/SLICE_777
+ROUTE         1     0.000     R12C27B.F0 to    R12C27B.DI0 u_uart_rx/work_en_N_1531 (to sys_clk_c)
+                  --------
+                    0.341   (61.3% logic, 38.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_uart_rx/SLICE_767:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R12C27C.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_uart_rx/SLICE_777:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R12C27B.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.027ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_send_ctrl/field_index_i2  (from sys_clk_c +)
+   Destination:    FF         Data in        u_send_ctrl/field_index_i1  (to sys_clk_c +)
+
+   Delay:               0.341ns  (61.3% logic, 38.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.341ns physical path delay u_send_ctrl/SLICE_622 to u_send_ctrl/SLICE_621 meets
+      0.314ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.314ns) by 0.027ns
+
+ Physical Path Details:
+
+      Data path u_send_ctrl/SLICE_622 to u_send_ctrl/SLICE_621:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.142    R12C26D.CLK to     R12C26D.Q0 u_send_ctrl/SLICE_622 (from sys_clk_c)
+ROUTE        34     0.132     R12C26D.Q0 to     R12C26B.D1 u_send_ctrl/field_index_2
+CTOF_DEL    ---     0.067     R12C26B.D1 to     R12C26B.F1 u_send_ctrl/SLICE_621
+ROUTE         1     0.000     R12C26B.F1 to    R12C26B.DI1 u_send_ctrl/n17530 (to sys_clk_c)
+                  --------
+                    0.341   (61.3% logic, 38.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_send_ctrl/SLICE_622:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R12C26D.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_send_ctrl/SLICE_621:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R12C26B.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.027ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              u_send_ctrl/field_index_i1  (from sys_clk_c +)
+   Destination:    FF         Data in        u_send_ctrl/field_index_i2  (to sys_clk_c +)
+
+   Delay:               0.342ns  (60.8% logic, 39.2% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.342ns physical path delay u_send_ctrl/SLICE_621 to u_send_ctrl/SLICE_622 meets
+      0.315ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling 0.315ns) by 0.027ns
+
+ Physical Path Details:
+
+      Data path u_send_ctrl/SLICE_621 to u_send_ctrl/SLICE_622:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.141    R12C26B.CLK to     R12C26B.Q1 u_send_ctrl/SLICE_621 (from sys_clk_c)
+ROUTE        51     0.134     R12C26B.Q1 to     R12C26D.D0 u_send_ctrl/field_index_1
+CTOF_DEL    ---     0.067     R12C26D.D0 to     R12C26D.F0 u_send_ctrl/SLICE_622
+ROUTE         1     0.000     R12C26D.F0 to    R12C26D.DI0 u_send_ctrl/n13267 (to sys_clk_c)
+                  --------
+                    0.342   (60.8% logic, 39.2% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path sys_clk to u_send_ctrl/SLICE_621:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R12C26B.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path sys_clk to u_send_ctrl/SLICE_622:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       385     0.743       F9.PADDI to    R12C26D.CLK sys_clk_c
+                  --------
+                    0.743   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report Summary
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "csi_clk_byte" 50.000000  |             |             |
+MHz ;                                   |     0.000 ns|     0.034 ns|   2  
+                                        |             |             |
+FREQUENCY NET "sys_clk_c" 50.000000 MHz |             |             |
+;                                       |     0.000 ns|     0.020 ns|   2  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+Clock Domains Analysis
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0   Loads: 29
+   No transfer within this clock domain is found
+
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 385
+   Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_709.Q0
+      Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;   Transfers: 19
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 212
+   No transfer within this clock domain is found
+
+Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 36
+   Covered under: FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: sys_clk_c   Source: sys_clk.PAD
+      Not reported because source and destination domains are unrelated.
+
+   Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
+      Not reported because source and destination domains are unrelated.
+
+
+Timing summary (Hold):
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 11274 paths, 2 nets, and 5816 connections (81.23% coverage)
+
+
+
+Timing summary (Setup and Hold):
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+

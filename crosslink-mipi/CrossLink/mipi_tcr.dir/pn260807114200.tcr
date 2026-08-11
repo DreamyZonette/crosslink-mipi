@@ -1,0 +1,5 @@
+#Start recording tcl command: 8/7/2026 11:41:27
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design open -dsgn "G:/shita/crosslink/project/ip/ip.sbx"
+#Stop recording: 8/7/2026 11:42:00

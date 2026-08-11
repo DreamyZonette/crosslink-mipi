@@ -1,0 +1,32 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Tue Aug 11 17:17:01 2026 *
+NOTE DESIGN NAME: mipi_3ch_top *
+NOTE DEVICE NAME: LIF-MD6000-6CKFBGA80 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS csi_sp_en : H10 : out *
+NOTE PINS csi_payload_en : K3 : out *
+NOTE PINS xshutdn_0 : F10 : out *
+NOTE PINS i2c_sclk_0 : K8 : out *
+NOTE PINS uart_txd : J9 : out *
+NOTE PINS led[0] : E9 : out *
+NOTE PINS led[1] : E10 : out *
+NOTE PINS led[2] : G9 : out *
+NOTE PINS led[3] : G10 : out *
+NOTE PINS i2c_sda_0 : J8 : inout *
+NOTE PINS csi_lp_en : K10 : out *
+NOTE PINS csi_dt[5] : K5 : out *
+NOTE PINS csi_dt[4] : J6 : out *
+NOTE PINS csi_dt[3] : K6 : out *
+NOTE PINS csi_dt[2] : J7 : out *
+NOTE PINS csi_dt[1] : K7 : out *
+NOTE PINS csi_dt[0] : K9 : out *
+NOTE PINS sys_clk : F9 : in *
+NOTE PINS sys_rstn : D10 : in *
+NOTE PINS uart_rxd : J10 : in *
+NOTE PINS SYSCONFIG_PIN_SPI_SS/CSN/SCL : H1 : inout *
+NOTE PINS SYSCONFIG_PIN_SPI_SCK/MCK/SDA : J1 : inout *
+NOTE PINS SYSCONFIG_PIN_MISO_D1 : K1 : inout *
+NOTE PINS SYSCONFIG_PIN_MOSI_D0 : G1 : inout *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: off *

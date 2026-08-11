@@ -1,0 +1,255 @@
+<HTML>
+<HEAD><TITLE>Lattice TCL Log</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="pn260807105125"></A><B><U><big>pn260807105125</big></U></B>
+#Start recording tcl command: 8/6/2026 18:44:52
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design new -dsgn "theips" -path "G:/shita/crosslink/project/theips" -device "LIF-MD6000-6KMG80I"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsi"
+source "G:/shita/crosslink/project/theips/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsi_rx"
+source "G:/shita/crosslink/project/theips/csi2dsi_rx/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+file copy -force -- "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_capture_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_capture_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_rx_wrap.v" "G:/shita/crosslink/project/impl1/source"
+file copy -force -- "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_rx_wrap_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_wrapper.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_rx_global_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_rx_global_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_soft_dphy_rx.v" "G:/shita/crosslink/project/impl1/source"
+file copy -force -- "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_soft_dphy_rx_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_wrap.v" "G:/shita/crosslink/project/impl1/source"
+prj_src add "G:/shita/crosslink/project/impl1/source/csi2dsi.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_wrapper.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_wrap.v"
+prj_run Export -impl impl1 -forceAll
+prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx_bb.v"
+prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl_bb.v"
+prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap_bb.v"
+prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl_bb.v"
+prj_run Export -impl impl1 -forceAll
+#Stop recording: 8/7/2026 10:51:25
+
+
+
+<A name="pn260807110417"></A><B><U><big>pn260807110417</big></U></B>
+#Start recording tcl command: 8/7/2026 10:58:00
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+#Stop recording: 8/7/2026 11:04:17
+
+
+
+<A name="pn260807112349"></A><B><U><big>pn260807112349</big></U></B>
+#Start recording tcl command: 8/7/2026 11:12:20
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+prj_src remove "G:/shita/crosslink/project/impl1/source/csi2dsi_wrap.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_wrapper.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi.v"
+sbp_design open -dsgn "G:/shita/crosslink/project/theips/theips.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsi"
+source "G:/shita/crosslink/project/theips/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design new -dsgn "theips" -path "G:/shita/crosslink/project/theips" -device "LIF-MD6000-6KMG80I"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsi"
+source "G:/shita/crosslink/project/theips/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+#Stop recording: 8/7/2026 11:23:49
+
+
+
+<A name="pn260807113830"></A><B><U><big>pn260807113830</big></U></B>
+#Start recording tcl command: 8/7/2026 11:24:00
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design new -dsgn "ip" -path "G:/shita/crosslink/project/ip" -device "LIF-MD6000-6KMG80I"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/csi2dsi"
+source "G:/shita/crosslink/project/ip/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/mipi_pll"
+source "G:/shita/crosslink/project/ip/mipi_pll/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/mipi_pll"
+source "G:/shita/crosslink/project/ip/mipi_pll/generate_ngd.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_builder export_add -comp {ip/mipi_pll}
+sbp_resource remove -ip {ip/mipi_pll}
+sbp_design gen
+prj_src add "G:/shita/crosslink/project/ip/ip.sbx"
+sbp_design gen
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/test"
+source "G:/shita/crosslink/project/ip/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/test"
+source "G:/shita/crosslink/project/ip/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+prj_project save
+prj_project close
+#Stop recording: 8/7/2026 11:38:30
+
+
+
+<A name="pn260807114200"></A><B><U><big>pn260807114200</big></U></B>
+#Start recording tcl command: 8/7/2026 11:41:27
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design open -dsgn "G:/shita/crosslink/project/ip/ip.sbx"
+#Stop recording: 8/7/2026 11:42:00
+
+
+
+<A name="pn260807115740"></A><B><U><big>pn260807115740</big></U></B>
+#Start recording tcl command: 8/7/2026 11:42:19
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design open -dsgn "G:/shita/crosslink/project/ip/ip.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/csi2dsi"
+source "G:/shita/crosslink/project/ip/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+sbp_design gen
+sbp_design gen
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/csi2dsi"
+source "G:/shita/crosslink/project/ip/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+sbp_design gen
+#Stop recording: 8/7/2026 11:57:40
+
+
+
+<A name="pn260807141558"></A><B><U><big>pn260807141558</big></U></B>
+#Start recording tcl command: 8/7/2026 11:57:55
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design open -dsgn "G:/shita/crosslink/project/ip/ip.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/csi2dsi"
+source "G:/shita/crosslink/project/ip/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/csi2dsi1"
+source "G:/shita/crosslink/project/ip/csi2dsi1/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+#Stop recording: 8/7/2026 14:15:58
+
+
+
+<A name="pn260807143327"></A><B><U><big>pn260807143327</big></U></B>
+#Start recording tcl command: 8/7/2026 14:16:18
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+prj_src remove "G:/shita/crosslink/project/ip/ip.sbx"
+launch_synplify_prj impl1
+#Stop recording: 8/7/2026 14:33:27
+
+
+
+<A name="pn260807150554"></A><B><U><big>pn260807150554</big></U></B>
+#Start recording tcl command: 8/7/2026 14:33:54
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design new -dsgn "theips" -path "G:/shita/crosslink/project/theips" -device "LIF-MD6000-6KMG80I"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsis"
+source "G:/shita/crosslink/project/theips/csi2dsis/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+prj_src add "G:/shita/crosslink/project/theips/theips.sbx"
+sbp_design gen
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/csi2dsi"
+source "G:/shita/crosslink/project/theips/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/test"
+source "G:/shita/crosslink/project/theips/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/test"
+source "G:/shita/crosslink/project/theips/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+#Stop recording: 8/7/2026 15:05:54
+
+
+
+<A name="pn260810095048"></A><B><U><big>pn260810095048</big></U></B>
+#Start recording tcl command: 8/10/2026 09:39:30
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design open -dsgn "G:/shita/crosslink/project/theips/theips.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/theips/test"
+source "G:/shita/crosslink/project/theips/test/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+#Stop recording: 8/10/2026 09:50:48
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

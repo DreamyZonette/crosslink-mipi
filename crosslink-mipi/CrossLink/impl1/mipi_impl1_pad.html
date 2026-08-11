@@ -1,0 +1,236 @@
+<HTML>
+<HEAD><TITLE>PAD Specification File</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Pad"></A>PAD Specification File
+***************************
+
+PART TYPE:        LIF-MD6000
+Performance Grade:      6
+PACKAGE:          CKFBGA80
+Package Status:                     Final          Version 1.38
+
+Tue Aug 11 17:16:56 2026
+
+Pinout by Port Name:
++----------------+----------+---------------+-----------+-----------+-------------------------------------------+
+| Port Name      | Pin/Bank | Buffer Type   | Site      | BC Enable | Properties                                |
++----------------+----------+---------------+-----------+-----------+-------------------------------------------+
+| csi_dt[0]      | K9/2     | LVCMOS33_OUT  | PB12D     |           | DRIVE:8mA CLAMP:ON                        |
+| csi_dt[1]      | K7/1     | LVCMOS18_OUT  | PB29B     |           | DRIVE:4mA CLAMP:ON                        |
+| csi_dt[2]      | J7/1     | LVCMOS18_OUT  | PB29A     |           | DRIVE:4mA CLAMP:ON                        |
+| csi_dt[3]      | K6/1     | LVCMOS18_OUT  | PB29C     |           | DRIVE:4mA CLAMP:ON                        |
+| csi_dt[4]      | J6/1     | LVCMOS18_OUT  | PB29D     |           | DRIVE:4mA CLAMP:ON                        |
+| csi_dt[5]      | K5/1     | LVCMOS18_OUT  | PB34C     |           | DRIVE:4mA CLAMP:ON                        |
+| csi_lp_en      | K10/2    | LVCMOS33_OUT  | PB12C     |           | DRIVE:8mA CLAMP:ON                        |
+| csi_payload_en | K3/1     | LVCMOS18_OUT  | PB43C     |           | DRIVE:4mA CLAMP:ON                        |
+| csi_sp_en      | H10/2    | LVCMOS33_OUT  | PB2C      |           | DRIVE:8mA CLAMP:ON                        |
+| i2c_sclk_0     | K8/2     | LVCMOS33_OUT  | PB16C     |           | DRIVE:8mA CLAMP:ON                        |
+| i2c_sda_0      | J8/2     | LVCMOS33_BIDI | PB16D     |           | DRIVE:8mA PULL:UP CLAMP:ON HYSTERESIS:ON  |
+| led[0]         | E9/2     | LVCMOS33_OUT  | PB12A     |           | DRIVE:8mA CLAMP:ON                        |
+| led[1]         | E10/2    | LVCMOS33_OUT  | PB12B     |           | DRIVE:8mA CLAMP:ON                        |
+| led[2]         | G9/2     | LVCMOS33_OUT  | PB2A      |           | DRIVE:8mA CLAMP:ON                        |
+| led[3]         | G10/2    | LVCMOS33_OUT  | PB2B      |           | DRIVE:8mA CLAMP:ON                        |
+| mipi_rcn_0     | A8/60    | DPHY_IN       | DPHY0_CKN |           |                                           |
+| mipi_rcp_0     | B8/60    | DPHY_IN       | DPHY0_CKP |           |                                           |
+| mipi_rdn_0     | A7/60    | DPHY_IN       | DPHY0_DN0 |           |                                           |
+| mipi_rdp_0     | B7/60    | DPHY_IN       | DPHY0_DP0 |           |                                           |
+| sys_clk        | F9/2     | LVCMOS33_IN   | PB6A      |           | PULL:UP CLAMP:ON HYSTERESIS:ON            |
+| sys_rstn       | D10/2    | LVCMOS33_IN   | PB16B     |           | PULL:UP CLAMP:ON HYSTERESIS:ON            |
+| uart_rxd       | J10/2    | LVCMOS33_IN   | PB6C      |           | PULL:UP CLAMP:ON HYSTERESIS:ON            |
+| uart_txd       | J9/2     | LVCMOS33_OUT  | PB6D      |           | DRIVE:8mA CLAMP:ON                        |
+| xshutdn_0      | F10/2    | LVCMOS33_OUT  | PB6B      |           | DRIVE:8mA CLAMP:ON                        |
++----------------+----------+---------------+-----------+-----------+-------------------------------------------+
+
+Vccio by Bank:
++------+-------+
+| Bank | Vccio |
++------+-------+
+| 0    | 2.5V  |
+| 1    | 1.8V  |
+| 2    | 3.3V  |
++------+-------+
+
+<A name="pad_pin"></A><B><U><big>Pinout by Pin Number:</big></U></B>
++----------+---------------------+------------+---------------+-----------+-------------------+-----------+
+| Pin/Bank | Pin Info            | Preference | Buffer Type   | Site      | Dual Function     | BC Enable |
++----------+---------------------+------------+---------------+-----------+-------------------+-----------+
+| A1/61    |                     |            |               | DPHY1_DN2 |                   |           |
+| A2/61    |                     |            |               | DPHY1_DN0 |                   |           |
+| A3/61    |                     |            |               | DPHY1_CKN |                   |           |
+| A4/61    |                     |            |               | DPHY1_DN1 |                   |           |
+| A5/61    |                     |            |               | DPHY1_DN3 |                   |           |
+| A6/60    |                     |            |               | DPHY0_DN2 |                   |           |
+| A7/60    | mipi_rdn_0          |            |               | DPHY0_DN0 |                   |           |
+| A8/60    | mipi_rcn_0          |            |               | DPHY0_CKN |                   |           |
+| A9/60    |                     |            |               | DPHY0_DN1 |                   |           |
+| A10/60   |                     |            |               | DPHY0_DN3 |                   |           |
+| B1/61    |                     |            |               | DPHY1_DP2 |                   |           |
+| B2/61    |                     |            |               | DPHY1_DP0 |                   |           |
+| B3/61    |                     |            |               | DPHY1_CKP |                   |           |
+| B4/61    |                     |            |               | DPHY1_DP1 |                   |           |
+| B5/61    |                     |            |               | DPHY1_DP3 |                   |           |
+| B6/60    |                     |            |               | DPHY0_DP2 |                   |           |
+| B7/60    | mipi_rdp_0          |            |               | DPHY0_DP0 |                   |           |
+| B8/60    | mipi_rcp_0          |            |               | DPHY0_CKP |                   |           |
+| B9/60    |                     |            |               | DPHY0_DP1 |                   |           |
+| B10/60   |                     |            |               | DPHY0_DP3 |                   |           |
+| D1/0     |     unused, PULL:UP |            |               | PB48      | PCLKT0_1/USER_SCL |           |
+| D9/2     |     unused, PULL:UP |            |               | PB16A     | PCLKT2_0          |           |
+| D10/2    | sys_rstn            | LOCATED    | LVCMOS33_IN   | PB16B     | PCLKC2_0          |           |
+| E1/1     |     unused, PULL:UP |            |               | PB34A     | GR_PCLK1_0        |           |
+| E2/1     |     unused, PULL:UP |            |               | PB34B     |                   |           |
+| E9/2     | led[0]              | LOCATED    | LVCMOS33_OUT  | PB12A     | GPLLT2_0          |           |
+| E10/2    | led[1]              | LOCATED    | LVCMOS33_OUT  | PB12B     | GPLLC2_0          |           |
+| F1/1     |     unused, PULL:UP |            |               | PB38A     |                   |           |
+| F2/1     |     unused, PULL:UP |            |               | PB38B     |                   |           |
+| F9/2     | sys_clk             | LOCATED    | LVCMOS33_IN   | PB6A      | GR_PCLK2_0        |           |
+| F10/2    | xshutdn_0           | LOCATED    | LVCMOS33_OUT  | PB6B      |                   |           |
+| G1/0     | Reserved: sysCONFIG |            | LVCMOS25_BIDI | PB50      | MOSI              |           |
+| G9/2     | led[2]              | LOCATED    | LVCMOS33_OUT  | PB2A      |                   |           |
+| G10/2    | led[3]              | LOCATED    | LVCMOS33_OUT  | PB2B      |                   |           |
+| H1/0     | Reserved: sysCONFIG |            | LVCMOS25_BIDI | PB52      | SPI_SS/CSN/SCL    |           |
+| H9/2     |     unused, PULL:UP |            |               | PB2D      | MIPI_CLKC2_0      |           |
+| H10/2    | csi_sp_en           | LOCATED    | LVCMOS33_OUT  | PB2C      | MIPI_CLKT2_0      |           |
+| J1/0     | Reserved: sysCONFIG |            | LVCMOS25_BIDI | PB53      | SPI_SCK/MCK/SDA   |           |
+| J2/0     |     unused, PULL:UP |            |               | PB49      | PMU_WKUPN         |           |
+| J3/1     |     unused, PULL:UP |            |               | PB43D     |                   |           |
+| J4/1     |     unused, PULL:UP |            |               | PB38D     |                   |           |
+| J5/1     |     unused, PULL:UP |            |               | PB34D     | MIPI_CLKC1_0      |           |
+| J6/1     | csi_dt[4]           | LOCATED    | LVCMOS18_OUT  | PB29D     | PCLKC1_1          |           |
+| J7/1     | csi_dt[2]           | LOCATED    | LVCMOS18_OUT  | PB29A     | PCLKT1_0          |           |
+| J8/2     | i2c_sda_0           | LOCATED    | LVCMOS33_BIDI | PB16D     | PCLKC2_1          |           |
+| J9/2     | uart_txd            | LOCATED    | LVCMOS33_OUT  | PB6D      |                   |           |
+| J10/2    | uart_rxd            | LOCATED    | LVCMOS33_IN   | PB6C      |                   |           |
+| K1/0     | Reserved: sysCONFIG |            | LVCMOS25_BIDI | PB51      | MISO              |           |
+| K2/0     |     unused, PULL:UP |            |               | PB47      | PCLKT0_0/USER_SDA |           |
+| K3/1     | csi_payload_en      | LOCATED    | LVCMOS18_OUT  | PB43C     |                   |           |
+| K4/1     |     unused, PULL:UP |            |               | PB38C     |                   |           |
+| K5/1     | csi_dt[5]           | LOCATED    | LVCMOS18_OUT  | PB34C     | MIPI_CLKT1_0      |           |
+| K6/1     | csi_dt[3]           | LOCATED    | LVCMOS18_OUT  | PB29C     | PCLKT1_1          |           |
+| K7/1     | csi_dt[1]           | LOCATED    | LVCMOS18_OUT  | PB29B     | PCLKC1_0          |           |
+| K8/2     | i2c_sclk_0          | LOCATED    | LVCMOS33_OUT  | PB16C     | PCLKT2_1          |           |
+| K9/2     | csi_dt[0]           | LOCATED    | LVCMOS33_OUT  | PB12D     |                   |           |
+| K10/2    | csi_lp_en           | LOCATED    | LVCMOS33_OUT  | PB12C     |                   |           |
+| PB43A/1  |     unused, PULL:UP |            |               | PB43A     |                   |           |
+| PB43B/1  |     unused, PULL:UP |            |               | PB43B     |                   |           |
++----------+---------------------+------------+---------------+-----------+-------------------+-----------+
+
+Shared Persistent sysCONFIG Pins:
++----------+--------------------+-----------------------+----------+---------------+-------------------+
+| Pad Name | sysCONFIG Pin Name | sysCONFIG Settings    | Pin/Bank | Buffer Type   | Config Pull Mode  |
++----------+--------------------+-----------------------+----------+---------------+-------------------+
+| PB52     | SPI_SS/CSN/SCL     | SLAVE_SPI_PORT=ENABLE | H1/0     | LVCMOS25_BIDI | PULLUP            |
+| PB53     | SPI_SCK/MCK/SDA    | SLAVE_SPI_PORT=ENABLE | J1/0     | LVCMOS25_BIDI | PULLUP            |
+| PB51     | MISO_D1            | SLAVE_SPI_PORT=ENABLE | K1/0     | LVCMOS25_BIDI | NO pull up/down   |
+| PB50     | MOSI_D0            | SLAVE_SPI_PORT=ENABLE | G1/0     | LVCMOS25_BIDI | PULLUP            |
++----------+--------------------+-----------------------+----------+---------------+-------------------+
+
+Dedicated sysCONFIG Pins:
++----------+--------------------+-----------------------+
+| Pin/Bank | sysCONFIG Pin Name | sysCONFIG Settings    |
++----------+--------------------+-----------------------+
+| H2/0     | CRESET_B           | SLAVE_SPI_PORT=ENABLE |
++----------+--------------------+-----------------------+
+
+
+List of All Pins' Locate Preferences Based on Final Placement After PAR 
+to Help Users Lock Down ALL the Pins Easily (by Simply Copy & Paste): 
+
+LOCATE  COMP  "SYSCONFIG_PIN_MISO_D1"  SITE  "K1";
+LOCATE  COMP  "SYSCONFIG_PIN_MOSI_D0"  SITE  "G1";
+LOCATE  COMP  "SYSCONFIG_PIN_SPI_SCK/MCK/SDA"  SITE  "J1";
+LOCATE  COMP  "SYSCONFIG_PIN_SPI_SS/CSN/SCL"  SITE  "H1";
+LOCATE  COMP  "csi_dt[0]"  SITE  "K9";
+LOCATE  COMP  "csi_dt[1]"  SITE  "K7";
+LOCATE  COMP  "csi_dt[2]"  SITE  "J7";
+LOCATE  COMP  "csi_dt[3]"  SITE  "K6";
+LOCATE  COMP  "csi_dt[4]"  SITE  "J6";
+LOCATE  COMP  "csi_dt[5]"  SITE  "K5";
+LOCATE  COMP  "csi_lp_en"  SITE  "K10";
+LOCATE  COMP  "csi_payload_en"  SITE  "K3";
+LOCATE  COMP  "csi_sp_en"  SITE  "H10";
+LOCATE  COMP  "i2c_sclk_0"  SITE  "K8";
+LOCATE  COMP  "i2c_sda_0"  SITE  "J8";
+LOCATE  COMP  "led[0]"  SITE  "E9";
+LOCATE  COMP  "led[1]"  SITE  "E10";
+LOCATE  COMP  "led[2]"  SITE  "G9";
+LOCATE  COMP  "led[3]"  SITE  "G10";
+LOCATE  COMP  "sys_clk"  SITE  "F9";
+LOCATE  COMP  "sys_rstn"  SITE  "D10";
+LOCATE  COMP  "uart_rxd"  SITE  "J10";
+LOCATE  COMP  "uart_txd"  SITE  "J9";
+LOCATE  COMP  "xshutdn_0"  SITE  "F10";
+
+
+
+
+
+PAR: Place And Route Diamond (64-bit) 3.13.0.56.2.
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Tue Aug 11 17:16:56 2026
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

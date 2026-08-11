@@ -1,0 +1,160 @@
+----------------------------------------------------------------------
+Report for cell mipi_3ch_top.TECH
+Register bits:  899 of 6047 (14.867%)
+I/O cells:      20
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                 BB         1          100.0
+                              CCU2C       198          100.0
+                            FD1P3BX         6          100.0
+                            FD1P3DX       400          100.0
+                            FD1S3BX         8          100.0
+                            FD1S3DX       485          100.0
+                                GSR         1          100.0
+                                 IB         3          100.0
+                            L6MUX21         1          100.0
+                               LUT4      1002          100.0
+                          MIPIDPHYA         1          100.0
+                                 OB        16          100.0
+                            PDPW8KE         2          100.0
+                              PFUMX        70          100.0
+SUB MODULES
+                            csi2dsi         1
+               csi2dsi_capture_ctrl         1
+csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",BYTECLK_MHZ=50,FIFO_TYPE="LUT")         1
+               csi2dsi_dphy_rx_wrap         1
+csi2dsi_dphy_wrapper(RX_GEAR=8,WORD_ALIGN="OFF",NUM_RX_LANE=1)         1
+             csi2dsi_rx_global_ctrl         1
+i2c_drive(IIC_CLK=26'b011000011010100000,DIV_FREQ_FACTOR=26'b0111110100)         1
+                        ov9734_ctrl         1
+top_iic(IIC_CLK=26'b011000011010100000)         1
+                            uart_rx         1
+                     uart_send_ctrl         1
+                            uart_tx         1
+                              TOTAL      2206
+----------------------------------------------------------------------
+Report for cell uart_tx.v1
+Instance Path : u_uart_tx
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C         7            3.5
+                            FD1P3BX         2           33.3
+                            FD1P3DX        15            3.8
+                            FD1S3DX        15            3.1
+                               LUT4        51            5.1
+                              PFUMX         1            1.4
+                              TOTAL        91
+----------------------------------------------------------------------
+Report for cell top_iic(IIC_CLK=26'b011000011010100000).v1
+Instance Path : u_top_iic
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        53           26.8
+                            FD1P3BX         4           66.7
+                            FD1P3DX       123           30.8
+                            FD1S3BX         4           50.0
+                            FD1S3DX        59           12.2
+                            L6MUX21         1          100.0
+                               LUT4       574           57.3
+                            PDPW8KE         2          100.0
+                              PFUMX        26           37.1
+SUB MODULES
+i2c_drive(IIC_CLK=26'b011000011010100000,DIV_FREQ_FACTOR=26'b0111110100)         1
+                        ov9734_ctrl         1
+                              TOTAL       848
+----------------------------------------------------------------------
+Report for cell ov9734_ctrl.v1
+Instance Path : u_top_iic.inst_ov9734_ctrl
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        39           19.7
+                            FD1P3DX        92           23.0
+                            FD1S3BX         2           25.0
+                            FD1S3DX        25            5.2
+                               LUT4       211           21.1
+                            PDPW8KE         2          100.0
+                              TOTAL       371
+----------------------------------------------------------------------
+Report for cell i2c_drive(IIC_CLK=26'b011000011010100000,DIV_FREQ_FACTOR=26'b0111110100).v1
+Instance Path : u_top_iic.inst_i2c_drive
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        14            7.1
+                            FD1P3BX         4           66.7
+                            FD1P3DX        31            7.8
+                            FD1S3BX         2           25.0
+                            FD1S3DX        34            7.0
+                            L6MUX21         1          100.0
+                               LUT4       363           36.2
+                              PFUMX        26           37.1
+                              TOTAL       475
+----------------------------------------------------------------------
+Report for cell uart_send_ctrl.v1
+Instance Path : u_send_ctrl
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        14            7.1
+                            FD1P3DX        57           14.3
+                            FD1S3DX        28            5.8
+                               LUT4       227           22.7
+                              PFUMX        42           60.0
+                              TOTAL       368
+----------------------------------------------------------------------
+Report for cell uart_rx.v1
+Instance Path : u_uart_rx
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C         7            3.5
+                            FD1P3DX        19            4.8
+                            FD1S3BX         3           37.5
+                            FD1S3DX        19            3.9
+                               LUT4        34            3.4
+                              PFUMX         1            1.4
+                              TOTAL        83
+----------------------------------------------------------------------
+Report for cell csi2dsi.v1
+Instance Path : u_csi2dsi
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         1            0.1
+                          MIPIDPHYA         1          100.0
+SUB MODULES
+               csi2dsi_capture_ctrl         1
+csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",BYTECLK_MHZ=50,FIFO_TYPE="LUT")         1
+               csi2dsi_dphy_rx_wrap         1
+csi2dsi_dphy_wrapper(RX_GEAR=8,WORD_ALIGN="OFF",NUM_RX_LANE=1)         1
+             csi2dsi_rx_global_ctrl         1
+                              TOTAL         7
+----------------------------------------------------------------------
+Report for cell csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",BYTECLK_MHZ=50,FIFO_TYPE="LUT").v1
+Instance Path : u_csi2dsi.dphy_rx_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         1            0.1
+                          MIPIDPHYA         1          100.0
+SUB MODULES
+               csi2dsi_capture_ctrl         1
+               csi2dsi_dphy_rx_wrap         1
+csi2dsi_dphy_wrapper(RX_GEAR=8,WORD_ALIGN="OFF",NUM_RX_LANE=1)         1
+             csi2dsi_rx_global_ctrl         1
+                              TOTAL         6
+----------------------------------------------------------------------
+Report for cell csi2dsi_capture_ctrl.<NoName>
+Instance Path : 
+                              TOTAL         0
+----------------------------------------------------------------------
+Report for cell csi2dsi_rx_global_ctrl.<NoName>
+Instance Path : 
+                              TOTAL         0
+----------------------------------------------------------------------
+Report for cell csi2dsi_dphy_rx_wrap.<NoName>
+Instance Path : 
+                              TOTAL         0
+----------------------------------------------------------------------
+Report for cell csi2dsi_dphy_wrapper(RX_GEAR=8,WORD_ALIGN="OFF",NUM_RX_LANE=1).v1
+Instance Path : u_csi2dsi.dphy_rx_inst.u_dphy_wrapper
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         1            0.1
+                          MIPIDPHYA         1          100.0
+                              TOTAL         2

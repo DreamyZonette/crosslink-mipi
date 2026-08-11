@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="csi2dsi_eval" device="LIF-MD6000-6KMG80I" synthesis="lse" default_implementation="csi2dsi_eval">
+    <Implementation title="csi2dsi_eval" dir="csi2dsi_eval" description="csi2dsi_eval" default_strategy="csi2dsi_top">
+        <Options>
+            <Option name="HDL type" value="Verilog"/>
+            <Option name="top" value="csi2dsi_wrap"/>
+        </Options>
+        <Source name="../../../../../csi2dsi_dphy_wrapper.v" type="Verilog"/>
+        <Source name="../../../../../csi2dsi_capture_ctrl_bb.v" type="Verilog"/>
+        <Source name="../../../../../csi2dsi_rx_global_ctrl_bb.v" type="Verilog"/>
+        <Source name="../../../../../csi2dsi_soft_dphy_rx_bb.v" type="Verilog"/>
+        <Source name="../../../../../csi2dsi_dphy_rx_wrap_bb.v" type="Verilog"/>
+        <Source name="../../../../../csi2dsi_dphy_rx.v" type="Verilog"/>
+        <Source name="../../../../../csi2dsi_wrap.v" type="Verilog"/>
+        <Source name="csi2dsi_top.lpf" type="Logic Preference"/>
+    </Implementation>
+    <Strategy name="csi2dsi_top" file="csi2dsi_top.sty"/>
+</BaliProject>

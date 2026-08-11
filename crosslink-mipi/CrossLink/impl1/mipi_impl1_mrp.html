@@ -1,0 +1,1745 @@
+<HTML>
+<HEAD><TITLE>Project Summary</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Mrp"></A>
+         Lattice Mapping Report File for Design Module 'mipi_3ch_top'
+
+
+
+<A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
+
+Command line:   map -a LIFMD -p LIF-MD6000 -t CKFBGA80 -s 6 -oc Industrial
+     mipi_impl1.ngd -o mipi_impl1_map.ncd -pr mipi_impl1.prf -mp mipi_impl1.mrp
+     -lpf D:/project/crosslink/project/impl1/mipi_impl1.lpf -lpf
+     D:/project/crosslink/project/mipi.lpf -gui -msgset
+     D:/project/crosslink/project/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LIF-MD6000CKFBGA80
+Target Performance:   6
+Mapper:  sn5w00,  version:  Diamond (64-bit) 3.13.0.56.2
+Mapped on:  08/11/26  17:16:49
+
+
+<A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
+   Number of registers:   1173 out of  6047 (19%)
+      PFU registers:         1173 out of  5936 (20%)
+      PIO registers:            0 out of   111 (0%)
+   Number of SLICEs:      1220 out of  2968 (41%)
+      SLICEs as Logic/ROM:   1217 out of  2968 (41%)
+      SLICEs as RAM:            3 out of  2226 (0%)
+      SLICEs as Carry:        266 out of  2968 (9%)
+   Number of LUT4s:        1744 out of  5936 (29%)
+      Number used as logic LUTs:        1206
+      Number used as distributed RAM:     6
+      Number used as ripple logic:      532
+      Number used as shift registers:     0
+   Number of PIO sites used: 20 out of 37 (54%)
+   Number of block RAMs:  3 out of 20 (15%)
+   Number of GSRs:  1 out of 1 (100%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   DTR used :   No
+   Number of Power Management Unit (PMU):  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 2 (0%)
+   Number of Dynamic Bank Controller (BCLVDSOB):  0 out of 2 (0%)
+   Number of DCC:  0 out of 14 (0%)
+   Number of DCS:  0 out of 1 (0%)
+   Number of PLLs:  0 out of 1 (0%)
+   Number of DDRDLLs:  0 out of 2 (0%)
+   Number of CLKDIV:  0 out of 4 (0%)
+   Number of ECLKSYNC:  0 out of 4 (0%)
+   Number of MIPIDPHY:  1 out of 2 (50%)
+   Number of I2C:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+   Number of clocks:  6
+     Net sys_clk_c: 385 loads, 385 rising, 0 falling (Driver: PIO sys_clk )
+     Net u_top_iic/inst_i2c_drive/drive_clk: 28 loads, 28 rising, 0 falling
+     (Driver: u_top_iic/inst_i2c_drive/drive_clk_255 )
+     Net csi_clk_byte_hs: 212 loads, 212 rising, 0 falling (Driver:
+
+     u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy )
+     Net csi_clk_byte: 36 loads, 36 rising, 0 falling (Driver:
+     u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy )
+     Net mipi_rcn_0: 0 loads, 0 rising, 0 falling (No Driver)
+     Net mipi_rcp_0: 0 loads, 0 rising, 0 falling (No Driver)
+   Number of Clock Enables:  57
+     Net u_uart_tx/bit_flag: 1 loads, 1 LSLICEs
+     Net u_uart_tx/sys_clk_c_enable_59: 9 loads, 9 LSLICEs
+     Net xshutdn_r: 1 loads, 1 LSLICEs
+     Net csi_long_packet_count_31__N_384: 28 loads, 28 LSLICEs
+     Net sys_clk_c_enable_225: 13 loads, 13 LSLICEs
+     Net csi_dt_c_4: 17 loads, 17 LSLICEs
+     Net sys_clk_c_enable_38: 1 loads, 1 LSLICEs
+     Net csi_hs_sync_count_31__N_349: 17 loads, 17 LSLICEs
+     Net sys_clk_c_enable_188: 11 loads, 11 LSLICEs
+     Net sys_clk_c_enable_207: 11 loads, 11 LSLICEs
+     Net drive_clk_enable_22: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_117: 4 loads, 4 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_37: 6 loads, 6 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_110: 10 loads, 10 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_26: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_91: 13 loads, 13 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_66: 5 loads, 5 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_55: 9 loads, 9 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_28: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_163: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_20: 2 loads, 2 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_18: 4 loads, 4 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_3: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_4: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_5: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_10: 2 loads, 2 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_7: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_21: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_31: 5 loads, 5 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_19: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_32: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_33: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_34: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/sys_clk_c_enable_226: 1 loads, 1 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_151: 25 loads, 25 LSLICEs
+     Net u_send_ctrl/tx_flag_N_1429: 4 loads, 4 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_161: 2 loads, 2 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_159: 2 loads, 2 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_158: 2 loads, 2 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_156: 3 loads, 3 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_120: 3 loads, 3 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_160: 1 loads, 1 LSLICEs
+     Net u_uart_rx/rx_data_7__N_1537: 4 loads, 4 LSLICEs
+     Net u_uart_rx/bit_flag: 2 loads, 2 LSLICEs
+     Net u_uart_rx/rx_flag_adj_1547: 4 loads, 4 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl
+     /cycle_cnt_r_15__N_116: 11 loads, 11 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl
+     /clk_byte_i_enable_1: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl
+
+     /clk_byte_i_enable_2: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/clk_byte_fr_i
+     _enable_1: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0
+     /lp11_ncr: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/term_d0_en_w: 1 loads, 0 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx
+     _fifo_queue.rx_fifo_queue_inst/rxq_pop_r: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx
+     _fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wr
+     en_i: 6 loads, 6 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx
+     _fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/rd
+     en_i: 7 loads, 7 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx
+     _fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/
+     wren_i: 11 loads, 9 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx
+     _fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/
+     rden_i: 10 loads, 9 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/d_sot_det_o_3__N_1210: 1 loads, 0
+     LSLICEs
+   Number of local set/reset loads for net sys_rst_n_N_472 merged into GSR:  650
+     
+   Number of LSRs:  6
+     Net sys_rstn_c: 52 loads, 52 LSLICEs
+     Net n17768: 12 loads, 12 LSLICEs
+     Net reset_byte_fr_sync_1: 230 loads, 228 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0
+     /lp11_reset_n: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0
+     /hs_entry: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx
+     _fifo_queue.rx_fifo_queue_inst/reset_byte_stb_n_w: 2 loads, 2 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net reset_byte_fr_sync_1: 230 loads
+     Net u_send_ctrl/field_index_0: 90 loads
+     Net sys_rstn_c: 56 loads
+     Net u_send_ctrl/field_index_1: 51 loads
+     Net tx_state_1: 49 loads
+     Net u_top_iic/inst_i2c_drive/cnt_scl_2: 44 loads
+     Net u_top_iic/inst_i2c_drive/current_state_6: 44 loads
+     Net u_top_iic/inst_ov9734_ctrl/state_3__N_622: 41 loads
+     Net u_top_iic/inst_i2c_drive/cnt_scl_1: 38 loads
+     Net u_top_iic/inst_ov9734_ctrl/n51: 38 loads
+
+
+
+
+   Number of warnings:  4
+   Number of errors:    0
+     
+
+
+
+
+
+
+
+<A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
+
+WARNING - map: D:/project/crosslink/project/mipi.lpf(49): Semantic error in
+     "LOCATE COMP "u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst" SITE "MIPIDPHY0" ;":
+     COMP "u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst" cannot be found in design.
+     This preference has been disabled.
+WARNING - map: Using local reset signal 'sys_rst_n_N_472' to infer global GSR
+     net.
+WARNING - map: The reset of EBR 'u_top_iic/inst_ov9734_ctrl/mux_272' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'u_top_iic/inst_ov9734_ctrl/mux_273' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+
+
+
+<A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| csi_sp_en           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| csi_payload_en      | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| xshutdn_0           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| i2c_sclk_0          | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| uart_txd            | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| led[0]              | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| led[1]              | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| led[2]              | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| led[3]              | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| i2c_sda_0           | BIDIR     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| csi_lp_en           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| csi_dt[5]           | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| csi_dt[4]           | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| csi_dt[3]           | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| csi_dt[2]           | OUTPUT    | LVCMOS18  |            |
++---------------------+-----------+-----------+------------+
+| csi_dt[1]           | OUTPUT    | LVCMOS18  |            |
+
++---------------------+-----------+-----------+------------+
+| csi_dt[0]           | OUTPUT    | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| sys_clk             | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| sys_rstn            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+| uart_rxd            | INPUT     | LVCMOS33  |            |
++---------------------+-----------+-----------+------------+
+
+
+
+<A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
+
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/i5 undriven or does not drive
+     anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/i4 undriven or does not drive
+     anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_cmp_2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_cmp_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_cmp_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_cmp_ci_a undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_ctr_2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_ctr_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_ctr_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af_
+     set_ctr_cia undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a2
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_cmp_2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_cmp_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_cmp_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_cmp_ci_a undriven or does not drive anything - clipped.
+
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_ctr_2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_ctr_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_ctr_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
+     set_ctr_cia undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     3 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     4 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     6 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     8 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     9 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     10 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     11 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     12 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     13 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/LUT
+     4_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/LUT
+     4_2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/LUT
+     4_3 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/LUT
+     4_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+
+     0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     7 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
+     5 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a3
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_se
+     t_cmp_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_se
+     t_cmp_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_se
+     t_cmp_ci_a undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_se
+     t_ctr_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_se
+     t_ctr_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_se
+     t_ctr_cia undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a2
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_se
+     t_cmp_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_se
+     t_cmp_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_se
+     t_cmp_ci_a undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_se
+     t_ctr_1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_se
+     t_ctr_0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_se
+     t_ctr_cia undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_3
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_5
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_6
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_7
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
+     1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
+     2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
+     3 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_
+     pfu_0_0/RAM1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
+     0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_0
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_4
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_1
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/FF_2
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a3
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/i2_3_lut_rep_9 undriven or does not drive
+     anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/bd1_r1_i1 undriven or does
+     not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ph
+     _cand_r_5__I_0_i6_2_lut undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/i1
+     224_4_lut undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ph
+     _cand_r_5__I_0_i2_2_lut undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/i2
+     _3_lut undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/i1
+     226_4_lut undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/i1
+     _2_lut_rep_20 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ou
+
+     t_rdy_c_I_0_3_lut_4_lut_4_lut undriven or does not drive anything -
+     clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i3 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i4 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i5 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i6 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i7 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i3 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i4 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i5 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i6 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i7 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i2 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i3 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i4 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i5 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i6 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i7 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ph
+     _r__i7 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ph
+     _r__i8 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/i7
+     _4_lut undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_r_i0_i0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/lp
+     _av_en_r1_219 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/lp
+     _av_en_r_217 undriven or does not drive anything - clipped.
+
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/sp
+     _en_r_214 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
+     _4d_r_i0 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
+     yload_rdy_r_I_0_238_2_lut undriven or does not drive anything - clipped.
+Block reset_byte_sync_i1 undriven or does not drive anything - clipped.
+Block reset_byte_sync_i0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/in
+     vout_1 was merged into signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_
+     rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dc
+     LIFMDasyncreg131032323288/Full
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rR
+     st was merged into signal reset_byte_fr_sync_1
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/in
+     vout_0 was merged into signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_
+     rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/rxemptyfr0_o
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/invo
+     ut_1 was merged into signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx
+     /RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLI
+     FMDasyncnoreg13044411/Full
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/rRst
+     was merged into signal reset_byte_fr_sync_1
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/invo
+     ut_0 was merged into signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx
+     /RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/rxque_empty_o
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/dec0
+     _wre3 was merged into signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_r
+     x/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcL
+     IFMDasyncnoreg13044411/wren_i
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_byte_fr_n_i_N_10
+     was merged into signal reset_byte_fr_sync_1
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_n_i_N_73 was merged
+     into signal n17768
+Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/r
+     eset_n_i_N_41 was merged into signal n17768
+Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/reset_byte_fr_n
+     _i_N_18 was merged into signal reset_byte_fr_sync_1
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/r
+     eset_n_i_N_2 was merged into signal reset_byte_fr_sync_1
+Signal sda_transmit_en_N_1145 was merged into signal
+     u_top_iic/inst_i2c_drive/sda_transmit_en
+Signal reset_byte_fr_sync_1__N_129 was merged into signal reset_byte_fr_sync_1
+Signal VCC_net undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/sc
+     uba_vhi undriven or does not drive anything - clipped.
+
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/scub
+     a_vhi undriven or does not drive anything - clipped.
+Signal csi_payload_en_c undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/VCC_net undriven or does not
+     drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_clk_rx_n undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_clk_rx_p undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_d3_rx_n_o undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_d3_rx_p_o undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sote_det_w_3 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sot_det_w_3 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_7 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_6 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_5 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_4 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_3 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_2 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_1 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd3_w_0 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_d2_rx_n_o undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_d2_rx_p_o undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sote_det_w_2 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sot_det_w_2 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_7 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_6 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_5 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_4 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_3 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_2 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_1 undriven or does not drive anything -
+     clipped.
+
+Signal u_csi2dsi/dphy_rx_inst/bd2_w_0 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_d1_rx_n_o undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/lp_d1_rx_p_o undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sote_det_w_1 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sot_det_w_1 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_7 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_6 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_5 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_4 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_3 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_2 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_1 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_0 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sote_det_w_0 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sot_det_w_0 undriven or does not drive anything
+     - clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_6 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_2/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_2/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     1_7 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     0_7 undriven or does not drive anything - clipped.
+
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/cm
+     p_ci_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     2_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     1_6 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     0_6 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_ctr_ci undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a2
+     /S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a2
+     /CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_2/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_2/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_d_c undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+
+     1_5 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     0_5 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/cm
+     p_ci_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     2_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     1_4 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     0_4 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_ctr_ci undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a1
+     /S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a1
+     /CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_2/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_2/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a0
+     /S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a0
+     /CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_2/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_2/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/em
+     pty_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     2_1 undriven or does not drive anything - clipped.
+
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_
+     gctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_
+     gctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/r_
+     gctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/w_
+     gctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/w_
+     gctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/w_
+     gctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _setcount_4 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     f_setcount_4 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _setcount_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     f_setcount_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _setcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     f_setcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _setcount_0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     f_setcount_0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     e_setcount_5 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _setcount_4 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     e_setcount_4 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+
+     _setcount_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     e_setcount_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _setcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     e_setcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _setcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     e_setcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _setcount_0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     e_setcount_0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_set undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_clr undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_set undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _setcount_5 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_cmp_clr undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pa
+     rtial_full undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pa
+     rtial_empty undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_d undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _setcount_5 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     f_setcount_5 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _setcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     f_setcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a3
+     /S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a3
+     /CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_c undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co0_
+     7 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/cmp_
+     ci_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_ctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co1_
+     3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co0_
+     6 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_ctr_cia/S0 undriven or does not drive anything - clipped.
+
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_ctr_ci undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a2/S
+     1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a2/C
+     O undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_d_c undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co0_
+     5 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/cmp_
+     ci_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_ctr_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co1_
+     2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co0_
+     4 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_ctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+
+     et_ctr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_ctr_ci undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_ctr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a1/S
+     1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a1/C
+     O undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a0/S
+     1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a0/C
+     O undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/empt
+     y_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/empt
+     y_cmp_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/empt
+     y_cmp_0/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/empt
+     y_cmp_0/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/empt
+     y_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/empt
+     y_cmp_ci_a/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/empt
+     y_cmp_ci_a/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
+     tr_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co1_
+     1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
+     tr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
+     tr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
+     tr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/w_gc
+     tr_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/co1
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/w_gc
+     tr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/w_gc
+     tr_cia/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/w_gc
+     tr_cia/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     etcount_0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/iaf_
+     setcount_0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/iae_
+     setcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     etcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/iae_
+     setcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     etcount_0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/iae_
+     setcount_0 undriven or does not drive anything - clipped.
+
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_set undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_clr undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_set undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     etcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo
+     _pfu_0_0/DO2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo
+     _pfu_0_0/DO3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo
+     _pfu_0_0/DO1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et_cmp_clr undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/part
+     ial_full undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/part
+     ial_empty undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_d undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     etcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/iaf_
+     setcount_2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     etcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/iaf_
+     setcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a3/S
+     1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+     et undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a3/C
+     O undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
+
+     et_c undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_7 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/n332 undriven or does not
+     drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/sub_29_add_2_17
+     /S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/sub_29_add_2_17
+     /CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/sub_29_add_2_1/
+     S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/sub_29_add_2_1/
+     CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/c
+     ycle_cnt_r_57_add_4_17/CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
+     6_adj_174 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
+     1473 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/b
+     d0_i_7__I_0_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/b
+     d0_i_7__I_0_1/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/b
+     d0_i_7__I_0_17/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/b
+     d0_i_7__I_0_17/CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/s
+     ub_173_add_2_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/s
+     ub_173_add_2_1/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/s
+     ub_173_add_2_17/CO undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
+     1686 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/c
+     ycle_cnt_r_57_add_4_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/c
+     ycle_cnt_r_57_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/c
+     ycle_cnt_r_57_add_4_1/CI undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[1]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[2]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[3]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[4]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[5]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[6]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[7]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[1]
+
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[2]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[3]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[4]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[5]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[6]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[7]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[1]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[2]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[3]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[4]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[5]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[6]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[7]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[0]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[1]
+     undriven or does not drive anything - clipped.
+Signal
+     u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n2
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
+     10 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
+     1475 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[0]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/lp_av_en_o
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/l
+     p_av_en_r undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/l
+     p_av_en_r_N_149 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/sp_en_o
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/s
+     p_en_o_N_135 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[0]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/p
+     ayload_o_7__N_134 undriven or does not drive anything - clipped.
+
+Signal u_uart_rx/add_32_13/CO undriven or does not drive anything - clipped.
+Signal u_uart_rx/add_32_1/S0 undriven or does not drive anything - clipped.
+Signal u_uart_rx/add_32_1/CI undriven or does not drive anything - clipped.
+Signal u_send_ctrl/sec_cnt_1916_add_4_27/S1 undriven or does not drive anything
+     - clipped.
+Signal u_send_ctrl/sec_cnt_1916_add_4_27/CO undriven or does not drive anything
+     - clipped.
+Signal u_send_ctrl/sec_cnt_1916_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_send_ctrl/sec_cnt_1916_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal u_top_iic/inst_i2c_drive/add_23_1/S0 undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_23_1/CI undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_23_15/CO undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_47_1/S0 undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_47_1/CI undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_47_11/S1 undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_47_11/CO undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/wait_cnt_1918_add_4_1/S0 undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/wait_cnt_1918_add_4_1/CI undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/wait_cnt_1918_add_4_17/CO undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_1/S0 undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_1/CI undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_9/S1 undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_9/CO undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_48_21/S1 undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_48_21/CO undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_58_1/S0 undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_58_1/CI undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_58_27/S1 undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_58_27/CO undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_48_1/S0 undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_48_1/CI undriven or does not drive
+     anything - clipped.
+Signal cam_cnt_1911_add_4_21/S1 undriven or does not drive anything - clipped.
+
+Signal cam_cnt_1911_add_4_21/CO undriven or does not drive anything - clipped.
+Signal xshutdn_cnt_1910_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal xshutdn_cnt_1910_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal add_86_1/S0 undriven or does not drive anything - clipped.
+Signal add_86_1/CI undriven or does not drive anything - clipped.
+Signal xshutdn_cnt_1910_add_4_21/S1 undriven or does not drive anything -
+     clipped.
+Signal xshutdn_cnt_1910_add_4_21/CO undriven or does not drive anything -
+     clipped.
+Signal blink_cnt_1909_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal blink_cnt_1909_add_4_1/CI undriven or does not drive anything - clipped.
+Signal csi_long_packet_count_1914_add_4_1/S0 undriven or does not drive anything
+     - clipped.
+Signal csi_long_packet_count_1914_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Signal blink_cnt_1909_add_4_25/S1 undriven or does not drive anything - clipped.
+     
+Signal blink_cnt_1909_add_4_25/CO undriven or does not drive anything - clipped.
+     
+Signal add_86_27/S1 undriven or does not drive anything - clipped.
+Signal add_86_27/CO undriven or does not drive anything - clipped.
+Signal reset_byte_sync_1 undriven or does not drive anything - clipped.
+Signal csi_payload_byte_count_1915_add_4_1/S0 undriven or does not drive
+     anything - clipped.
+Signal csi_payload_byte_count_1915_add_4_1/CI undriven or does not drive
+     anything - clipped.
+Signal csi_long_packet_count_1914_add_4_33/S1 undriven or does not drive
+     anything - clipped.
+Signal csi_long_packet_count_1914_add_4_33/CO undriven or does not drive
+     anything - clipped.
+Signal csi_hs_sync_count_1913_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal csi_hs_sync_count_1913_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal csi_hs_sync_count_1913_add_4_33/S1 undriven or does not drive anything -
+     clipped.
+Signal csi_hs_sync_count_1913_add_4_33/CO undriven or does not drive anything -
+     clipped.
+Signal csi_byte_clk_count_1912_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal csi_byte_clk_count_1912_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal csi_payload_byte_count_1915_add_4_33/S1 undriven or does not drive
+     anything - clipped.
+Signal csi_payload_byte_count_1915_add_4_33/CO undriven or does not drive
+     anything - clipped.
+Signal csi_byte_clk_count_1912_add_4_33/S1 undriven or does not drive anything -
+     clipped.
+Signal csi_byte_clk_count_1912_add_4_33/CO undriven or does not drive anything -
+     clipped.
+Signal cam_cnt_1911_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal cam_cnt_1911_add_4_1/CI undriven or does not drive anything - clipped.
+Signal reset_byte_sync_0 undriven or does not drive anything - clipped.
+Signal u_uart_tx/add_18_1/S0 undriven or does not drive anything - clipped.
+
+Signal u_uart_tx/add_18_1/CI undriven or does not drive anything - clipped.
+Signal u_uart_tx/add_18_13/CO undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/INV
+     _1 was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/OR2
+     _t10 was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/INV
+     _0 was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/INV_1
+     was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/OR2_t
+     4 was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/INV_0
+     was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
+     12 was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/reset_byte_fr_n_i_I_0_1_lut was optimized away.
+     
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_n_i_I_0_1_lut was
+     optimized away.
+Block u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/re
+     set_n_i_I_0_83_1_lut was optimized away.
+Block u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/reset_byte_fr_n_
+     i_I_0_1_lut was optimized away.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/re
+     set_n_i_I_0_1_lut was optimized away.
+Block u_top_iic/inst_i2c_drive/sda_transmit_en_I_0_1_lut was optimized away.
+Block reset_byte_fr_sync_1__I_0_1_lut was optimized away.
+Block i2 was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/scu
+     ba_vhi_inst was optimized away.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/scuba
+     _vhi_inst was optimized away.
+Block u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/sub_29_i2 was optimized away.
+
+
+
+<A name="mrp_mem"></A><B><U><big>Memory Usage</big></U></B>
+
+/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_qu
+     eue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411:
+    EBRs: 0
+    RAM SLICEs: 2
+    Logic SLICEs: 33
+    PFU Registers: 33
+/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_qu
+     eue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo_pfu_0
+
+     _0/RAMW:
+    EBRs: 0
+    RAM SLICEs: 1
+    Logic SLICEs: 0
+    PFU Registers: 0
+/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_qu
+     eue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288:
+    EBRs: 1
+    RAM SLICEs: 0
+    Logic SLICEs: 51
+    PFU Registers: 62
+    -Contains EBR pdp_ram_0_0_0:  TYPE= DP8KE,  Width_B= 8,  Depth_A= 32,
+         Depth_B= 32,  REGMODE_A= OUTREG,  REGMODE_B= OUTREG,  RESETMODE= ASYNC,
+         ASYNC_RESET_RELEASE= SYNC,  WRITEMODE_A= NORMAL,  WRITEMODE_B= NORMAL,
+         GSR= DISABLED,  MEM_LPC_FILE=
+         pmi_fifo_dcELar131032323288fe06152__PMIX__32__8__8__-1A
+/u_top_iic/inst_ov9734_ctrl:
+    EBRs: 2
+    RAM SLICEs: 0
+    Logic SLICEs: 168
+    PFU Registers: 119
+    -Contains EBR mux_272:  TYPE= PDPW8KE,  Width= 18,  Depth_R= 256,  REGMODE=
+         NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+    -Contains EBR mux_273:  TYPE= PDPW8KE,  Width= 6,  Depth_R= 256,  REGMODE=
+         NOREG,  RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+
+     
+
+
+
+<A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
+---------------
+
+Instance Name: u_top_iic/inst_ov9734_ctrl/mux_272
+         Type: PDPW8KE
+Instance Name: u_top_iic/inst_ov9734_ctrl/mux_273
+         Type: PDPW8KE
+Instance Name: u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_f
+     ifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg1310323
+     23288/pdp_ram_0_0_0
+         Type: DP8KE
+Instance Name: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy
+         Type: MIPIDPHYA
+
+
+
+<A name="mrp_gsr"></A><B><U><big>GSR Usage</big></U></B>
+---------
+
+GSR Component:
+   The local reset signal 'sys_rst_n_N_472' of the design has been inferred as
+        Global Set Reset (GSR). The reset signal used for GSR control is
+        'sys_rst_n_N_472'.
+        
+
+     GSR Property:
+   The design components with GSR property set to ENABLED will respond to global
+        set reset while the components with GSR property set to DISABLED will
+        not.
+        
+
+
+
+
+<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
+-------------------------
+
+   Total CPU Time: 0 secs  
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 70 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights
+     reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

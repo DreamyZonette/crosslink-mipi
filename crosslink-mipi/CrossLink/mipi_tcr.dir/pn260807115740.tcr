@@ -1,0 +1,19 @@
+#Start recording tcl command: 8/7/2026 11:42:19
+#Project Location: G:/shita/crosslink/project; Project name: mipi
+prj_project open "G:/shita/crosslink/project/mipi.ldf"
+sbp_design open -dsgn "G:/shita/crosslink/project/ip/ip.sbx"
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/csi2dsi"
+source "G:/shita/crosslink/project/ip/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+sbp_design gen
+sbp_design gen
+sbp_design gen
+set currentPath [pwd];set tmp_autopath $auto_path
+cd "G:/shita/crosslink/project/ip/csi2dsi"
+source "G:/shita/crosslink/project/ip/csi2dsi/generate_core.tcl"
+set auto_path $tmp_autopath;cd $currentPath
+sbp_design gen
+sbp_design gen
+#Stop recording: 8/7/2026 11:57:40

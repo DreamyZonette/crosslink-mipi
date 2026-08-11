@@ -1,0 +1,462 @@
+<HTML>
+<HEAD><TITLE>Synthesis and Ngdbuild Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Syn"></A><B><U><big>Synthesis and Ngdbuild  Report</big></U></B>
+synthesis:  version Diamond (64-bit) 3.13.0.56.2
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Tue Aug 11 17:16:46 2026
+
+
+Command Line:  synthesis -f mipi_impl1_lattice.synproj -gui -msgset D:/project/crosslink/project/promote.xml 
+
+Synthesis options:
+The -a option is LIFMD.
+The -s option is 6.
+The -t option is CKFBGA80.
+The -d option is LIF-MD6000.
+Using package CKFBGA80.
+Using performance grade 6.
+                                                          
+
+##########################################################
+
+### Lattice Family : LIFMD
+
+### Device  : LIF-MD6000
+
+### Package : CKFBGA80
+
+### Speed   : 6
+
+##########################################################
+
+                                                          
+
+INFO - synthesis: User-Selected Strategy Settings
+Optimization goal = Timing
+Top-level module name = mipi_3ch_top.
+Target frequency = 200.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+Mux style = Auto
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+force_gsr = auto
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-p D:/project/crosslink/project (searchpath added)
+-p D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data (searchpath added)
+-p D:/project/crosslink/project/impl1 (searchpath added)
+-p D:/project/crosslink/project (searchpath added)
+-p D:/project/crosslink/project/theips/csi2dsi (searchpath added)
+Verilog design file = D:/project/crosslink/project/mipi_3ch_top.v
+Verilog design file = D:/project/crosslink/project/impl1/source/uart_tx.v
+Verilog design file = D:/project/crosslink/project/impl1/source/uart_send_ctrl.v
+Verilog design file = D:/project/crosslink/project/impl1/source/top_iic.v
+Verilog design file = D:/project/crosslink/project/impl1/source/i2c_drive.v
+Verilog design file = D:/project/crosslink/project/impl1/source/uart_rx.v
+Verilog design file = D:/project/crosslink/project/impl1/source/ov9734_ctrl.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_wrapper.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v
+Verilog design file = D:/project/crosslink/project/theips/csi2dsi/csi2dsi_soft_dphy_rx_bb.v
+Verilog design file = D:/project/crosslink/project/theips/theips.v
+NGD file = mipi_impl1.ngd
+-sdc option: SDC file input not used.
+-lpf option: Output file option is ON.
+Hardtimer checking is enabled (default). The -dt option is not used.
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Analyzing Verilog file D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/lifmd.v. VERI-1482
+Compile design.
+Compile Design Begin
+Analyzing Verilog file d:/project/crosslink/project/mipi_3ch_top.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/uart_tx.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/uart_send_ctrl.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/top_iic.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/i2c_drive.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/uart_rx.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/impl1/source/ov9734_ctrl.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_wrapper.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/csi2dsi/csi2dsi_soft_dphy_rx_bb.v. VERI-1482
+Analyzing Verilog file d:/project/crosslink/project/theips/theips.v. VERI-1482
+Analyzing Verilog file D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/lifmd.v. VERI-1482
+Top module name (Verilog): mipi_3ch_top
+INFO - synthesis: d:/project/crosslink/project/mipi_3ch_top.v(5): compiling module mipi_3ch_top. VERI-1018
+INFO - synthesis: d:/project/crosslink/project/impl1/source/top_iic.v(2): compiling module top_iic(IIC_CLK=26'b011000011010100000). VERI-1018
+INFO - synthesis: d:/project/crosslink/project/impl1/source/ov9734_ctrl.v(2): compiling module ov9734_ctrl. VERI-1018
+INFO - synthesis: d:/project/crosslink/project/impl1/source/i2c_drive.v(1): compiling module i2c_drive(IIC_CLK=26'b011000011010100000,DIV_FREQ_FACTOR=26'b0111110100). VERI-1018
+INFO - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(8): compiling module csi2dsi. VERI-1018
+INFO - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v(53): compiling module csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",BYTECLK_MHZ=50,FIFO_TYPE="LUT"). VERI-1018
+INFO - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v(8): compiling module csi2dsi_dphy_rx_wrap. VERI-1018
+INFO - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_wrapper.v(75): compiling module csi2dsi_dphy_wrapper(RX_GEAR=8,WORD_ALIGN="OFF",NUM_RX_LANE=1). VERI-1018
+INFO - synthesis: D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNTHESIS_HEADERS/lifmd.v(1226): compiling module MIPIDPHYA(HSEL=0,HS_16BIT_EN=0,CN=5'b0,CM=8'b0,CO=2'b0,PLL_TST=4'b1001,ENP_DESER=1'b0). VERI-1018
+INFO - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v(8): compiling module csi2dsi_rx_global_ctrl. VERI-1018
+WARNING - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx.v(388): actual bit length 1 differs from formal bit length 2 for port lp_hs_state_clk_o. VERI-1330
+INFO - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v(8): compiling module csi2dsi_capture_ctrl. VERI-1018
+WARNING - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(204): net lp_d0_tx_en_i does not have a driver. VDB-1002
+WARNING - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(205): net lp_d0_tx_p_i does not have a driver. VDB-1002
+WARNING - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(206): net lp_d0_tx_n_i does not have a driver. VDB-1002
+INFO - synthesis: d:/project/crosslink/project/impl1/source/uart_send_ctrl.v(1): compiling module uart_send_ctrl. VERI-1018
+WARNING - synthesis: d:/project/crosslink/project/impl1/source/uart_send_ctrl.v(38): expression size 32 truncated to fit in target size 8. VERI-1209
+INFO - synthesis: d:/project/crosslink/project/impl1/source/uart_tx.v(1): compiling module uart_tx. VERI-1018
+INFO - synthesis: d:/project/crosslink/project/impl1/source/uart_rx.v(2): compiling module uart_rx. VERI-1018
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data/sn5wlib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading device for application map from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Package Status:                     Final          Version 1.38.
+Top-level module name = mipi_3ch_top.
+WARNING - synthesis: Couldn't bind cell OFE1P3BX to technology library
+WARNING - synthesis: Couldn't bind cell OFE1P3DX to technology library
+WARNING - synthesis: Couldn't bind cell OFE1P3IX to technology library
+WARNING - synthesis: Couldn't bind cell OFE1P3JX to technology library
+WARNING - synthesis: Couldn't bind cell ROM16X1 to technology library
+WARNING - synthesis: Couldn't bind cell ROM32X1 to technology library
+WARNING - synthesis: Couldn't bind cell ROM64X1 to technology library
+WARNING - synthesis: Couldn't bind cell ROM128X1 to technology library
+WARNING - synthesis: Couldn't bind cell ROM256X1 to technology library
+WARNING - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(204): net lp_d0_tx_en_i does not have a driver. VDB-1002
+WARNING - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(205): net lp_d0_tx_p_i does not have a driver. VDB-1002
+WARNING - synthesis: d:/project/crosslink/project/theips/csi2dsi/csi2dsi.v(206): net lp_d0_tx_n_i does not have a driver. VDB-1002
+INFO - synthesis: Extracted state machine for register '\u_uart_tx/bit_cnt' with one-hot encoding
+original encoding -> new encoding (one-hot encoding)
+
+ 0000 -> 0000000000000001
+
+ 0001 -> 0000000000000010
+
+ 0010 -> 0000000000000100
+
+ 0011 -> 0000000000001000
+
+ 0100 -> 0000000000010000
+
+ 0101 -> 0000000000100000
+
+ 0110 -> 0000000001000000
+
+ 0111 -> 0000000010000000
+
+ 1000 -> 0000000100000000
+
+ 1001 -> 0000001000000000
+
+ 1010 -> 0000010000000000
+
+ 1011 -> 0000100000000000
+
+ 1100 -> 0001000000000000
+
+ 1101 -> 0010000000000000
+
+ 1110 -> 0100000000000000
+
+ 1111 -> 1000000000000000
+
+INFO - synthesis: Extracted state machine for register '\u_top_iic/inst_ov9734_ctrl/state' with one-hot encoding
+original encoding -> new encoding (one-hot encoding)
+
+ 0000 -> 0000001
+
+ 0001 -> 0000010
+
+ 0010 -> 0000100
+
+ 0011 -> 0001000
+
+ 0100 -> 0010000
+
+ 0110 -> 0100000
+
+ 0111 -> 1000000
+
+
+
+
+WARNING - synthesis: Bit 5 of Register \u_top_iic/inst_ov9734_ctrl/state_FSM is stuck at Zero
+WARNING - synthesis: Bit 15 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Bit 14 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Bit 13 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Bit 12 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Bit 11 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Bit 10 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Bit 9 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Bit 8 of Register \u_top_iic/inst_ov9734_ctrl/frame_count is stuck at Zero
+WARNING - synthesis: Skipping pad insertion on mipi_rcp_0 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on mipi_rcn_0 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on mipi_rdp_0 due to black_box_pad_pin attribute.
+WARNING - synthesis: Skipping pad insertion on mipi_rdn_0 due to black_box_pad_pin attribute.
+WARNING - synthesis: d:/project/crosslink/project/impl1/source/ov9734_ctrl.v(388): Register \u_top_iic/inst_ov9734_ctrl/rd_byte_num_i3 is stuck at Zero. VDB-5013
+WARNING - synthesis: d:/project/crosslink/project/impl1/source/uart_send_ctrl.v(163): Register \u_send_ctrl/field_label_i7 is stuck at Zero. VDB-5013
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcllan13044411fbeaa5d.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcelar131032323288fe06152.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl.ngo'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/data/neoprims.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/data/neomacro.ngl'...
+Applying 200.000000 MHz constraint to all clocks
+
+WARNING - synthesis: No user .sdc file.
+Results of NGD DRC are available in mipi_3ch_top_drc.log.
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data/sn5wlib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcllan13044411fbeaa5d.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcelar131032323288fe06152.ngo'...
+WARNING - synthesis: logical net 'reset_byte_sync_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_p' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_n' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d1_rx_p_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d1_rx_n_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d2_rx_p_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d2_rx_n_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d3_rx_p_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d3_rx_n_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_7' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_6' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_5' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_4' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_7' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_6' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_5' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_4' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_7' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_6' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_5' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_4' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/sp_en_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/lp_av_en_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[7]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[6]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[5]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[4]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[3]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[2]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[0]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[0]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[7]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[6]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[5]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[4]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[3]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[2]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[0]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[7]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[6]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[5]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[4]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[3]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[2]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]' has no load.
+WARNING - synthesis: DRC complete with 71 warnings.
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file mipi_impl1.ngd.
+
+################### Begin Area Report (mipi_3ch_top)######################
+Number of register bits => 899 of 6047 (14 % )
+BB => 1
+CCU2C => 198
+FD1P3BX => 6
+FD1P3DX => 400
+FD1S3BX => 8
+FD1S3DX => 485
+GSR => 1
+IB => 3
+L6MUX21 => 1
+LUT4 => 1002
+MIPIDPHYA => 1
+OB => 16
+PDPW8KE => 2
+PFUMX => 70
+################### End Area Report ##################
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 6
+  Net : sys_clk_c, loads : 701
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/csi_clk_byte_hs, loads : 154
+  Net : u_top_iic/inst_i2c_drive/drive_clk, loads : 45
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/csi_clk_byte, loads : 2
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/mipi_rcn_0, loads : 1
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/mipi_rcp_0, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 48
+Top 10 highest fanout Clock Enables:
+  Net : csi_long_packet_count_31__N_384, loads : 54
+  Net : csi_hs_sync_count_31__N_349, loads : 32
+  Net : u_send_ctrl/sys_clk_c_enable_151, loads : 32
+  Net : sys_clk_c_enable_225, loads : 26
+  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_91, loads : 26
+  Net : sys_clk_c_enable_188, loads : 20
+  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_110, loads : 20
+  Net : sys_clk_c_enable_207, loads : 20
+  Net : u_uart_tx/bit_flag, loads : 19
+  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_55, loads : 18
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : sys_rst_n_N_472, loads : 652
+  Net : reset_byte_fr_sync_1__N_129, loads : 152
+  Net : led_c_2, loads : 96
+  Net : u_send_ctrl/field_index_0, loads : 90
+  Net : csi_long_packet_count_31__N_384, loads : 54
+  Net : u_send_ctrl/field_index_1, loads : 51
+  Net : u_send_ctrl/tx_state_1, loads : 48
+  Net : u_top_iic/inst_i2c_drive/cnt_scl_2, loads : 44
+  Net : u_top_iic/inst_i2c_drive/current_state_6, loads : 44
+  Net : u_top_iic/inst_ov9734_ctrl/state_3__N_622, loads : 41
+################### End Clock Report ##################
+
+<A name="lse_trs"></A><B><U><big>Timing Report Summary</big></U></B>
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk3 [get_nets                          |             |             |
+\u_top_iic/inst_i2c_drive/drive_clk]    |  200.000 MHz|  101.543 MHz|    10 *
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk2 [get_nets csi_clk_byte]            |  200.000 MHz|  341.064 MHz|     2  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk1 [get_nets csi_clk_byte_hs]         |            -|            -|     0  
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets sys_clk_c]               |  200.000 MHz|  109.637 MHz|     7 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+2 constraints not met.
+
+
+Peak Memory Usage: 98.313  MB
+
+--------------------------------------------------------------
+Elapsed CPU time for LSE flow : 2.422  secs
+--------------------------------------------------------------
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,93 @@
+Results of NGD DRC are available in mipi_3ch_top_drc.log.
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data/sn5wlib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/sa5p00/data/sa5plib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/xo2c00/data/xo2clib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library 'D:/software/Diamond/diamond/3.13/ispfpga/or5g00/data/orc5glib.ngl'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_capture_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_rx_global_ctrl.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/csi2dsi_dphy_rx_wrap.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcllan13044411fbeaa5d.ngo'...
+Loading NGO design 'D:/project/crosslink/project/theips/csi2dsi/pmi_fifo_dcelar131032323288fe06152.ngo'...
+
+
+Running DRC...
+
+WARNING - synthesis: logical net 'reset_byte_sync_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_p' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_n' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d1_rx_p_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d1_rx_n_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d2_rx_p_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d2_rx_n_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d3_rx_p_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_d3_rx_n_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sot_det_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/d_sote_det_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_7' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_6' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_5' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_4' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd1_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_7' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_6' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_5' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_4' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd2_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_7' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_6' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_5' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_4' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_3' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_2' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_1' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_w_0' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/sp_en_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/lp_av_en_o' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[7]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[6]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[5]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[4]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[3]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[2]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[0]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/vc_o[0]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[7]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[6]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[5]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[4]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[3]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[2]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[0]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[7]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[6]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[5]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[4]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[3]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[2]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[1]' has no load.
+WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]' has no load.
+WARNING - synthesis: DRC complete with 71 warnings.
+
+Design Results:
+   2880 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file mipi_impl1.ngd.
