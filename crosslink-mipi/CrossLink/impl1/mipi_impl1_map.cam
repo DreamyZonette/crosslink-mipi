@@ -1,13 +1,13 @@
 [ START MERGED ]
 reset_byte_fr_sync_1__N_129 reset_byte_fr_sync_1
-sda_transmit_en_N_1145 u_top_iic/inst_i2c_drive/sda_transmit_en
+n17913 u_top_iic/inst_i2c_drive/sda_transmit_en
 u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/reset_n_i_N_2 reset_byte_fr_sync_1
-u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_n_i_N_73 n17768
-u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_byte_fr_n_i_N_10 reset_byte_fr_sync_1
 u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/reset_byte_fr_n_i_N_18 reset_byte_fr_sync_1
-u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/reset_n_i_N_41 n17768
-u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/rRst reset_byte_fr_sync_1
+u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/reset_n_i_N_41 n17917
 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/dec0_wre3 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/wren_i
+u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_n_i_N_73 n17917
+u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_byte_fr_n_i_N_10 reset_byte_fr_sync_1
+u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/rRst reset_byte_fr_sync_1
 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/invout_0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/rxque_empty_o
 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/invout_1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/Full
 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/rRst reset_byte_fr_sync_1
@@ -311,13 +311,13 @@ u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/sp_en_o_
 u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]
 u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[0]
 u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/payload_o_7__N_134
+u_send_ctrl/sec_cnt_1909_add_4_1/S0
+u_send_ctrl/sec_cnt_1909_add_4_1/CI
+u_send_ctrl/sec_cnt_1909_add_4_27/S1
+u_send_ctrl/sec_cnt_1909_add_4_27/CO
 u_uart_rx/add_32_13/CO
 u_uart_rx/add_32_1/S0
 u_uart_rx/add_32_1/CI
-u_send_ctrl/sec_cnt_1916_add_4_27/S1
-u_send_ctrl/sec_cnt_1916_add_4_27/CO
-u_send_ctrl/sec_cnt_1916_add_4_1/S0
-u_send_ctrl/sec_cnt_1916_add_4_1/CI
 u_top_iic/inst_i2c_drive/add_23_1/S0
 u_top_iic/inst_i2c_drive/add_23_1/CI
 u_top_iic/inst_i2c_drive/add_23_15/CO
@@ -325,54 +325,50 @@ u_top_iic/inst_i2c_drive/add_47_1/S0
 u_top_iic/inst_i2c_drive/add_47_1/CI
 u_top_iic/inst_i2c_drive/add_47_11/S1
 u_top_iic/inst_i2c_drive/add_47_11/CO
-u_top_iic/inst_ov9734_ctrl/wait_cnt_1918_add_4_1/S0
-u_top_iic/inst_ov9734_ctrl/wait_cnt_1918_add_4_1/CI
-u_top_iic/inst_ov9734_ctrl/wait_cnt_1918_add_4_17/CO
-u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_1/S0
-u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_1/CI
-u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_9/S1
-u_top_iic/inst_ov9734_ctrl/reg_index_1919_add_4_9/CO
-u_top_iic/inst_ov9734_ctrl/add_48_21/S1
-u_top_iic/inst_ov9734_ctrl/add_48_21/CO
-u_top_iic/inst_ov9734_ctrl/add_58_1/S0
-u_top_iic/inst_ov9734_ctrl/add_58_1/CI
-u_top_iic/inst_ov9734_ctrl/add_58_27/S1
-u_top_iic/inst_ov9734_ctrl/add_58_27/CO
-u_top_iic/inst_ov9734_ctrl/add_48_1/S0
-u_top_iic/inst_ov9734_ctrl/add_48_1/CI
-cam_cnt_1911_add_4_21/S1
-cam_cnt_1911_add_4_21/CO
-xshutdn_cnt_1910_add_4_1/S0
-xshutdn_cnt_1910_add_4_1/CI
-add_86_1/S0
-add_86_1/CI
-xshutdn_cnt_1910_add_4_21/S1
-xshutdn_cnt_1910_add_4_21/CO
-blink_cnt_1909_add_4_1/S0
-blink_cnt_1909_add_4_1/CI
-csi_long_packet_count_1914_add_4_1/S0
-csi_long_packet_count_1914_add_4_1/CI
-blink_cnt_1909_add_4_25/S1
-blink_cnt_1909_add_4_25/CO
+u_top_iic/inst_ov9734_ctrl/add_65_23/CO
+u_top_iic/inst_ov9734_ctrl/add_65_1/S0
+u_top_iic/inst_ov9734_ctrl/add_65_1/CI
+u_top_iic/inst_ov9734_ctrl/reg_index_1910_add_4_1/S0
+u_top_iic/inst_ov9734_ctrl/reg_index_1910_add_4_1/CI
+u_top_iic/inst_ov9734_ctrl/reg_index_1910_add_4_9/S1
+u_top_iic/inst_ov9734_ctrl/reg_index_1910_add_4_9/CO
+u_top_iic/inst_ov9734_ctrl/final_cnt_1912_add_4_1/S0
+u_top_iic/inst_ov9734_ctrl/final_cnt_1912_add_4_1/CI
+u_top_iic/inst_ov9734_ctrl/final_cnt_1912_add_4_21/S1
+u_top_iic/inst_ov9734_ctrl/final_cnt_1912_add_4_21/CO
+csi_hs_sync_count_1906_add_4_1/S0
+csi_hs_sync_count_1906_add_4_1/CI
+blink_cnt_1902_add_4_1/S0
+blink_cnt_1902_add_4_1/CI
+csi_hs_sync_count_1906_add_4_33/S1
+csi_hs_sync_count_1906_add_4_33/CO
+csi_long_packet_count_1907_add_4_1/S0
+csi_long_packet_count_1907_add_4_1/CI
+blink_cnt_1902_add_4_25/S1
+blink_cnt_1902_add_4_25/CO
+xshutdn_cnt_1903_add_4_1/S0
+xshutdn_cnt_1903_add_4_1/CI
 add_86_27/S1
 add_86_27/CO
+add_86_1/S0
+add_86_1/CI
+xshutdn_cnt_1903_add_4_21/S1
+xshutdn_cnt_1903_add_4_21/CO
+csi_long_packet_count_1907_add_4_33/S1
+csi_long_packet_count_1907_add_4_33/CO
+csi_payload_byte_count_1908_add_4_1/S0
+csi_payload_byte_count_1908_add_4_1/CI
+cam_cnt_1904_add_4_1/S0
+cam_cnt_1904_add_4_1/CI
+csi_payload_byte_count_1908_add_4_33/S1
+csi_payload_byte_count_1908_add_4_33/CO
 reset_byte_sync_1
-csi_payload_byte_count_1915_add_4_1/S0
-csi_payload_byte_count_1915_add_4_1/CI
-csi_long_packet_count_1914_add_4_33/S1
-csi_long_packet_count_1914_add_4_33/CO
-csi_hs_sync_count_1913_add_4_1/S0
-csi_hs_sync_count_1913_add_4_1/CI
-csi_hs_sync_count_1913_add_4_33/S1
-csi_hs_sync_count_1913_add_4_33/CO
-csi_byte_clk_count_1912_add_4_1/S0
-csi_byte_clk_count_1912_add_4_1/CI
-csi_payload_byte_count_1915_add_4_33/S1
-csi_payload_byte_count_1915_add_4_33/CO
-csi_byte_clk_count_1912_add_4_33/S1
-csi_byte_clk_count_1912_add_4_33/CO
-cam_cnt_1911_add_4_1/S0
-cam_cnt_1911_add_4_1/CI
+cam_cnt_1904_add_4_21/S1
+cam_cnt_1904_add_4_21/CO
+csi_byte_clk_count_1905_add_4_1/S0
+csi_byte_clk_count_1905_add_4_1/CI
+csi_byte_clk_count_1905_add_4_33/S1
+csi_byte_clk_count_1905_add_4_33/CO
 reset_byte_sync_0
 u_uart_tx/add_18_1/S0
 u_uart_tx/add_18_1/CI
@@ -380,10 +376,11 @@ u_uart_tx/add_18_13/CO
 [ END CLIPPED ]
 [ START DESIGN PREFS ]
 SCHEMATIC START ;
-# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Tue Aug 11 17:16:49 2026
+# map:  version Diamond (64-bit) 3.13.0.56.2 -- WARNING: Map write only section -- Wed Aug 12 09:18:30 2026
 
 SYSCONFIG SLAVE_SPI_PORT=ENABLE MASTER_SPI_PORT=DISABLE I2C_PORT=DISABLE MCCLK_FREQ=6 MY_ASSP=OFF ONE_TIME_PROGRAM_SRAM=DISABLE ONE_TIME_PROGRAM_NVCM=DISABLE SECURITY_SRAM=DISABLE SECURITY_NVCM=DISABLE TRANSFR=OFF BOOT_UP_SEQUENCE=NVCM CDONE_PORT=CDONE_USER_IO DONE_EX=OFF ;
 LOCATE COMP "csi_sp_en" SITE "H10" ;
+LOCATE COMP "csi_lp_en" SITE "K10" ;
 LOCATE COMP "csi_payload_en" SITE "K3" ;
 LOCATE COMP "xshutdn_0" SITE "F10" ;
 LOCATE COMP "i2c_sclk_0" SITE "K8" ;
@@ -393,16 +390,15 @@ LOCATE COMP "led[1]" SITE "E10" ;
 LOCATE COMP "led[2]" SITE "G9" ;
 LOCATE COMP "led[3]" SITE "G10" ;
 LOCATE COMP "i2c_sda_0" SITE "J8" ;
-LOCATE COMP "csi_lp_en" SITE "K10" ;
-LOCATE COMP "csi_dt[5]" SITE "K5" ;
-LOCATE COMP "csi_dt[4]" SITE "J6" ;
-LOCATE COMP "csi_dt[3]" SITE "K6" ;
-LOCATE COMP "csi_dt[2]" SITE "J7" ;
-LOCATE COMP "csi_dt[1]" SITE "K7" ;
-LOCATE COMP "csi_dt[0]" SITE "K9" ;
-LOCATE COMP "sys_clk" SITE "F9" ;
-LOCATE COMP "sys_rstn" SITE "D10" ;
 LOCATE COMP "uart_rxd" SITE "J10" ;
+LOCATE COMP "sys_rstn" SITE "D10" ;
+LOCATE COMP "sys_clk" SITE "F9" ;
+LOCATE COMP "csi_dt[0]" SITE "K9" ;
+LOCATE COMP "csi_dt[1]" SITE "K7" ;
+LOCATE COMP "csi_dt[2]" SITE "J7" ;
+LOCATE COMP "csi_dt[3]" SITE "K6" ;
+LOCATE COMP "csi_dt[4]" SITE "J6" ;
+LOCATE COMP "csi_dt[5]" SITE "K5" ;
 FREQUENCY NET "csi_clk_byte" 50.000000 MHz ;
 FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
 SCHEMATIC END ;

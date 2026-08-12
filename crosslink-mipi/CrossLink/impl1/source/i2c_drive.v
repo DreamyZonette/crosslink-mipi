@@ -112,194 +112,205 @@ module i2c_drive(
             
         end
         else begin
-            cnt_scl = cnt_scl + 1'd1; //*************/
-            //----------------------------- sda assignment----------------------
+            // cnt_scl uses blocking increment so the case statement below
+            // sees the updated value. All other signals use non-blocking <=.
+            cnt_scl = cnt_scl + 1'd1;
+
             case(current_state)
-                IDLE:begin
+                //--------------------- state: IDLE ---------------------------
+                IDLE: begin
                     flag_done       <= 1'b0;
-                    //flag_state_done <= 1'b1;
+                    flag_ack        <= 1'b0;          // clear residual ACK
                     cnt_scl         <= 10'd0;
                     sda_transmit    <= 1'b0;
-                    if(start) 
+                    rd_cnt          <= 4'd0;          // reset multi-byte read counter
+                    rd_first_done   <= 1'b0;          // reset first-byte flag
+                    if (start)
                         next_state <= SLAVE_ADDR;
-                    else 
+                    else
                         next_state <= current_state;
                 end
-                //------------------------- state: SLAVE_ADDR --------------------
-                SLAVE_ADDR:begin
+
+                //--------------------- state: SLAVE_ADDR ---------------------
+                SLAVE_ADDR: begin
                     case (cnt_scl)
                         10'd1:  sda_transmit_en <= 1'b1;
-                        10'd2:  sda_transmit <= SLAVE_ADDRESS[6]; // host send 7 bit slave's address
+                        10'd2:  sda_transmit <= SLAVE_ADDRESS[6];
                         10'd6:  sda_transmit <= SLAVE_ADDRESS[5];
                         10'd10: sda_transmit <= SLAVE_ADDRESS[4];
                         10'd14: sda_transmit <= SLAVE_ADDRESS[3];
                         10'd19: sda_transmit <= SLAVE_ADDRESS[2];
                         10'd23: sda_transmit <= SLAVE_ADDRESS[1];
                         10'd27: sda_transmit <= SLAVE_ADDRESS[0];
-                        10'd31: sda_transmit <= 1'b0;        // always write (0x10) for register address setup
-                        10'd34: sda_transmit_en <= 1'b0;// host release sda
-                        10'd36: begin 
-                            if (!sda_receive) // 0:slave ack successfully
+                        10'd31: sda_transmit <= 1'b0;       // RW=0 (write)
+                        10'd34: sda_transmit_en <= 1'b0;    // host release sda
+                        10'd36: begin
+                            if (!sda_receive)
                                 flag_ack <= 1'b1;
-                            else 
+                            else
                                 flag_ack <= 1'b0;
                         end
                         10'd37: begin
-                            flag_ack <= 1'b0; 
+                            // State transition gated inside case — no reversion risk
+                            if (flag_ack) begin
+                                if (ADDR_WIDTH)
+                                    next_state <= ROM_ADDR16;
+                                else
+                                    next_state <= ROM_ADDR8;
+                            end
+                            else
+                                next_state <= current_state;
+                            flag_ack <= 1'b0;
                             cnt_scl  <= 10'd0;
                         end
-                        default: sda_transmit <= sda_transmit;
+                        default: ;
                     endcase
-
-                    if (flag_ack) begin
-                        if(ADDR_WIDTH) 
-                            next_state <= ROM_ADDR16;
-                        else 
-                            next_state <= ROM_ADDR8;                      
-                    end
-                    else 
-                        next_state <= current_state;
-                        
                 end
-                //------------------------- state: ROM_ADDR16 --------------------
-                ROM_ADDR16:begin
+
+                //--------------------- state: ROM_ADDR16 ---------------------
+                ROM_ADDR16: begin
                     case (cnt_scl)
                         10'd1:  begin
-                                sda_transmit_en = 1'b1;
-                                sda_transmit = addr[15]; //  host send 15~8th bit address to slave
+                            sda_transmit_en <= 1'b1;
+                            sda_transmit    <= addr[15];
                         end
-                        10'd5:  sda_transmit <= addr[14]; 
+                        10'd5:  sda_transmit <= addr[14];
                         10'd9:  sda_transmit <= addr[13];
                         10'd13: sda_transmit <= addr[12];
                         10'd17: sda_transmit <= addr[11];
                         10'd21: sda_transmit <= addr[10];
                         10'd25: sda_transmit <= addr[9];
                         10'd29: sda_transmit <= addr[8];
-                        10'd33: sda_transmit_en <= 1'b0;// host release sda
-                        10'd35: begin 
-                            if (!sda_receive) // 0:slave ack successfully
+                        10'd33: sda_transmit_en <= 1'b0;    // host release sda
+                        10'd35: begin
+                            if (!sda_receive)
                                 flag_ack <= 1'b1;
-                            else 
+                            else
                                 flag_ack <= 1'b0;
                         end
                         10'd36: begin
-                            flag_ack <= 1'b0; 
+                            // State transition gated inside case
+                            if (flag_ack)
+                                next_state <= ROM_ADDR8;
+                            else
+                                next_state <= current_state;
+                            flag_ack <= 1'b0;
                             cnt_scl  <= 10'd0;
                         end
-                        default: sda_transmit <= sda_transmit;
+                        default: ;
                     endcase
-                    if(flag_ack) 
-                        next_state <= ROM_ADDR8;                    
-                    else 
-                        next_state <= current_state;
                 end
-                //------------------------- state: ROM_ADDR8 --------------------
-                ROM_ADDR8:begin
+
+                //--------------------- state: ROM_ADDR8 ----------------------
+                ROM_ADDR8: begin
                     case (cnt_scl)
                         10'd1:  begin
-                                sda_transmit_en = 1'b1;
-                                sda_transmit = addr[7];//  host send 7~0th bit address to slave
-                        end 
-                        10'd5:  sda_transmit <= addr[6];  
+                            sda_transmit_en <= 1'b1;
+                            sda_transmit    <= addr[7];
+                        end
+                        10'd5:  sda_transmit <= addr[6];
                         10'd9:  sda_transmit <= addr[5];
                         10'd13: sda_transmit <= addr[4];
                         10'd17: sda_transmit <= addr[3];
                         10'd21: sda_transmit <= addr[2];
                         10'd25: sda_transmit <= addr[1];
                         10'd29: sda_transmit <= addr[0];
-                        10'd33: sda_transmit_en <= 1'b0;// host release sda
-                        10'd35: begin 
-                            if (!sda_receive) // 0:slave ack successfully
-                                flag_ack = 1'b1;
-                            else 
-                                flag_ack = 1'b0;
+                        10'd33: sda_transmit_en <= 1'b0;    // host release sda
+                        10'd35: begin
+                            if (!sda_receive)
+                                flag_ack <= 1'b1;
+                            else
+                                flag_ack <= 1'b0;
                         end
                         10'd36: begin
+                            // State transition already inside case — keep it here
                             if (flag_ack) begin
-                                if(!ctrl_w0_r1) 
+                                if (!ctrl_w0_r1)
                                     next_state <= DATA_WR;
-                                else 
+                                else
                                     next_state <= SLAVE_ADDR_RD;
                             end
-                            else 
+                            else
                                 next_state <= current_state;
-
-                            flag_ack <= 1'b0; 
+                            flag_ack <= 1'b0;
                             cnt_scl  <= 10'd0;
                         end
-                        default: sda_transmit <= sda_transmit;
+                        default: ;
                     endcase
-                    
                 end
-                //------------------------- state: DATA_WR --------------------
-                DATA_WR:begin
+
+                //--------------------- state: DATA_WR ------------------------
+                DATA_WR: begin
                     case (cnt_scl)
                         10'd1:  begin
-                                sda_transmit_en = 1'b1;
-                                sda_transmit = data_write[7]; //  host write 7~0th bits data to slave
+                            sda_transmit_en <= 1'b1;
+                            sda_transmit    <= data_write[7];
                         end
-                        
-                        10'd5:  sda_transmit <= data_write[6]; 
+                        10'd5:  sda_transmit <= data_write[6];
                         10'd9:  sda_transmit <= data_write[5];
                         10'd13: sda_transmit <= data_write[4];
                         10'd17: sda_transmit <= data_write[3];
                         10'd21: sda_transmit <= data_write[2];
                         10'd25: sda_transmit <= data_write[1];
                         10'd29: sda_transmit <= data_write[0];
-                        10'd33: sda_transmit_en <= 1'b0;// host release sda
-                        10'd35: begin 
-                            if (!sda_receive) // 0:slave ack successfully
+                        10'd33: sda_transmit_en <= 1'b0;    // host release sda
+                        10'd35: begin
+                            if (!sda_receive)
                                 flag_ack <= 1'b1;
-                            else 
+                            else
                                 flag_ack <= 1'b0;
                         end
                         10'd36: begin
-                            flag_ack <= 1'b0; 
+                            // State transition gated inside case
+                            if (flag_ack)
+                                next_state <= STOP;
+                            else
+                                next_state <= current_state;
+                            flag_ack <= 1'b0;
                             cnt_scl  <= 10'd0;
                         end
-                        default: sda_transmit <= sda_transmit;
+                        default: ;
                     endcase
-                    if(flag_ack) 
-                        next_state <= STOP;                   
-                    else 
-                        next_state <= current_state;
                 end
-                //------------------------- state: SLAVE_ADDR_RD --------------------
-                SLAVE_ADDR_RD:begin
+
+                //--------------------- state: SLAVE_ADDR_RD ------------------
+                SLAVE_ADDR_RD: begin
                     case (cnt_scl)
-                        10'd1:begin
-                                sda_transmit_en <= 1'b1;
-                                sda_transmit    <= 1'b1; 
+                        10'd1:  begin
+                            sda_transmit_en <= 1'b1;
+                            sda_transmit    <= 1'b1;
                         end
                         10'd3:  sda_transmit <= 1'b0;
-                        10'd5:  sda_transmit <= SLAVE_ADDRESS[6]; // send 7 bit slave's address again
+                        10'd5:  sda_transmit <= SLAVE_ADDRESS[6];
                         10'd9:  sda_transmit <= SLAVE_ADDRESS[5];
                         10'd13: sda_transmit <= SLAVE_ADDRESS[4];
                         10'd17: sda_transmit <= SLAVE_ADDRESS[3];
                         10'd21: sda_transmit <= SLAVE_ADDRESS[2];
                         10'd25: sda_transmit <= SLAVE_ADDRESS[1];
                         10'd29: sda_transmit <= SLAVE_ADDRESS[0];
-                        10'd33: sda_transmit <= 1'b1; //reading flag
-                        10'd37: sda_transmit_en <= 1'b0;// host release sda
-                        10'd39: begin 
-                            if (!sda_receive) // 0:slave ack successfully
+                        10'd33: sda_transmit <= 1'b1;       // RW=1 (read)
+                        10'd37: sda_transmit_en <= 1'b0;    // host release sda
+                        10'd39: begin
+                            if (!sda_receive)
                                 flag_ack <= 1'b1;
-                            else 
+                            else
                                 flag_ack <= 1'b0;
                         end
                         10'd40: begin
-                            flag_ack <= 1'b0; 
+                            // State transition gated inside case
+                            if (flag_ack)
+                                next_state <= DATA_RD;
+                            else
+                                next_state <= current_state;
+                            flag_ack <= 1'b0;
                             cnt_scl  <= 10'd0;
                         end
-                        default: sda_transmit <= sda_transmit;
+                        default: ;
                     endcase
-                    if(flag_ack) 
-                        next_state <= DATA_RD;
-                    else 
-                        next_state <= current_state; 
                 end
-                //------------------------- state: DATA_RD --------------------
-                DATA_RD:begin
+
+                //--------------------- state: DATA_RD ------------------------
+                DATA_RD: begin
                     case (cnt_scl)
                         10'd1:   sda_transmit_en <= 1'b0;
                         10'd3:   data_read_temp[7] <= sda_receive;
@@ -311,66 +322,59 @@ module i2c_drive(
                         10'd27:  data_read_temp[1] <= sda_receive;
                         10'd31:  data_read_temp[0] <= sda_receive;
                         10'd33: begin
-                            // Multi-byte read: ACK if more bytes, NACK if last
                             if (rd_cnt < rd_byte_num - 1) begin
-                                sda_transmit    <= 1'b0;  // ACK (SDA=low)
+                                sda_transmit    <= 1'b0;   // ACK
                                 sda_transmit_en <= 1'b1;
                             end
                             else begin
-                                sda_transmit    <= 1'b1;  // NACK (SDA=high)
+                                sda_transmit    <= 1'b1;   // NACK
                                 sda_transmit_en <= 1'b1;
                             end
                         end
                         10'd36: begin
-                            cnt_scl  <= 10'd0;
-                            // Master samples NACK on the rising edge after cnt_scl=35
-                            // For multi-byte read: ACK after each byte except last
+                            cnt_scl <= 10'd0;
                             if (rd_cnt < rd_byte_num - 1) begin
                                 // ACK sent — stay in DATA_RD for next byte
                                 if (!rd_first_done) begin
                                     rd_byte0      <= data_read_temp;
                                     rd_first_done <= 1'b1;
                                 end
-                                rd_cnt <= rd_cnt + 1'd1;
-                                next_state <= DATA_RD;  // continue reading
+                                rd_cnt     <= rd_cnt + 1'd1;
+                                next_state <= DATA_RD;
                             end
                             else begin
                                 // NACK sent — last byte, go to STOP
-                                data_read <= data_read_temp;
-                                flag_ack  <= 1'b1;
+                                data_read  <= data_read_temp;
+                                flag_ack   <= 1'b1;
                                 next_state <= STOP;
                             end
                         end
                         default: ;
                     endcase
                 end
-                //------------------------- state: StOP --------------------
-                STOP:begin
+
+                //--------------------- state: STOP ---------------------------
+                STOP: begin
                     case (cnt_scl)
-                        10'd1:begin
-                            sda_transmit_en = 1'b1; // host take sda
-                            sda_transmit = 1'b0;
-                            
-                        end 
-                        10'd3: begin 
-                            flag_done = 1'b1;
-                            sda_transmit <= 1'b1;
-                            cnt_scl  <= 10'd0;
-                            // Prepare the byte bookkeeping for the next transaction.
-                            rd_cnt        <= 4'd0;
-                            rd_first_done <= 1'b0;
+                        10'd1: begin
+                            sda_transmit_en <= 1'b1;
+                            sda_transmit    <= 1'b0;
                         end
-                        default: sda_transmit <= sda_transmit;
+                        10'd3: begin
+                            flag_done       <= 1'b1;
+                            sda_transmit    <= 1'b1;
+                            cnt_scl         <= 10'd0;
+                            next_state      <= IDLE;       // transition inside case
+                            rd_cnt          <= 4'd0;
+                            rd_first_done   <= 1'b0;
+                        end
+                        default: ;
                     endcase
-                    if(flag_done) 
-                        next_state <= IDLE;
-                    else 
-                        next_state <= current_state;
                 end
-                //------------------------- DEFAULT --------------------
+
+                //--------------------- DEFAULT -------------------------------
                 default: begin
-                        sda_transmit <= sda_transmit;
-                        next_state   <= IDLE;
+                    next_state <= IDLE;
                 end
             endcase
         end

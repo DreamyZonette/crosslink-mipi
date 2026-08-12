@@ -4,11 +4,11 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Aug 11 17:16:51 2026
+Wed Aug 12 09:18:36 2026
 
-D:/software/Diamond/diamond/3.13/ispfpga\bin\nt64\par -f mipi_impl1.p2t
+G:/Software/lscc/diamond/3.13/ispfpga\bin\nt64\par -f mipi_impl1.p2t
 mipi_impl1_map.ncd mipi_impl1.dir mipi_impl1.prf -gui -msgset
-D:/project/crosslink/project/promote.xml
+G:/shita/git/crosslink-mipi/CrossLink/promote.xml
 
 
 Preference file: mipi_impl1.prf.
@@ -16,11 +16,11 @@ Preference file: mipi_impl1.prf.
 Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
 Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-5_1   *      0            11.815       0            0.020        0            07           Completed
+5_1   *      0            10.560       0            0.020        0            26           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 8 secs 
+Total (real) run time for 1-seed: 26 secs 
 
 par done!
 

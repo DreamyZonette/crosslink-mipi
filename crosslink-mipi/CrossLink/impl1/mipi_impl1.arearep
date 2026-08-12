@@ -1,23 +1,23 @@
 ----------------------------------------------------------------------
 Report for cell mipi_3ch_top.TECH
-Register bits:  899 of 6047 (14.867%)
+Register bits:  855 of 6047 (14.139%)
 I/O cells:      20
                                   Cell usage:
                                cell     count   Res Usage(%)
                                  BB         1          100.0
-                              CCU2C       198          100.0
-                            FD1P3BX         6          100.0
-                            FD1P3DX       400          100.0
-                            FD1S3BX         8          100.0
-                            FD1S3DX       485          100.0
+                              CCU2C       187          100.0
+                            FD1P3BX         5          100.0
+                            FD1P3DX       352          100.0
+                            FD1S3BX         9          100.0
+                            FD1S3DX       489          100.0
                                 GSR         1          100.0
                                  IB         3          100.0
-                            L6MUX21         1          100.0
-                               LUT4      1002          100.0
+                            L6MUX21         3          100.0
+                               LUT4       926          100.0
                           MIPIDPHYA         1          100.0
                                  OB        16          100.0
-                            PDPW8KE         2          100.0
-                              PFUMX        70          100.0
+                              PFUMX        81          100.0
+                           ROM256X1        19          100.0
 SUB MODULES
                             csi2dsi         1
                csi2dsi_capture_ctrl         1
@@ -31,86 +31,87 @@ top_iic(IIC_CLK=26'b011000011010100000)         1
                             uart_rx         1
                      uart_send_ctrl         1
                             uart_tx         1
-                              TOTAL      2206
+                              TOTAL      2105
 ----------------------------------------------------------------------
 Report for cell uart_tx.v1
 Instance Path : u_uart_tx
                                   Cell usage:
                                cell     count   Res Usage(%)
-                              CCU2C         7            3.5
-                            FD1P3BX         2           33.3
-                            FD1P3DX        15            3.8
+                              CCU2C         7            3.7
+                            FD1P3BX         2           40.0
+                            FD1P3DX        15            4.3
                             FD1S3DX        15            3.1
-                               LUT4        51            5.1
-                              PFUMX         1            1.4
-                              TOTAL        91
+                               LUT4        66            7.1
+                              PFUMX         1            1.2
+                              TOTAL       106
 ----------------------------------------------------------------------
 Report for cell top_iic(IIC_CLK=26'b011000011010100000).v1
 Instance Path : u_top_iic
                                   Cell usage:
                                cell     count   Res Usage(%)
-                              CCU2C        53           26.8
-                            FD1P3BX         4           66.7
-                            FD1P3DX       123           30.8
-                            FD1S3BX         4           50.0
-                            FD1S3DX        59           12.2
-                            L6MUX21         1          100.0
-                               LUT4       574           57.3
-                            PDPW8KE         2          100.0
-                              PFUMX        26           37.1
+                              CCU2C        42           22.5
+                            FD1P3BX         3           60.0
+                            FD1P3DX        76           21.6
+                            FD1S3BX         5           55.6
+                            FD1S3DX        62           12.7
+                            L6MUX21         3          100.0
+                               LUT4       522           56.4
+                              PFUMX        43           53.1
+                           ROM256X1         3           15.8
 SUB MODULES
 i2c_drive(IIC_CLK=26'b011000011010100000,DIV_FREQ_FACTOR=26'b0111110100)         1
                         ov9734_ctrl         1
-                              TOTAL       848
+                              TOTAL       761
 ----------------------------------------------------------------------
 Report for cell ov9734_ctrl.v1
 Instance Path : u_top_iic.inst_ov9734_ctrl
                                   Cell usage:
                                cell     count   Res Usage(%)
-                              CCU2C        39           19.7
-                            FD1P3DX        92           23.0
-                            FD1S3BX         2           25.0
-                            FD1S3DX        25            5.2
-                               LUT4       211           21.1
-                            PDPW8KE         2          100.0
-                              TOTAL       371
+                              CCU2C        28           15.0
+                            FD1P3DX        70           19.9
+                            FD1S3BX         2           22.2
+                            FD1S3DX        19            3.9
+                               LUT4       183           19.8
+                              PFUMX         4            4.9
+                           ROM256X1         3           15.8
+                              TOTAL       309
 ----------------------------------------------------------------------
 Report for cell i2c_drive(IIC_CLK=26'b011000011010100000,DIV_FREQ_FACTOR=26'b0111110100).v1
 Instance Path : u_top_iic.inst_i2c_drive
                                   Cell usage:
                                cell     count   Res Usage(%)
-                              CCU2C        14            7.1
-                            FD1P3BX         4           66.7
-                            FD1P3DX        31            7.8
-                            FD1S3BX         2           25.0
-                            FD1S3DX        34            7.0
-                            L6MUX21         1          100.0
-                               LUT4       363           36.2
-                              PFUMX        26           37.1
-                              TOTAL       475
-----------------------------------------------------------------------
-Report for cell uart_send_ctrl.v1
-Instance Path : u_send_ctrl
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                              CCU2C        14            7.1
-                            FD1P3DX        57           14.3
-                            FD1S3DX        28            5.8
-                               LUT4       227           22.7
-                              PFUMX        42           60.0
-                              TOTAL       368
+                              CCU2C        14            7.5
+                            FD1P3BX         3           60.0
+                            FD1P3DX         6            1.7
+                            FD1S3BX         3           33.3
+                            FD1S3DX        43            8.8
+                            L6MUX21         3          100.0
+                               LUT4       339           36.6
+                              PFUMX        39           48.1
+                              TOTAL       450
 ----------------------------------------------------------------------
 Report for cell uart_rx.v1
 Instance Path : u_uart_rx
                                   Cell usage:
                                cell     count   Res Usage(%)
-                              CCU2C         7            3.5
-                            FD1P3DX        19            4.8
-                            FD1S3BX         3           37.5
+                              CCU2C         7            3.7
+                            FD1P3DX        19            5.4
+                            FD1S3BX         3           33.3
                             FD1S3DX        19            3.9
-                               LUT4        34            3.4
-                              PFUMX         1            1.4
+                               LUT4        34            3.7
+                              PFUMX         1            1.2
                               TOTAL        83
+----------------------------------------------------------------------
+Report for cell uart_send_ctrl.v1
+Instance Path : u_send_ctrl
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2C        14            7.5
+                            FD1P3DX        56           15.9
+                            FD1S3DX        29            5.9
+                               LUT4       190           20.5
+                              PFUMX        35           43.2
+                              TOTAL       324
 ----------------------------------------------------------------------
 Report for cell csi2dsi.v1
 Instance Path : u_csi2dsi

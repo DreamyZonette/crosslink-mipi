@@ -4,10 +4,10 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Aug 11 17:17:00 2026
+Wed Aug 12 09:19:06 2026
 
 
-Command: bitgen -w -g RamCfg:Reset -g DisableUES:FALSE -g ES:No -jedec -gui -msgset D:/project/crosslink/project/promote.xml mipi_impl1.ncd mipi_impl1.prf 
+Command: bitgen -w -g RamCfg:Reset -g DisableUES:FALSE -g ES:No -jedec -gui -msgset G:/shita/git/crosslink-mipi/CrossLink/promote.xml mipi_impl1.ncd mipi_impl1.prf 
 
 Loading design for application Bitgen from file mipi_impl1.ncd.
 Design name: mipi_3ch_top
@@ -16,7 +16,7 @@ Vendor:      LATTICE
 Device:      LIF-MD6000
 Package:     CKFBGA80
 Performance: 6
-Loading device for application Bitgen from file 'sn5w6000.nph' in environment: D:/software/Diamond/diamond/3.13/ispfpga.
+Loading device for application Bitgen from file 'sn5w6000.nph' in environment: G:/Software/lscc/diamond/3.13/ispfpga.
 Package Status:                     Final          Version 1.38.
 Performance Hardware Data Status:   Final          Version 41.1.
 
@@ -71,6 +71,6 @@ Creating bit map...
 Bitstream Status: Final           Version 4.9.
  
 Saving bit stream in "mipi_impl1.jed".
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 85 MB
+Total CPU Time: 1 secs 
+Total REAL Time: 2 secs 
+Peak Memory Usage: 87 MB
