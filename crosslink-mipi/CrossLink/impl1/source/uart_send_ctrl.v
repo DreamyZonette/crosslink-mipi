@@ -10,6 +10,11 @@ module uart_send_ctrl (
     input [15:0]      last_wc,
     input [15:0]      frame_count,
     input             frame_count_valid,
+    input [15:0]      sensor_id,
+    input [7:0]       reg_4a00_val,
+    input             dphy_hs_d_en,
+    input             dphy_term_clk_en,
+    input [1:0]       dphy_lp_state_d,
     output reg        tx_flag,
     output reg [7:0]  tx_data
 );
@@ -52,22 +57,24 @@ localparam PH_LF    = 3'd4;
 
 reg [1:0]  tx_state;
 reg [2:0]  tx_phase;
-reg [2:0]  field_index;
+reg [3:0]  field_index;
 reg [7:0]  field_label;
 reg [31:0] field_value;
 reg [3:0]  digits_left;
 
 // A single short record is emitted each second to keep the UART formatter
-// below the PFUMX fan-in limit.  The seven records repeat in this order:
+// below the PFUMX fan-in limit.  The eleven records repeat in this order:
 // C (byte clock), H (HS SoT), L (long packets), P (payload bytes),
-// D (data type), W (word count), F (sensor frame counter).
+// D (data type), W (word count), F (sensor frame counter),
+// S (sensor ID @ 0x300A), R (color-bar write-back), E (data-lane HS enable +
+// clock-lane termination), V (data-lane LP/HS state).
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         tx_flag      <= 1'b0;
         tx_data      <= 8'd0;
         tx_state     <= TX_IDLE;
         tx_phase     <= PH_LABEL;
-        field_index  <= 3'd0;
+        field_index  <= 4'd0;
         field_label  <= 8'd0;
         field_value  <= 32'd0;
         digits_left  <= 4'd0;
@@ -77,40 +84,60 @@ always @(posedge clk or negedge rst_n) begin
             TX_IDLE: begin
                 if (sec_tick && !uart_busy) begin
                     case (field_index)
-                        3'd0: begin
+                        4'd0: begin
                             field_label <= "C";
                             field_value <= byte_clk_count;
                             digits_left <= 4'd8;
                         end
-                        3'd1: begin
+                        4'd1: begin
                             field_label <= "H";
                             field_value <= hs_sync_count;
                             digits_left <= 4'd8;
                         end
-                        3'd2: begin
+                        4'd2: begin
                             field_label <= "L";
                             field_value <= long_packet_count;
                             digits_left <= 4'd8;
                         end
-                        3'd3: begin
+                        4'd3: begin
                             field_label <= "P";
                             field_value <= payload_byte_count;
                             digits_left <= 4'd8;
                         end
-                        3'd4: begin
+                        4'd4: begin
                             field_label <= "D";
                             field_value <= {last_dt, 26'd0};
                             digits_left <= 4'd2;
                         end
-                        3'd5: begin
+                        4'd5: begin
                             field_label <= "W";
                             field_value <= {last_wc, 16'd0};
                             digits_left <= 4'd4;
                         end
-                        default: begin
+                        4'd6: begin
                             field_label <= "F";
                             field_value <= {(frame_count_valid ? frame_count : 16'd0), 16'd0};
                             digits_left <= 4'd4;
+                        end
+                        4'd7: begin
+                            field_label <= "S";
+                            field_value <= {sensor_id, 16'd0};
+                            digits_left <= 4'd4;
+                        end
+                        4'd8: begin
+                            field_label <= "R";
+                            field_value <= {reg_4a00_val, 24'd0};
+                            digits_left <= 4'd2;
+                        end
+                        4'd9: begin
+                            field_label <= "E";
+                            field_value <= {dphy_hs_d_en, dphy_term_clk_en, 30'd0};
+                            digits_left <= 4'd1;
+                        end
+                        default: begin
+                            field_label <= "V";
+                            field_value <= {dphy_lp_state_d, 30'd0};
+                            digits_left <= 4'd1;
                         end
                     endcase
                     tx_phase <= PH_LABEL;
@@ -148,8 +175,8 @@ always @(posedge clk or negedge rst_n) begin
                         PH_CR: tx_phase <= PH_LF;
                         default: begin
                             tx_state <= TX_IDLE;
-                            if (field_index == 3'd6)
-                                field_index <= 3'd0;
+                            if (field_index == 4'd10)
+                                field_index <= 4'd0;
                             else
                                 field_index <= field_index + 1'b1;
                         end

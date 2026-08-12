@@ -31,26 +31,26 @@
 
 
 -lpf 1
--p "G:/shita/git/crosslink-mipi/CrossLink"
--ver "G:/shita/git/crosslink-mipi/CrossLink/mipi_3ch_top.v"
-"G:/shita/git/crosslink-mipi/CrossLink/impl1/source/uart_tx.v"
-"G:/shita/git/crosslink-mipi/CrossLink/impl1/source/uart_send_ctrl.v"
-"G:/shita/git/crosslink-mipi/CrossLink/impl1/source/top_iic.v"
-"G:/shita/git/crosslink-mipi/CrossLink/impl1/source/i2c_drive.v"
-"G:/shita/git/crosslink-mipi/CrossLink/impl1/source/uart_rx.v"
-"G:/shita/git/crosslink-mipi/CrossLink/impl1/source/ov9734_ctrl.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_rx.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_wrapper.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_soft_dphy_rx_bb.v"
-"G:/shita/git/crosslink-mipi/CrossLink/theips/theips.v"
+-p "D:/project/crosslink-mipi/crosslink-mipi/CrossLink"
+-ver "D:/project/crosslink-mipi/crosslink-mipi/CrossLink/mipi_3ch_top.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/source/uart_tx.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/source/uart_send_ctrl.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/source/top_iic.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/source/i2c_drive.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/source/uart_rx.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/source/ov9734_ctrl.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_rx.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_wrapper.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_capture_ctrl_bb.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_rx_wrap_bb.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_rx_global_ctrl_bb.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_soft_dphy_rx_bb.v"
+"D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/theips.v"
 -top mipi_3ch_top
 
 
--p "G:/Software/lscc/diamond/3.13/ispfpga/sn5w00/data" "G:/shita/git/crosslink-mipi/CrossLink/impl1" "G:/shita/git/crosslink-mipi/CrossLink" "G:/shita/git/crosslink-mipi/CrossLink/theips/csi2dsi"
+-p "D:/software/Diamond/diamond/3.13/ispfpga/sn5w00/data" "D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1" "D:/project/crosslink-mipi/crosslink-mipi/CrossLink" "D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi"
 
 -ngd "mipi_impl1.ngd"
 

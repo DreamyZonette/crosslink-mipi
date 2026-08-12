@@ -19,9 +19,9 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>G:/shita/git/crosslink-mipi/CrossLink/impl1/mipi_impl1.bit</File>
-			<FileTime>08/12/26 09:19:06</FileTime>
-			<JedecChecksum>0x7094</JedecChecksum>
+			<File>D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/mipi_impl1.bit</File>
+			<FileTime>08/12/26 18:20:28</FileTime>
+			<JedecChecksum>0xAD2F</JedecChecksum>
 			<Operation>Fast Program</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>

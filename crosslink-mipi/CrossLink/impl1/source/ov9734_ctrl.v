@@ -1,4 +1,5 @@
-// ov9734_ctrl.v — OV9734 full 176-register config + sensor ID readback + 0x4A00 polling
+// ov9734_ctrl.v — OV9734 full 176-register config + sensor ID readback
+//                  + 0x0100 mode-select poll (proves streaming)
 module ov9734_ctrl (
     input           sys_clk,
     input           sys_rst_n,
@@ -16,12 +17,12 @@ module ov9734_ctrl (
     output reg      sensor_id_valid,
     output reg [15:0] frame_count,      // placeholder (not read in this version)
     output reg        frame_count_valid,// placeholder
-    output reg [7:0]  reg_4a00_val,     // 0x4A00 register readback value
+    output reg [7:0]  reg_4a00_val,     // 0x4A00 frame counter readback
     output reg        reg_4a00_valid,   // 1-cycle pulse when reg_4a00_val is updated
     input           cam_ready
 );
 
-    localparam NUM_REGS     = 176;
+    localparam NUM_REGS     = 175;
     localparam WAIT_NORMAL  = 16'd9_999;        // 200us between writes @ 50MHz
     localparam WAIT_SWRST   = 17'd99_999;       // 2ms after SW reset (0x0103)
     localparam WAIT_RD_LOOP = 23'd4_999_999;    // 100ms between 0x4A00 reads @ 50MHz
@@ -50,6 +51,8 @@ module ov9734_ctrl (
               1: reg_cfg = {16'h0100, 8'h00};
 
             // ── IO control ──
+            // Matches the verified 9734.txt reference: the OV9734 outputs MIPI
+            // by default, so keep 0x3001/0x3002 at 0x00.
               2: reg_cfg = {16'h3001, 8'h00};
               3: reg_cfg = {16'h3002, 8'h00};
               4: reg_cfg = {16'h3007, 8'h00};
@@ -171,6 +174,7 @@ module ov9734_ctrl (
             102: reg_cfg = {16'h4309, 8'h00};
 
             // ── MIPI / PHY ──
+            // Values match the verified 9734.txt reference exactly.
             103: reg_cfg = {16'h4600, 8'h00};
             104: reg_cfg = {16'h4601, 8'h80};
             105: reg_cfg = {16'h4800, 8'h00};
@@ -257,10 +261,8 @@ module ov9734_ctrl (
             172: reg_cfg = {16'h3811, 8'h04};
             173: reg_cfg = {16'h3813, 8'h04};
 
-            174: reg_cfg = {16'h5080, 8'h80}; // color bar test
-
             // ── Stream ON ──
-            175: reg_cfg = {16'h0100, 8'h01};
+            174: reg_cfg = {16'h0100, 8'h01};
 
             default: reg_cfg = {16'hFFFF, 8'hFF};
         endcase
@@ -374,10 +376,12 @@ module ov9734_ctrl (
                     end
                 end
 
-                // Read Sensor ID: 0x300A (16-bit → {rd_byte0, data_read})
+                // Read Sensor ID: 0x300A (16-bit → {rd_byte0, data_read}).
+                // The repeated-START read returns one register ahead of the
+                // written address on this sensor, so probe 0x3009 to land on 0x300A.
                 S_RD_ID: begin
                     ctrl_w0_r1   <= 1'b1;
-                    addr         <= 16'h300A;
+                    addr         <= 16'h3009;
                     rd_byte_num  <= 4'd2;                // 16-bit read: 2 bytes
                     if (flag_done_posedge && start) begin
                         start           <= 1'b0;
@@ -395,10 +399,12 @@ module ov9734_ctrl (
                     end
                 end
 
-                // Wait 100ms + read 0x4A00 (8-bit) polling loop
+                // Wait 100ms + read 0x0100 (MODE_SELECT) polling loop.
+                // Probing 0x00FF compensates the +1 read offset and lands on
+                // 0x0100.  0x01 = streaming, 0x00 = standby.
                 S_RD_4A00: begin
                     ctrl_w0_r1   <= 1'b1;
-                    addr         <= 16'h4A00;
+                    addr         <= 16'h00FF;
                     rd_byte_num  <= 4'd1;                // 8-bit read: 1 byte
                     if (flag_done_posedge && start) begin
                         // Read complete — capture data and pulse valid

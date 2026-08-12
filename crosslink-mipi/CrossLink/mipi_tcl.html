@@ -6,42 +6,7 @@
 -->
 </STYLE>
 </HEAD>
-<PRE><A name="pn260807105125"></A><B><U><big>pn260807105125</big></U></B>
-#Start recording tcl command: 8/6/2026 18:44:52
-#Project Location: G:/shita/crosslink/project; Project name: mipi
-prj_project open "G:/shita/crosslink/project/mipi.ldf"
-sbp_design new -dsgn "theips" -path "G:/shita/crosslink/project/theips" -device "LIF-MD6000-6KMG80I"
-set currentPath [pwd];set tmp_autopath $auto_path
-cd "G:/shita/crosslink/project/theips/csi2dsi"
-source "G:/shita/crosslink/project/theips/csi2dsi/generate_core.tcl"
-set auto_path $tmp_autopath;cd $currentPath
-set currentPath [pwd];set tmp_autopath $auto_path
-cd "G:/shita/crosslink/project/theips/csi2dsi_rx"
-source "G:/shita/crosslink/project/theips/csi2dsi_rx/generate_core.tcl"
-set auto_path $tmp_autopath;cd $currentPath
-file copy -force -- "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_capture_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_capture_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_rx_wrap.v" "G:/shita/crosslink/project/impl1/source"
-file copy -force -- "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_rx_wrap_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_dphy_wrapper.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_rx_global_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_rx_global_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_soft_dphy_rx.v" "G:/shita/crosslink/project/impl1/source"
-file copy -force -- "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_soft_dphy_rx_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_tmp/csi2dsi_wrap.v" "G:/shita/crosslink/project/impl1/source"
-prj_src add "G:/shita/crosslink/project/impl1/source/csi2dsi.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_wrapper.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx_bb.v" "G:/shita/crosslink/project/impl1/source/csi2dsi_wrap.v"
-prj_run Export -impl impl1 -forceAll
-prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_soft_dphy_rx_bb.v"
-prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_rx_global_ctrl_bb.v"
-prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_dphy_rx_wrap_bb.v"
-prj_src exclude "G:/shita/crosslink/project/impl1/source/csi2dsi_capture_ctrl_bb.v"
-prj_run Export -impl impl1 -forceAll
-#Stop recording: 8/7/2026 10:51:25
-
-
-
-<A name="pn260807110417"></A><B><U><big>pn260807110417</big></U></B>
-#Start recording tcl command: 8/7/2026 10:58:00
-#Project Location: G:/shita/crosslink/project; Project name: mipi
-prj_project open "G:/shita/crosslink/project/mipi.ldf"
-#Stop recording: 8/7/2026 11:04:17
-
-
-
-<A name="pn260807112349"></A><B><U><big>pn260807112349</big></U></B>
+<PRE><A name="pn260807112349"></A><B><U><big>pn260807112349</big></U></B>
 #Start recording tcl command: 8/7/2026 11:12:20
 #Project Location: G:/shita/crosslink/project; Project name: mipi
 prj_project open "G:/shita/crosslink/project/mipi.ldf"
@@ -197,6 +162,23 @@ cd "G:/shita/crosslink/project/theips/test"
 source "G:/shita/crosslink/project/theips/test/generate_core.tcl"
 set auto_path $tmp_autopath;cd $currentPath
 #Stop recording: 8/10/2026 09:50:48
+
+
+
+<A name="pn260811182131"></A><B><U><big>pn260811182131</big></U></B>
+#Start recording tcl command: 8/11/2026 18:21:26
+#Project Location: G:/shita/git/CrossLink; Project name: mipi
+prj_project open "G:/shita/git/CrossLink/mipi.ldf"
+#Stop recording: 8/11/2026 18:21:31
+
+
+
+<A name="pn260812105138"></A><B><U><big>pn260812105138</big></U></B>
+#Start recording tcl command: 8/12/2026 10:15:27
+#Project Location: D:/project/crosslink-mipi/crosslink-mipi/CrossLink; Project name: mipi
+prj_project open "D:/project/crosslink-mipi/crosslink-mipi/CrossLink/mipi.ldf"
+prj_run Export -impl impl1 -forceAll
+#Stop recording: 8/12/2026 10:51:38
 
 
 

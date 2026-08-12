@@ -274,29 +274,35 @@ module i2c_drive(
                 end
 
                 //--------------------- state: SLAVE_ADDR_RD ------------------
+                // Repeated START: cnt_scl=1 releases SDA (already high after the
+                // slave ACK), cnt_scl=2 pulls SDA low while SCL is still high.
+                // Address bits land in SCL-low (cnt_scl=4,8,12,...) so the slave
+                // samples them on the following rising edge - the same phase as
+                // the working SLAVE_ADDR write path.  SDA is released before the
+                // 9th (ACK) clock so the slave can actually pull it low.
                 SLAVE_ADDR_RD: begin
                     case (cnt_scl)
                         10'd1:  begin
                             sda_transmit_en <= 1'b1;
                             sda_transmit    <= 1'b1;
                         end
-                        10'd3:  sda_transmit <= 1'b0;
-                        10'd5:  sda_transmit <= SLAVE_ADDRESS[6];
-                        10'd9:  sda_transmit <= SLAVE_ADDRESS[5];
-                        10'd13: sda_transmit <= SLAVE_ADDRESS[4];
-                        10'd17: sda_transmit <= SLAVE_ADDRESS[3];
-                        10'd21: sda_transmit <= SLAVE_ADDRESS[2];
-                        10'd25: sda_transmit <= SLAVE_ADDRESS[1];
-                        10'd29: sda_transmit <= SLAVE_ADDRESS[0];
-                        10'd33: sda_transmit <= 1'b1;       // RW=1 (read)
-                        10'd37: sda_transmit_en <= 1'b0;    // host release sda
-                        10'd39: begin
+                        10'd2:  sda_transmit <= 1'b0;
+                        10'd4:  sda_transmit <= SLAVE_ADDRESS[6];
+                        10'd8:  sda_transmit <= SLAVE_ADDRESS[5];
+                        10'd12: sda_transmit <= SLAVE_ADDRESS[4];
+                        10'd16: sda_transmit <= SLAVE_ADDRESS[3];
+                        10'd20: sda_transmit <= SLAVE_ADDRESS[2];
+                        10'd24: sda_transmit <= SLAVE_ADDRESS[1];
+                        10'd28: sda_transmit <= SLAVE_ADDRESS[0];
+                        10'd32: sda_transmit <= 1'b1;       // RW=1 (read)
+                        10'd34: sda_transmit_en <= 1'b0;    // host release sda before ACK clock
+                        10'd38: begin
                             if (!sda_receive)
                                 flag_ack <= 1'b1;
                             else
                                 flag_ack <= 1'b0;
                         end
-                        10'd40: begin
+                        10'd39: begin
                             // State transition gated inside case
                             if (flag_ack)
                                 next_state <= DATA_RD;

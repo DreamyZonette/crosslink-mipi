@@ -1,0 +1,5 @@
+#Start recording tcl command: 8/12/2026 10:15:27
+#Project Location: D:/project/crosslink-mipi/crosslink-mipi/CrossLink; Project name: mipi
+prj_project open "D:/project/crosslink-mipi/crosslink-mipi/CrossLink/mipi.ldf"
+prj_run Export -impl impl1 -forceAll
+#Stop recording: 8/12/2026 10:51:38

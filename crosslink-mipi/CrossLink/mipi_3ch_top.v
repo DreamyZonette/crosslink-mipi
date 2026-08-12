@@ -33,6 +33,8 @@ wire        sensor_id_valid;
 wire [15:0] frame_count;
 wire        frame_count_valid;
 wire [3:0]  i2c_rd_byte_num;
+wire [7:0]  reg_4a00_val;
+wire        reg_4a00_valid;
 wire        logic_rstn;
 reg         rst_n_pulse;
 reg [25:0]  rst_cnt;
@@ -106,7 +108,7 @@ assign xshutdn_0 = xshutdn_out_reg;
 top_iic #(
     .SLAVE_ADDRESS  (7'h10         	),   // OV9734: 7-bit 0x10, write=0x20, read=0x21
     .SYSTEM_CLK     (26'd50_000_000	),
-    .IIC_CLK        (26'd100_000	),
+    .IIC_CLK        (26'd10_000	),   // 10kHz: 10x timing margin vs 100kHz, kills the intermittent SCCB race
     .ADDR_WIDTH     (1'b1       	)
 ) u_top_iic (
     .sys_clk         (sys_clk         ),
@@ -118,6 +120,8 @@ top_iic #(
     .sensor_id_valid (sensor_id_valid ),
     .frame_count     (frame_count     ),
     .frame_count_valid(frame_count_valid),
+    .reg_4a00_val    (reg_4a00_val    ),
+    .reg_4a00_valid  (reg_4a00_valid  ),
     .cam_ready       (cam_ready       ),
     .rd_byte_num     (i2c_rd_byte_num )
 );
@@ -213,8 +217,9 @@ always @(posedge sys_clk or negedge logic_rstn) begin
     end
 end
 
-// HS_ONLY requires the recovered continuous byte clock as clk_byte_fr_i.
-// Assert reset asynchronously and release it in each D-PHY clock domain.
+// HS_ONLY mode: clk_byte_fr_i uses the recovered continuous byte clock
+// (csi_clk_byte_hs) as feedback.  Assert reset asynchronously and release it in
+// each D-PHY clock domain.
 always @(posedge csi_clk_byte_hs or negedge logic_rstn) begin
     if (!logic_rstn)
         reset_byte_fr_sync <= 2'b00;
@@ -251,7 +256,7 @@ csi2dsi u_csi2dsi (
     .d0_p_i             (mipi_rdp_0),
 
     // Clock / Reset / Control
-    .clk_byte_fr_i      (csi_clk_byte_hs),  // HS_ONLY feedback required by the IP
+    .clk_byte_fr_i      (csi_clk_byte_hs),  // HS_ONLY: continuous byte clock feedback
     .clk_lp_ctrl_i      (sys_clk),
     .reset_byte_fr_n_i  (reset_byte_fr_n),
     .reset_byte_n_i     (reset_byte_n),
@@ -299,6 +304,30 @@ wire [7:0]  rx_data;
 wire        rx_flag;
 wire        uart_busy;
 
+// D-PHY lane status, synchronized to sys_clk for the UART debug readout.
+// hs_d_en=1 when the D-PHY drives HS on data lane0; term_clk_en=1 when the
+// clock-lane termination is on; lp_state_d is the data-lane LP/HS state.
+reg        dphy_hs_d_en_s1, dphy_hs_d_en_s2;
+reg        dphy_term_clk_en_s1, dphy_term_clk_en_s2;
+reg [1:0]  dphy_lp_state_d_s1, dphy_lp_state_d_s2;
+always @(posedge sys_clk or negedge logic_rstn) begin
+    if (!logic_rstn) begin
+        dphy_hs_d_en_s1     <= 1'b0;
+        dphy_hs_d_en_s2     <= 1'b0;
+        dphy_term_clk_en_s1 <= 1'b0;
+        dphy_term_clk_en_s2 <= 1'b0;
+        dphy_lp_state_d_s1  <= 2'd0;
+        dphy_lp_state_d_s2  <= 2'd0;
+    end else begin
+        dphy_hs_d_en_s1     <= dphy_hs_d_en;
+        dphy_hs_d_en_s2     <= dphy_hs_d_en_s1;
+        dphy_term_clk_en_s1 <= dphy_term_clk_en;
+        dphy_term_clk_en_s2 <= dphy_term_clk_en_s1;
+        dphy_lp_state_d_s1  <= dphy_lp_hs_state_d;
+        dphy_lp_state_d_s2  <= dphy_lp_state_d_s1;
+    end
+end
+
 uart_send_ctrl u_send_ctrl (
     .clk                (sys_clk),
     .rst_n              (logic_rstn),
@@ -311,6 +340,11 @@ uart_send_ctrl u_send_ctrl (
     .last_wc            (csi_last_wc_sys),
     .frame_count        (frame_count),
     .frame_count_valid  (frame_count_valid),
+    .sensor_id          (sensor_id),
+    .reg_4a00_val       (reg_4a00_val),
+    .dphy_hs_d_en       (dphy_hs_d_en_s2),
+    .dphy_term_clk_en   (dphy_term_clk_en_s2),
+    .dphy_lp_state_d    (dphy_lp_state_d_s2),
     .tx_flag            (tx_flag),
     .tx_data            (tx_data)
 );
