@@ -26,7 +26,7 @@ always@(posedge sys_clk or negedge sys_rst_n) begin
         work_en <= 1'b0;
     else if(pi_flag == 1'b1)
         work_en <= 1'b1;
-    else if((bit_flag == 1'b1) && (bit_cnt == 4'd9))
+    else if((bit_flag == 1'b1) && (bit_cnt == 4'd10))
         work_en <= 1'b0;
 end
 
@@ -54,7 +54,7 @@ end
 always@(posedge sys_clk or negedge sys_rst_n) begin
     if(sys_rst_n == 1'b0)
         bit_cnt <= 4'b0;
-    else if((bit_flag == 1'b1) && (bit_cnt == 4'd9))
+    else if((bit_flag == 1'b1) && (bit_cnt == 4'd10))
         bit_cnt <= 4'b0;
     else if((bit_flag == 1'b1) && (work_en == 1'b1))
         bit_cnt <= bit_cnt + 1'b1;
@@ -76,6 +76,7 @@ always@(posedge sys_clk or negedge sys_rst_n) begin
             7 : tx <= pi_data[6];     // 数据位6
             8 : tx <= pi_data[7];     // 数据位7
             9 : tx <= 1'b1;          // 停止位
+            10 : tx <= 1'b1;         // 保持高电平，确保停止位完整
             default : tx <= 1'b1;
         endcase
 end
