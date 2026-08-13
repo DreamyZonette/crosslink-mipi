@@ -1,19 +1,19 @@
 // mipi_3ch_top.v
 // OV9734: onboard 24MHz crystal, no XVCLK input. 50MHz sys_clk for timing.
-// TXS0104 OE hardwired high 锟ms cam_ready delay covers back-drive risk.
+// TXS0104 OE hardwired high; 20ms cam_ready delay covers back-drive risk.
 // XSHUTDN never pulled low after initial power-up (except full sys_rstn).
 module mipi_3ch_top (
     input wire sys_clk,
     input wire sys_rstn,
-    // 璋冭瘯淇″彿
+    // 调试信号
     output wire [3:0] led,
     output wire       uart_txd,
     input wire        uart_rxd,
-    // 鎽勫儚澶撮厤缃俊锟  
+    // 摄像头配置信号  
     output wire       i2c_sclk_0,
     inout wire        i2c_sda_0,
     output wire       xshutdn_0,
-    // 鎽勫儚澶存暟鎹俊锟   
+    // 摄像头数据信号   
     inout wire       mipi_rcp_0,
     inout wire       mipi_rcn_0,
     inout wire       mipi_rdp_0,
@@ -88,7 +88,7 @@ always @(posedge sys_clk or negedge sys_rstn) begin
                 xshutdn_cnt <= xshutdn_cnt + 1'd1;
             end
         end
-        // Phase 2: 20ms after XSHUTDN锟assert cam_ready
+        // Phase 2: 20ms after XSHUTDN high, assert cam_ready
         else if (!cam_ready) begin
             if (cam_cnt == 20'd999_999) begin
                 cam_ready <= 1'b1;
