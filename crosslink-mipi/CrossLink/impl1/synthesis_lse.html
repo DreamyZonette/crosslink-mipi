@@ -14,7 +14,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Aug 12 18:20:12 2026
+Thu Aug 13 10:57:39 2026
 
 
 Command Line:  synthesis -f mipi_impl1_lattice.synproj -gui -msgset D:/project/crosslink-mipi/crosslink-mipi/CrossLink/promote.xml 
@@ -117,7 +117,7 @@ Analyzing Verilog file D:/software/Diamond/diamond/3.13/ispfpga/userware/NT/SYNT
 Top module name (Verilog): mipi_3ch_top
 INFO - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/mipi_3ch_top.v(5): compiling module mipi_3ch_top. VERI-1018
 INFO - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/top_iic.v(2): compiling module top_iic(IIC_CLK=26'b010011100010000). VERI-1018
-INFO - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/ov9734_ctrl.v(3): compiling module ov9734_ctrl. VERI-1018
+INFO - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/ov9734_ctrl.v(2): compiling module ov9734_ctrl. VERI-1018
 INFO - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/i2c_drive.v(1): compiling module i2c_drive(IIC_CLK=26'b010011100010000,DIV_FREQ_FACTOR=26'b01001110001000). VERI-1018
 INFO - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/theips/csi2dsi/csi2dsi.v(8): compiling module csi2dsi. VERI-1018
 INFO - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/theips/csi2dsi/csi2dsi_dphy_rx.v(53): compiling module csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",WORD_ALIGN="ON",BYTECLK_MHZ=45,FIFO_TYPE="LUT"). VERI-1018
@@ -154,7 +154,7 @@ WARNING - synthesis: Couldn't bind cell ROM256X1 to technology library
 WARNING - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/theips/csi2dsi/csi2dsi.v(204): net lp_d0_tx_en_i does not have a driver. VDB-1002
 WARNING - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/theips/csi2dsi/csi2dsi.v(205): net lp_d0_tx_p_i does not have a driver. VDB-1002
 WARNING - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/theips/csi2dsi/csi2dsi.v(206): net lp_d0_tx_n_i does not have a driver. VDB-1002
-WARNING - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/ov9734_ctrl.v(432): Register \u_top_iic/inst_ov9734_ctrl/frame_count_valid_124 is stuck at Zero. VDB-5013
+WARNING - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/ov9734_ctrl.v(424): Register \u_top_iic/inst_ov9734_ctrl/frame_count_valid_124 is stuck at Zero. VDB-5013
 INFO - synthesis: Extracted state machine for register '\u_top_iic/inst_ov9734_ctrl/state' with one-hot encoding
 original encoding -> new encoding (one-hot encoding)
 
@@ -213,8 +213,6 @@ WARNING - synthesis: Skipping pad insertion on mipi_rcn_0 due to black_box_pad_p
 WARNING - synthesis: Skipping pad insertion on mipi_rdp_0 due to black_box_pad_pin attribute.
 WARNING - synthesis: Skipping pad insertion on mipi_rdn_0 due to black_box_pad_pin attribute.
 WARNING - synthesis: d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/uart_send_ctrl.v(190): Register \u_send_ctrl/field_label_i7 is stuck at Zero. VDB-5013
-Duplicate register/latch removal. reset_byte_fr_sync_i0 is a one-to-one match with reset_byte_sync_i0.
-Duplicate register/latch removal. reset_byte_sync_i1 is a one-to-one match with reset_byte_fr_sync_i1.
 Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_rx_wrap.ngo'...
 Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/pmi_fifo_dcllan13044411fbeaa5d.ngo'...
 Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/pmi_fifo_dcelar131032323288fe06152.ngo'...
@@ -236,6 +234,7 @@ Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/cs
 Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/csi2dsi_dphy_rx_wrap.ngo'...
 Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/pmi_fifo_dcllan13044411fbeaa5d.ngo'...
 Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/csi2dsi/pmi_fifo_dcelar131032323288fe06152.ngo'...
+WARNING - synthesis: logical net 'reset_byte_sync_1' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_0' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_p' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_n' has no load.
@@ -305,25 +304,25 @@ WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.captu
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[2]' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[1]' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]' has no load.
-WARNING - synthesis: DRC complete with 69 warnings.
+WARNING - synthesis: DRC complete with 70 warnings.
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file mipi_impl1.ngd.
 
 ################### Begin Area Report (mipi_3ch_top)######################
-Number of register bits => 911 of 6047 (15 % )
+Number of register bits => 913 of 6047 (15 % )
 BB => 1
 CCU2C => 187
 FD1P3BX => 5
-FD1P3DX => 407
+FD1P3DX => 410
 FD1S3BX => 9
-FD1S3DX => 490
+FD1S3DX => 489
 GSR => 1
 IB => 3
 L6MUX21 => 19
-LUT4 => 979
+LUT4 => 998
 MIPIDPHYA => 1
 OB => 16
-PFUMX => 100
+PFUMX => 105
 ROM256X1 => 20
 ################### End Area Report ##################
 
@@ -331,7 +330,7 @@ ROM256X1 => 20
 Clock Nets
 Number of Clocks: 6
   Net : sys_clk_c, loads : 704
-  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/csi_clk_byte_hs, loads : 152
+  Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/csi_clk_byte_hs, loads : 154
   Net : u_top_iic/inst_i2c_drive/drive_clk, loads : 54
   Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/csi_clk_byte, loads : 2
   Net : u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/mipi_rcn_0, loads : 1
@@ -340,27 +339,27 @@ Clock Enable Nets
 Number of Clock Enables: 47
 Top 10 highest fanout Clock Enables:
   Net : csi_long_packet_count_31__N_384, loads : 54
-  Net : u_top_iic/inst_i2c_drive/cnt_scl_4, loads : 35
   Net : csi_hs_sync_count_31__N_349, loads : 32
-  Net : u_send_ctrl/sys_clk_c_enable_191, loads : 32
-  Net : sys_clk_c_enable_229, loads : 26
+  Net : u_send_ctrl/sys_clk_c_enable_193, loads : 32
+  Net : u_top_iic/inst_i2c_drive/cnt_scl_4, loads : 29
+  Net : sys_clk_c_enable_233, loads : 26
   Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_82, loads : 23
-  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_217, loads : 20
-  Net : sys_clk_c_enable_150, loads : 20
-  Net : sys_clk_c_enable_157, loads : 20
+  Net : sys_clk_c_enable_123, loads : 20
+  Net : u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_219, loads : 20
+  Net : sys_clk_c_enable_147, loads : 20
   Net : u_uart_tx/bit_flag, loads : 19
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : sys_rst_n_N_472, loads : 664
+  Net : sys_rst_n_N_472, loads : 666
   Net : reset_byte_fr_sync_1__N_129, loads : 152
-  Net : u_send_ctrl/field_index_0, loads : 106
+  Net : u_send_ctrl/field_index_0, loads : 107
   Net : led_c_2, loads : 96
-  Net : u_top_iic/inst_i2c_drive/cnt_scl_2, loads : 56
+  Net : u_send_ctrl/field_index_2, loads : 60
   Net : csi_long_packet_count_31__N_384, loads : 54
-  Net : u_send_ctrl/field_index_1, loads : 49
-  Net : u_top_iic/inst_i2c_drive/cnt_scl_0, loads : 47
-  Net : u_send_ctrl/tx_state_1, loads : 46
-  Net : u_send_ctrl/field_index_2, loads : 46
+  Net : u_send_ctrl/field_index_1, loads : 53
+  Net : u_top_iic/inst_i2c_drive/cnt_scl_2, loads : 45
+  Net : u_top_iic/inst_i2c_drive/cnt_scl_5, loads : 40
+  Net : u_top_iic/inst_ov9734_ctrl/start, loads : 37
 ################### End Clock Report ##################
 
 <A name="lse_trs"></A><B><U><big>Timing Report Summary</big></U></B>
@@ -371,16 +370,16 @@ Constraint                              |   Constraint|       Actual|Levels
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
 clk3 [get_nets                          |             |             |
-\u_top_iic/inst_i2c_drive/drive_clk]    |  200.000 MHz|   95.758 MHz|     9 *
+\u_top_iic/inst_i2c_drive/drive_clk]    |  200.000 MHz|   80.919 MHz|    10 *
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk2 [get_nets csi_clk_byte]            |  200.000 MHz|  336.022 MHz|     2  
+clk2 [get_nets csi_clk_byte]            |  200.000 MHz|  341.064 MHz|     2  
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
 clk1 [get_nets csi_clk_byte_hs]         |            -|            -|     0  
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets sys_clk_c]               |  200.000 MHz|  112.701 MHz|     6 *
+clk0 [get_nets sys_clk_c]               |  200.000 MHz|  114.403 MHz|     7 *
                                         |             |             |
 --------------------------------------------------------------------------------
 
@@ -388,10 +387,10 @@ clk0 [get_nets sys_clk_c]               |  200.000 MHz|  112.701 MHz|     6 *
 2 constraints not met.
 
 
-Peak Memory Usage: 100.516  MB
+Peak Memory Usage: 100.730  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 2.313  secs
+Elapsed CPU time for LSE flow : 2.250  secs
 --------------------------------------------------------------
 
 

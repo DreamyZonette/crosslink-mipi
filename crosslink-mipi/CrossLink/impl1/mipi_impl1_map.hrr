@@ -3,8 +3,8 @@ Report for cell mipi_3ch_top
    Instance path: mipi_3ch_top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	    1452.00        100.0
-                                  LUT4	    1582.00        100.0
+                                  SLIC	    1444.00        100.0
+                                  LUT4	    1600.00        100.0
                                DISTRAM	       3.00        100.0
                                  IOBUF	         20        100.0
                                 PFUREG	       1207        100.0
@@ -12,40 +12,58 @@ Report for cell mipi_3ch_top
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-                        uart_send_ctrl	          1        10.6
-                               uart_tx	          1         2.7
-                               uart_rx	          1         2.5
-  top_iic(IIC_CLK=26'b010011100010000)	          1        28.2
-                               csi2dsi	          1        23.1
+                        uart_send_ctrl	          1         9.5
+                               uart_tx	          1         2.4
+                               uart_rx	          1         2.4
+  top_iic(IIC_CLK=26'b010011100010000)	          1        29.3
+                               csi2dsi	          1        23.2
 ---------------------------------------------------
 Report for cell uart_tx
    Instance path: mipi_3ch_top/u_uart_tx
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      38.75         2.7
-                                  LUT4	      61.33         3.9
+                                  SLIC	      34.50         2.4
+                                  LUT4	      51.00         3.2
                                 PFUREG	         32         2.7
+                                RIPPLE	          7         2.7
+---------------------------------------------------
+Report for cell uart_send_ctrl
+   Instance path: mipi_3ch_top/u_send_ctrl
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     136.50         9.5
+                                  LUT4	     234.00        14.6
+                                PFUREG	         86         7.1
+                                RIPPLE	         14         5.5
+---------------------------------------------------
+Report for cell uart_rx
+   Instance path: mipi_3ch_top/u_uart_rx
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      35.33         2.4
+                                  LUT4	      33.00         2.1
+                                PFUREG	         41         3.4
                                 RIPPLE	          7         2.7
 ---------------------------------------------------
 Report for cell top_iic(IIC_CLK=26'b010011100010000)
    Instance path: mipi_3ch_top/u_top_iic
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     409.25        28.2
-                                  LUT4	     581.67        36.8
+                                  SLIC	     422.67        29.3
+                                  LUT4	     603.67        37.7
                                 PFUREG	        195        16.2
                                 RIPPLE	         42        16.5
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-                           ov9734_ctrl	          1        11.9
-i2c_drive(IIC_CLK=26'b010011100010000,DIV_FREQ_FACTOR=26'b01001110001000)	          1        16.3
+                           ov9734_ctrl	          1        11.6
+i2c_drive(IIC_CLK=26'b010011100010000,DIV_FREQ_FACTOR=26'b01001110001000)	          1        17.7
 ---------------------------------------------------
 Report for cell ov9734_ctrl
    Instance path: mipi_3ch_top/u_top_iic/inst_ov9734_ctrl
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     173.08        11.9
-                                  LUT4	     227.33        14.4
+                                  SLIC	     167.17        11.6
+                                  LUT4	     214.33        13.4
                                 PFUREG	        115         9.5
                                 RIPPLE	         28        11.0
 ---------------------------------------------------
@@ -53,57 +71,48 @@ Report for cell i2c_drive(IIC_CLK=26'b010011100010000,DIV_FREQ_FACTOR=26'b010011
    Instance path: mipi_3ch_top/u_top_iic/inst_i2c_drive
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     236.17        16.3
-                                  LUT4	     354.33        22.4
+                                  SLIC	     255.50        17.7
+                                  LUT4	     389.33        24.3
                                 PFUREG	         80         6.6
-                                RIPPLE	         14         5.5
----------------------------------------------------
-Report for cell uart_send_ctrl
-   Instance path: mipi_3ch_top/u_send_ctrl
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  SLIC	     153.25        10.6
-                                  LUT4	     231.67        14.6
-                                PFUREG	         86         7.1
                                 RIPPLE	         14         5.5
 ---------------------------------------------------
 Report for cell csi2dsi
    Instance path: mipi_3ch_top/u_csi2dsi
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     335.33        23.1
-                                  LUT4	     318.50        20.1
+                                  SLIC	     335.33        23.2
+                                  LUT4	     318.50        19.9
                                DISTRAM	       2.00        66.7
                                 PFUREG	        296        24.5
                                 RIPPLE	         68        26.7
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",WORD_ALIGN="ON",BYTECLK_MHZ=45,FIFO_TYPE="LUT")	          1        23.1
+csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",WORD_ALIGN="ON",BYTECLK_MHZ=45,FIFO_TYPE="LUT")	          1        23.2
 ---------------------------------------------------
 Report for cell csi2dsi_dphy_rx(RX_TYPE="CSI2",NUM_RX_LANE=1,RX_GEAR=8,RX_CLK_MODE="HS_ONLY",WORD_ALIGN="ON",BYTECLK_MHZ=45,FIFO_TYPE="LUT")
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     335.33        23.1
-                                  LUT4	     318.50        20.1
+                                  SLIC	     335.33        23.2
+                                  LUT4	     318.50        19.9
                                DISTRAM	       2.00        66.7
                                 PFUREG	        296        24.5
                                 RIPPLE	         68        26.7
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
+                  csi2dsi_capture_ctrl	          1         7.3
+                  csi2dsi_dphy_rx_wrap	          1        13.3
                 csi2dsi_rx_global_ctrl	          1         2.6
-                  csi2dsi_dphy_rx_wrap	          1        13.2
 csi2dsi_dphy_wrapper(RX_GEAR=8,NUM_RX_LANE=1)	          1         0.1
-                  csi2dsi_capture_ctrl	          1         7.2
 ---------------------------------------------------
 Report for cell csi2dsi_capture_ctrl
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     105.00         7.2
-                                  LUT4	      98.00         6.2
+                                  SLIC	     105.00         7.3
+                                  LUT4	      98.00         6.1
                                 PFUREG	        113         9.4
                                 RIPPLE	         27        10.6
 SUB MODULES
@@ -115,7 +124,7 @@ Report for cell capture_ctrl(NUM_RX_LANE=1,RX_GEAR=8,RX_TYPE="CSI2")
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                   SLIC	     104.00         7.2
-                                  LUT4	      96.00         6.1
+                                  LUT4	      96.00         6.0
                                 PFUREG	        113         9.4
                                 RIPPLE	         27        10.6
 ---------------------------------------------------
@@ -129,14 +138,14 @@ Report for cell csi2dsi_rx_global_ctrl
                                 RIPPLE	          9         3.5
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-rx_global_ctrl(NUM_RX_LANE=1,BYTECLK_MHZ=45,RX_CLK_MODE="HS_ONLY",SETTLEPER=9)	          1         2.5
+rx_global_ctrl(NUM_RX_LANE=1,BYTECLK_MHZ=45,RX_CLK_MODE="HS_ONLY",SETTLEPER=5)	          1         2.6
 ---------------------------------------------------
-Report for cell rx_global_ctrl(NUM_RX_LANE=1,BYTECLK_MHZ=45,RX_CLK_MODE="HS_ONLY",SETTLEPER=9)
+Report for cell rx_global_ctrl(NUM_RX_LANE=1,BYTECLK_MHZ=45,RX_CLK_MODE="HS_ONLY",SETTLEPER=5)
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      37.00         2.5
-                                  LUT4	      40.50         2.6
+                                  SLIC	      37.00         2.6
+                                  LUT4	      40.50         2.5
                                 PFUREG	         34         2.8
                                 RIPPLE	          9         3.5
 SUB MODULES
@@ -155,22 +164,22 @@ Report for cell csi2dsi_dphy_rx_wrap
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     192.00        13.2
-                                  LUT4	     178.00        11.3
+                                  SLIC	     192.00        13.3
+                                  LUT4	     178.00        11.1
                                DISTRAM	       2.00        66.7
                                 PFUREG	        149        12.3
                                 RIPPLE	         32        12.5
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-dphy_rx_wrap(NUM_RX_LANE=1,RX_GEAR=8,DPHY_RX_IP="MIXEL",WORD_ALIGN="ON",RX_CLK_MODE="HS_ONLY",BYTECLK_MHZ=45,FIFO_TYPE="LUT",RX_FIFO_DEPTH=32,RX_FIFO_CTR_WIDTH=1)	          1        13.2
+dphy_rx_wrap(NUM_RX_LANE=1,RX_GEAR=8,DPHY_RX_IP="MIXEL",WORD_ALIGN="ON",RX_CLK_MODE="HS_ONLY",BYTECLK_MHZ=45,FIFO_TYPE="LUT",RX_FIFO_DEPTH=32,RX_FIFO_CTR_WIDTH=1)	          1        13.3
 ---------------------------------------------------
 Report for cell dphy_rx_wrap(NUM_RX_LANE=1,RX_GEAR=8,DPHY_RX_IP="MIXEL",WORD_ALIGN="ON",RX_CLK_MODE="HS_ONLY",BYTECLK_MHZ=45,FIFO_TYPE="LUT",RX_FIFO_DEPTH=32,RX_FIFO_CTR_WIDTH=1)
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	     191.50        13.2
-                                  LUT4	     177.00        11.2
+                                  SLIC	     191.50        13.3
+                                  LUT4	     177.00        11.1
                                DISTRAM	       2.00        66.7
                                 PFUREG	        149        12.3
                                 RIPPLE	         32        12.5
@@ -178,21 +187,21 @@ Report for cell dphy_rx_wrap(NUM_RX_LANE=1,RX_GEAR=8,DPHY_RX_IP="MIXEL",WORD_ALI
 SUB MODULES
                                   cell	      count    SLC Usage(%)
 word_align(DPHY_RX_IP="MIXEL",NUM_RX_LANE=1,BYTECLK_MHZ=45)	          1         6.3
-rx_fifo(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)	          1         6.8
+rx_fifo(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)	          1         6.9
 ---------------------------------------------------
 Report for cell word_align(DPHY_RX_IP="MIXEL",NUM_RX_LANE=1,BYTECLK_MHZ=45)
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                   SLIC	      91.00         6.3
-                                  LUT4	     126.00         8.0
+                                  LUT4	     126.00         7.9
                                 PFUREG	         37         3.1
 ---------------------------------------------------
 Report for cell rx_fifo(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      99.00         6.8
+                                  SLIC	      99.00         6.9
                                   LUT4	      51.00         3.2
                                DISTRAM	       2.00        66.7
                                 PFUREG	        109         9.0
@@ -200,13 +209,13 @@ Report for cell rx_fifo(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-rx_fifo_queue(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)	          1         6.8
+rx_fifo_queue(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)	          1         6.9
 ---------------------------------------------------
 Report for cell rx_fifo_queue(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  SLIC	      99.00         6.8
+                                  SLIC	      99.00         6.9
                                   LUT4	      51.00         3.2
                                DISTRAM	       2.00        66.7
                                 PFUREG	        109         9.0
@@ -214,15 +223,15 @@ Report for cell rx_fifo_queue(NUM_RX_LANE=1,FR_FIFO_DEPTH=32,CTR_WIDTH=1)
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    SLC Usage(%)
-        pmi_fifo_dcLLan13044411fbeaa5d	          1         2.4
     pmi_fifo_dcELar131032323288fe06152	          1         3.5
+        pmi_fifo_dcLLan13044411fbeaa5d	          1         2.4
 ---------------------------------------------------
 Report for cell pmi_fifo_dcLLan13044411fbeaa5d
    Instance path: mipi_3ch_top/u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                   SLIC	      35.33         2.4
-                                  LUT4	      13.50         0.9
+                                  LUT4	      13.50         0.8
                                DISTRAM	       2.00        66.7
                                 PFUREG	         33         2.7
                                 RIPPLE	         14         5.5
@@ -243,12 +252,3 @@ Report for cell csi2dsi_dphy_wrapper(RX_GEAR=8,NUM_RX_LANE=1)
                                   cell	      count    Res Usage(%)
                                   SLIC	       1.00         0.1
                                   LUT4	       1.00         0.1
----------------------------------------------------
-Report for cell uart_rx
-   Instance path: mipi_3ch_top/u_uart_rx
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  SLIC	      36.33         2.5
-                                  LUT4	      33.00         2.1
-                                PFUREG	         41         3.4
-                                RIPPLE	          7         2.7

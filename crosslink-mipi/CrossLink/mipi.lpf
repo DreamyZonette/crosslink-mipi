@@ -46,4 +46,3 @@ FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
 
 LOCATE COMP "xshutdn_0" SITE "F10" ;
 IOBUF PORT "xshutdn_0" IO_TYPE=LVCMOS33 ;
-LOCATE COMP "u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst" SITE "MIPIDPHY0";

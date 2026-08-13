@@ -20,8 +20,8 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>D:/project/crosslink-mipi/crosslink-mipi/CrossLink/impl1/mipi_impl1.bit</File>
-			<FileTime>08/12/26 18:20:28</FileTime>
-			<JedecChecksum>0xAD2F</JedecChecksum>
+			<FileTime>08/13/26 10:57:54</FileTime>
+			<JedecChecksum>0x5A0B</JedecChecksum>
 			<Operation>Fast Program</Operation>
 			<Option>
 				<SVFVendor>JTAG STANDARD</SVFVendor>

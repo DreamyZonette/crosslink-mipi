@@ -22,7 +22,7 @@ Setup and Hold Report
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.13.0.56.2</big></U></B>
-Wed Aug 12 18:20:16 2026
+Thu Aug 13 10:57:42 2026
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -41,8 +41,8 @@ Report level:    verbose report, limited to 1 item per preference
 
 <A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<LI><A href='#map_twr_pref_0_0' Target='right'>FREQUENCY NET "csi_clk_byte" 45.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
-Report:  173.732MHz is the maximum frequency for this preference.
+<LI><A href='#map_twr_pref_0_0' Target='right'>FREQUENCY NET "csi_clk_byte" 45.000000 MHz (0 errors)</A></LI>            189 items scored, 0 timing errors detected.
+Report:  266.951MHz is the maximum frequency for this preference.
 
 <LI><A href='#map_twr_pref_0_1' Target='right'>FREQUENCY NET "sys_clk_c" 50.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
 Report:  182.017MHz is the maximum frequency for this preference.
@@ -55,48 +55,36 @@ BLOCK RESETPATHS
 
 ================================================================================
 <A name="map_twr_pref_0_0"></A>Preference: FREQUENCY NET "csi_clk_byte" 45.000000 MHz ;
-            4096 items scored, 0 timing errors detected.
+            189 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Passed: The following path meets requirements by 16.466ns
+Passed: The following path meets requirements by 9.238ns (weighted slack = 18.476ns)
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/bd0_shift1_r_i4  (from csi_clk_byte +)
-   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/bd0_sync_r__i0  (to csi_clk_byte +)
+   Source:         MIPIDPHYA  Port           u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy(ASIC)  (from csi_clk_byte -)
+   Destination:    DP8KE      Port           u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0(ASIC)  (to csi_clk_byte +)
 
-   Delay:               5.337ns  (35.6% logic, 64.4% route), 7 logic levels.
+   Delay:               0.969ns  (40.9% logic, 59.1% route), 1 logic levels.
 
  Constraint Details:
 
-      5.337ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_596 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_504 meets
-     22.222ns delay constraint less
-      0.419ns DIN_SET requirement (totaling 21.803ns) by 16.466ns
+      0.969ns physical path delay u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0 meets
+     11.111ns delay constraint less
+      0.904ns DATA_SET requirement (totaling 10.207ns) by 9.238ns
 
  Physical Path Details:
 
-      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_596 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_504:
+      Data path u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.422 *SLICE_596.CLK to */SLICE_596.Q0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_596 (from csi_clk_byte)
-ROUTE         8   e 0.573 */SLICE_596.Q0 to *SLICE_1458.A0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/bd0_shift1_r[4]
-CTOF_DEL    ---     0.202 *SLICE_1458.A0 to *SLICE_1458.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_1458
-ROUTE         1   e 0.573 *SLICE_1458.F0 to */SLICE_913.C0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/n1413
-CTOOFX_DEL  ---     0.334 */SLICE_913.C0 to *LICE_913.OFX0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/i257/SLICE_913
-ROUTE        13   e 0.573 *LICE_913.OFX0 to *SLICE_1426.C0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/n204
-CTOF_DEL    ---     0.202 *SLICE_1426.C0 to *SLICE_1426.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_1426
-ROUTE         1   e 0.573 *SLICE_1426.F0 to *SLICE_1215.A0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/n451
-CTOF_DEL    ---     0.202 *SLICE_1215.A0 to *SLICE_1215.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_1215
-ROUTE         1   e 0.573 *SLICE_1215.F0 to */SLICE_896.B1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/n465
-CTOOFX_DEL  ---     0.334 */SLICE_896.B1 to *LICE_896.OFX0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/i77/SLICE_896
-ROUTE         1   e 0.573 *LICE_896.OFX0 to */SLICE_504.D0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/n64
-CTOF_DEL    ---     0.202 */SLICE_504.D0 to */SLICE_504.F0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/SLICE_504
-ROUTE         1   e 0.001 */SLICE_504.F0 to *SLICE_504.DI0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/n16 (to csi_clk_byte)
+C2Q_DEL     ---     0.396 *hy.HSBYTECLKD to *y.D0HSRXDATA6 u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy
+ROUTE         1   e 0.573 *y.D0HSRXDATA6 to *am_0_0_0.DIA6 u_csi2dsi/dphy_rx_inst/bd0_w_6 (to csi_clk_byte)
                   --------
-                    5.337   (35.6% logic, 64.4% route), 7 logic levels.
+                    0.969   (40.9% logic, 59.1% route), 1 logic levels.
 
-Report:  173.732MHz is the maximum frequency for this preference.
+Report:  266.951MHz is the maximum frequency for this preference.
 
 
 ================================================================================
@@ -110,35 +98,35 @@ Passed: The following path meets requirements by 14.506ns
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
    Source:         FF         Q              u_top_iic/inst_ov9734_ctrl/wait_cnt_i8  (from sys_clk_c +)
-   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/addr_i2  (to sys_clk_c +)
+   Destination:    FF         Data in        u_top_iic/inst_ov9734_ctrl/wait_cnt_i19  (to sys_clk_c +)
 
    Delay:               5.073ns  (32.2% logic, 67.8% route), 7 logic levels.
 
  Constraint Details:
 
-      5.073ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_769 to u_top_iic/inst_ov9734_ctrl/SLICE_691 meets
+      5.073ns physical path delay u_top_iic/inst_ov9734_ctrl/SLICE_761 to u_top_iic/inst_ov9734_ctrl/SLICE_766 meets
      20.000ns delay constraint less
       0.421ns DIN_SET requirement (totaling 19.579ns) by 14.506ns
 
  Physical Path Details:
 
-      Data path u_top_iic/inst_ov9734_ctrl/SLICE_769 to u_top_iic/inst_ov9734_ctrl/SLICE_691:
+      Data path u_top_iic/inst_ov9734_ctrl/SLICE_761 to u_top_iic/inst_ov9734_ctrl/SLICE_766:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.422 *SLICE_769.CLK to */SLICE_769.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_769 (from sys_clk_c)
-ROUTE         4   e 0.573 */SLICE_769.Q0 to *SLICE_1289.C1 u_top_iic/inst_ov9734_ctrl/wait_cnt_8
-CTOF_DEL    ---     0.202 *SLICE_1289.C1 to *SLICE_1289.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1289
-ROUTE         1   e 0.573 *SLICE_1289.F1 to *SLICE_1116.A0 u_top_iic/inst_ov9734_ctrl/n16838
-CTOF_DEL    ---     0.202 *SLICE_1116.A0 to *SLICE_1116.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1116
-ROUTE         1   e 0.573 *SLICE_1116.F0 to *SLICE_1114.B0 u_top_iic/inst_ov9734_ctrl/n16862
-CTOF_DEL    ---     0.202 *SLICE_1114.B0 to *SLICE_1114.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1114
-ROUTE         2   e 0.573 *SLICE_1114.F0 to *SLICE_1100.B1 u_top_iic/inst_ov9734_ctrl/n45_adj_1524
-CTOF_DEL    ---     0.202 *SLICE_1100.B1 to *SLICE_1100.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1100
-ROUTE         7   e 0.573 *SLICE_1100.F1 to *SLICE_1309.B0 u_top_iic/inst_ov9734_ctrl/n19450
-CTOF_DEL    ---     0.202 *SLICE_1309.B0 to *SLICE_1309.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1309
-ROUTE         1   e 0.573 *SLICE_1309.F0 to */SLICE_691.C1 u_top_iic/inst_ov9734_ctrl/n2355
-CTOF_DEL    ---     0.202 */SLICE_691.C1 to */SLICE_691.F1 u_top_iic/inst_ov9734_ctrl/SLICE_691
-ROUTE         1   e 0.001 */SLICE_691.F1 to *SLICE_691.DI1 u_top_iic/inst_ov9734_ctrl/addr_15_N_455_2 (to sys_clk_c)
+REG_DEL     ---     0.422 *SLICE_761.CLK to */SLICE_761.Q0 u_top_iic/inst_ov9734_ctrl/SLICE_761 (from sys_clk_c)
+ROUTE         4   e 0.573 */SLICE_761.Q0 to *SLICE_1312.C1 u_top_iic/inst_ov9734_ctrl/wait_cnt_8
+CTOF_DEL    ---     0.202 *SLICE_1312.C1 to *SLICE_1312.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1312
+ROUTE         1   e 0.573 *SLICE_1312.F1 to *SLICE_1125.A0 u_top_iic/inst_ov9734_ctrl/n16423
+CTOF_DEL    ---     0.202 *SLICE_1125.A0 to *SLICE_1125.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1125
+ROUTE         1   e 0.573 *SLICE_1125.F0 to *SLICE_1124.B0 u_top_iic/inst_ov9734_ctrl/n16447
+CTOF_DEL    ---     0.202 *SLICE_1124.B0 to *SLICE_1124.F0 u_top_iic/inst_ov9734_ctrl/SLICE_1124
+ROUTE         2   e 0.573 *SLICE_1124.F0 to *SLICE_1116.B1 u_top_iic/inst_ov9734_ctrl/n45_adj_1496
+CTOF_DEL    ---     0.202 *SLICE_1116.B1 to *SLICE_1116.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1116
+ROUTE         5   e 0.573 *SLICE_1116.F1 to *SLICE_1112.A1 u_top_iic/inst_ov9734_ctrl/n19239
+CTOF_DEL    ---     0.202 *SLICE_1112.A1 to *SLICE_1112.F1 u_top_iic/inst_ov9734_ctrl/SLICE_1112
+ROUTE        23   e 0.573 *SLICE_1112.F1 to */SLICE_766.B1 u_top_iic/inst_ov9734_ctrl/n7926
+CTOF_DEL    ---     0.202 */SLICE_766.B1 to */SLICE_766.F1 u_top_iic/inst_ov9734_ctrl/SLICE_766
+ROUTE         1   e 0.001 */SLICE_766.F1 to *SLICE_766.DI1 u_top_iic/inst_ov9734_ctrl/wait_cnt_22_N_520_19 (to sys_clk_c)
                   --------
                     5.073   (32.2% logic, 67.8% route), 7 logic levels.
 
@@ -151,7 +139,7 @@ Preference                              |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
 FREQUENCY NET "csi_clk_byte" 45.000000  |             |             |
-MHz ;                                   |   45.000 MHz|  173.732 MHz|   7  
+MHz ;                                   |   45.000 MHz|  266.951 MHz|   1  
                                         |             |             |
 FREQUENCY NET "sys_clk_c" 50.000000 MHz |             |             |
 ;                                       |   50.000 MHz|  182.017 MHz|   7  
@@ -167,14 +155,14 @@ All preferences were met.
 
 Found 4 clocks:
 
-Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/SLICE_739.Q0   Loads: 35
+Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_730.Q0   Loads: 35
    No transfer within this clock domain is found
 
-Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 397
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 390
    Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
 
    Data transfers from:
-   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/SLICE_739.Q0
+   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_730.Q0
       Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;   Transfers: 27
 
    Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
@@ -183,10 +171,10 @@ Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 397
    Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD
       Not reported because source and destination domains are unrelated.
 
-Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 89
+Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 225
    No transfer within this clock domain is found
 
-Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 173
+Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 36
    Covered under: FREQUENCY NET "csi_clk_byte" 45.000000 MHz ;
 
    Data transfers from:
@@ -203,11 +191,11 @@ Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL
 Timing errors: 0  Score: 0
 Cumulative negative slack: 0
 
-Constraints cover 26184 paths, 2 nets, and 7188 connections (79.99% coverage)
+Constraints cover 13987 paths, 2 nets, and 7357 connections (81.63% coverage)
 
 --------------------------------------------------------------------------------
 <A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.13.0.56.2</big></U></B>
-Wed Aug 12 18:20:16 2026
+Thu Aug 13 10:57:42 2026
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -226,11 +214,11 @@ Report level:    verbose report, limited to 1 item per preference
 
 <A name="mtw1_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
 
-<FONT COLOR=red><LI><A href='#map_twr_pref_1_0' Target='right'><FONT COLOR=red>FREQUENCY NET "csi_clk_byte" 45.000000 MHz (54 errors)</FONT></A></LI>
-</FONT>            4096 items scored, 54 timing errors detected.
+<FONT COLOR=red><LI><A href='#map_twr_pref_1_0' Target='right'><FONT COLOR=red>FREQUENCY NET "csi_clk_byte" 45.000000 MHz (13 errors)</FONT></A></LI>
+</FONT>            189 items scored, 13 timing errors detected.
 
-<FONT COLOR=red><LI><A href='#map_twr_pref_1_1' Target='right'><FONT COLOR=red>FREQUENCY NET "sys_clk_c" 50.000000 MHz (104 errors)</FONT></A></LI>
-</FONT>            4096 items scored, 104 timing errors detected.
+<FONT COLOR=red><LI><A href='#map_twr_pref_1_1' Target='right'><FONT COLOR=red>FREQUENCY NET "sys_clk_c" 50.000000 MHz (102 errors)</FONT></A></LI>
+</FONT>            4096 items scored, 102 timing errors detected.
 
 BLOCK ASYNCPATHS
 BLOCK RESETPATHS
@@ -240,39 +228,39 @@ BLOCK RESETPATHS
 
 ================================================================================
 <A name="map_twr_pref_1_0"></A>Preference: FREQUENCY NET "csi_clk_byte" 45.000000 MHz ;
-            4096 items scored, 54 timing errors detected.
+            189 items scored, 13 timing errors detected.
 --------------------------------------------------------------------------------
 
 
-Error: The following path exceeds requirements by 0.771ns
+Error: The following path exceeds requirements by 0.114ns
 
  Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
 
-   Source:         FF         Q              reset_byte_sync_i1  (from csi_clk_byte +)
-   Destination:    DP8KE      Port           u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0(ASIC)  (to csi_clk_byte +)
+   Source:         FF         Q              u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/hs_d_en_stb_meta_r_44  (from csi_clk_byte +)
+   Destination:    FF         Data in        u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/hs_d_en_stb_r_45  (to csi_clk_byte +)
 
-   Delay:               0.341ns  (41.6% logic, 58.4% route), 1 logic levels.
+   Delay:               0.199ns  (70.9% logic, 29.1% route), 1 logic levels.
 
  Constraint Details:
 
-      0.341ns physical path delay SLICE_468 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0 exceeds
-      1.112ns LSRREC_HLD and
-      0.000ns delay constraint requirement (totaling 1.112ns) by 0.771ns
+      0.199ns physical path delay u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_609 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_609 exceeds
+      0.313ns M_HLD and
+      0.000ns delay constraint requirement (totaling 0.313ns) by 0.114ns
 
  Physical Path Details:
 
-      Data path SLICE_468 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/pdp_ram_0_0_0:
+      Data path u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_609 to u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_609:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.142  SLICE_468.CLK to   SLICE_468.Q0 SLICE_468 (from csi_clk_byte)
-ROUTE       243   e 0.199   SLICE_468.Q0 to *am_0_0_0.RSTB reset_byte_sync_1 (to csi_clk_byte)
+REG_DEL     ---     0.141 *SLICE_609.CLK to */SLICE_609.Q1 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/SLICE_609 (from csi_clk_byte)
+ROUTE         1   e 0.058 */SLICE_609.Q1 to */SLICE_609.M0 u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/hs_d_en_stb_meta_r (to csi_clk_byte)
                   --------
-                    0.341   (41.6% logic, 58.4% route), 1 logic levels.
+                    0.199   (70.9% logic, 29.1% route), 1 logic levels.
 
 
 ================================================================================
 <A name="map_twr_pref_1_1"></A>Preference: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
-            4096 items scored, 104 timing errors detected.
+            4096 items scored, 102 timing errors detected.
 --------------------------------------------------------------------------------
 
 
@@ -287,17 +275,17 @@ Error: The following path exceeds requirements by 0.100ns
 
  Constraint Details:
 
-      0.200ns physical path delay SLICE_451 to SLICE_451 exceeds
+      0.200ns physical path delay SLICE_448 to SLICE_448 exceeds
       0.300ns M_HLD and
       0.000ns delay constraint requirement (totaling 0.300ns) by 0.100ns
 
  Physical Path Details:
 
-      Data path SLICE_451 to SLICE_451:
+      Data path SLICE_448 to SLICE_448:
 
    Name    Fanout   Delay (ns)          Site               Resource
-REG_DEL     ---     0.142  SLICE_451.CLK to   SLICE_451.Q0 SLICE_451 (from sys_clk_c)
-ROUTE         1   e 0.058   SLICE_451.Q0 to   SLICE_451.M1 dphy_hs_d_en_s1 (to sys_clk_c)
+REG_DEL     ---     0.142  SLICE_448.CLK to   SLICE_448.Q0 SLICE_448 (from sys_clk_c)
+ROUTE         1   e 0.058   SLICE_448.Q0 to   SLICE_448.M1 dphy_hs_d_en_s1 (to sys_clk_c)
                   --------
                     0.200   (71.0% logic, 29.0% route), 1 logic levels.
 
@@ -308,7 +296,7 @@ Preference(MIN Delays)                  |   Constraint|       Actual|Levels
 ----------------------------------------------------------------------------
                                         |             |             |
 FREQUENCY NET "csi_clk_byte" 45.000000  |             |             |
-MHz ;                                   |     0.000 ns|    -0.771 ns|   1 *
+MHz ;                                   |     0.000 ns|    -0.114 ns|   1 *
                                         |             |             |
 FREQUENCY NET "sys_clk_c" 50.000000 MHz |             |             |
 ;                                       |     0.000 ns|    -0.100 ns|   1 *
@@ -326,14 +314,14 @@ No net is responsible for more than 10% of the timing errors.
 
 Found 4 clocks:
 
-Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/SLICE_739.Q0   Loads: 35
+Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_730.Q0   Loads: 35
    No transfer within this clock domain is found
 
-Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 397
+Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 390
    Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;
 
    Data transfers from:
-   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/SLICE_739.Q0
+   Clock Domain: u_top_iic/inst_i2c_drive/drive_clk   Source: u_top_iic/inst_i2c_drive/SLICE_730.Q0
       Covered under: FREQUENCY NET "sys_clk_c" 50.000000 MHz ;   Transfers: 27
 
    Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE
@@ -342,10 +330,10 @@ Clock Domain: sys_clk_c   Source: sys_clk.PAD   Loads: 397
    Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD
       Not reported because source and destination domains are unrelated.
 
-Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 89
+Clock Domain: csi_clk_byte_hs   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.CLKHSBYTE   Loads: 225
    No transfer within this clock domain is found
 
-Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 173
+Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy.HSBYTECLKD   Loads: 36
    Covered under: FREQUENCY NET "csi_clk_byte" 45.000000 MHz ;
 
    Data transfers from:
@@ -359,19 +347,19 @@ Clock Domain: csi_clk_byte   Source: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL
 <A name="mtw1_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
 ---------------
 
-Timing errors: 158  Score: 9635
-Cumulative negative slack: 9635
+Timing errors: 115  Score: 5931
+Cumulative negative slack: 5931
 
-Constraints cover 26184 paths, 2 nets, and 7442 connections (82.82% coverage)
+Constraints cover 13987 paths, 2 nets, and 7594 connections (84.26% coverage)
 
 
 
 <A name="mtw1_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
 ---------------
 
-Timing errors: 0 (setup), 158 (hold)
-Score: 0 (setup), 9635 (hold)
-Cumulative negative slack: 9635 (0+9635)
+Timing errors: 0 (setup), 115 (hold)
+Score: 0 (setup), 5931 (hold)
+Cumulative negative slack: 5931 (0+5931)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------

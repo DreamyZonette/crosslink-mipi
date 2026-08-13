@@ -16,8 +16,8 @@ CoreRevision=1.6
 ModuleName=csi2dsi
 SourceFormat=Verilog
 ParameterFileVersion=1.4
-Date=08/12/2026
-Time=18:14:42
+Date=08/13/2026
+Time=10:43:50
 
 [Parameters]
 numrxch=1
@@ -54,7 +54,7 @@ CORE_SYNP=0
 txgear=1
 tgtpixclkint=15.0000
 parser=ON
-settleper=9
+settleper=5
 fifotype=LUT
 expsettleper=5
 rxfifotype=EBR

@@ -465,7 +465,7 @@
             <lattice:device>LIF-MD6000-6KMG80I</lattice:device>
             <lattice:synthesis>lse</lattice:synthesis>
             <lattice:date>2026-08-07.14:34:52</lattice:date>
-            <lattice:modified>2026-08-12.18:15:01</lattice:modified>
+            <lattice:modified>2026-08-13.10:44:54</lattice:modified>
             <lattice:diamond>3.13.0.56.2</lattice:diamond>
             <lattice:language>Verilog</lattice:language>
             <lattice:attributes>
@@ -1029,7 +1029,7 @@
                     <spirit:vendorExtensions>
                         <lattice:synthesis>lse</lattice:synthesis>
                         <lattice:date>22-04-16.00:00:00</lattice:date>
-                        <lattice:modified>2026-08-12.18:15:01</lattice:modified>
+                        <lattice:modified>2026-08-13.10:44:54</lattice:modified>
                         <lattice:attributes>
                             <lattice:attribute lattice:name="AddComponent">false</lattice:attribute>
                             <lattice:attribute lattice:name="Change4to5">false</lattice:attribute>
@@ -1096,7 +1096,7 @@
                             </lattice:lpcentry>
                             <lattice:lpcentry>
                                 <lattice:lpckey>Date</lattice:lpckey>
-                                <lattice:lpcvalue lattice:resolve="constant">08/12/2026</lattice:lpcvalue>
+                                <lattice:lpcvalue lattice:resolve="constant">08/13/2026</lattice:lpcvalue>
                             </lattice:lpcentry>
                             <lattice:lpcentry>
                                 <lattice:lpckey>ModuleName</lattice:lpckey>
@@ -1112,7 +1112,7 @@
                             </lattice:lpcentry>
                             <lattice:lpcentry>
                                 <lattice:lpckey>Time</lattice:lpckey>
-                                <lattice:lpcvalue lattice:resolve="constant">18:14:42</lattice:lpcvalue>
+                                <lattice:lpcvalue lattice:resolve="constant">10:43:50</lattice:lpcvalue>
                             </lattice:lpcentry>
                             <lattice:lpcentry>
                                 <lattice:lpckey>VendorName</lattice:lpckey>
@@ -1249,7 +1249,7 @@
                             </lattice:lpcentry>
                             <lattice:lpcentry>
                                 <lattice:lpckey>settleper</lattice:lpckey>
-                                <lattice:lpcvalue lattice:resolve="constant">9</lattice:lpcvalue>
+                                <lattice:lpcvalue lattice:resolve="constant">5</lattice:lpcvalue>
                             </lattice:lpcentry>
                             <lattice:lpcentry>
                                 <lattice:lpckey>tgtbyteclk</lattice:lpckey>

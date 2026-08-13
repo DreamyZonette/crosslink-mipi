@@ -44,14 +44,6 @@
     </Task>
     <Task name="Map">
         <Message>
-            <ID>1100679</ID>
-            <Severity>Warning</Severity>
-            <Dynamic>D:/project/crosslink-mipi/crosslink-mipi/CrossLink/mipi.lpf(49): Semantic error in &quot;LOCATE COMP &quot;u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst&quot; SITE &quot;MIPIDPHY0&quot; ;&quot;: </Dynamic>
-            <Dynamic>u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst</Dynamic>
-            <Navigation>D:/project/crosslink-mipi/crosslink-mipi/CrossLink/mipi.lpf</Navigation>
-            <Navigation>49</Navigation>
-        </Message>
-        <Message>
             <ID>51001030</ID>
             <Severity>Warning</Severity>
             <Dynamic>sys_rst_n_N_472</Dynamic>
@@ -85,10 +77,10 @@
         <Message>
             <ID>35901018</ID>
             <Severity>Info</Severity>
-            <Dynamic>d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/ov9734_ctrl.v(3): </Dynamic>
+            <Dynamic>d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/ov9734_ctrl.v(2): </Dynamic>
             <Dynamic>ov9734_ctrl</Dynamic>
             <Navigation>d:/project/crosslink-mipi/crosslink-mipi/crosslink/impl1/source/ov9734_ctrl.v</Navigation>
-            <Navigation>3</Navigation>
+            <Navigation>2</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -309,6 +301,13 @@
         <Message>
             <ID>35001611</ID>
             <Severity>Warning</Severity>
+        </Message>
+        <Message>
+            <ID>1166052</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>logical</Dynamic>
+            <Dynamic>reset_byte_sync_1</Dynamic>
+            <Navigation>reset_byte_sync_1</Navigation>
         </Message>
         <Message>
             <ID>1166052</ID>
@@ -796,7 +795,7 @@
         <Message>
             <ID>1163101</ID>
             <Severity>Warning</Severity>
-            <Dynamic>69</Dynamic>
+            <Dynamic>70</Dynamic>
         </Message>
     </Task>
     <Task name="Jedecgen">

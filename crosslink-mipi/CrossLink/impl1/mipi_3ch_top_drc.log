@@ -13,6 +13,7 @@ Loading NGO design 'D:/project/crosslink-mipi/crosslink-mipi/CrossLink/theips/cs
 
 Running DRC...
 
+WARNING - synthesis: logical net 'reset_byte_sync_1' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/bd3_0' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_p' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/lp_clk_rx_n' has no load.
@@ -82,10 +83,10 @@ WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.captu
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[2]' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[1]' has no load.
 WARNING - synthesis: logical net 'u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/ecc_o[0]' has no load.
-WARNING - synthesis: DRC complete with 69 warnings.
+WARNING - synthesis: DRC complete with 70 warnings.
 
 Design Results:
-   3077 blocks expanded
+   3103 blocks expanded
 completed the first expansion
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file mipi_impl1.ngd.

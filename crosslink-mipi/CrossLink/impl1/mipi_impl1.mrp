@@ -15,7 +15,7 @@ Target Vendor:  LATTICE
 Target Device:  LIF-MD6000CKFBGA80
 Target Performance:   6
 Mapper:  sn5w00,  version:  Diamond (64-bit) 3.13.0.56.2
-Mapped on:  08/12/26  18:20:15
+Mapped on:  08/13/26  10:57:41
 
 Design Summary
 --------------
@@ -23,12 +23,12 @@ Design Summary
    Number of registers:   1207 out of  6047 (20%)
       PFU registers:         1207 out of  5936 (20%)
       PIO registers:            0 out of   111 (0%)
-   Number of SLICEs:      1452 out of  2968 (49%)
-      SLICEs as Logic/ROM:   1449 out of  2968 (49%)
+   Number of SLICEs:      1444 out of  2968 (49%)
+      SLICEs as Logic/ROM:   1441 out of  2968 (49%)
       SLICEs as RAM:            3 out of  2226 (0%)
       SLICEs as Carry:        255 out of  2968 (9%)
-   Number of LUT4s:        2098 out of  5936 (35%)
-      Number used as logic LUTs:        1582
+   Number of LUT4s:        2116 out of  5936 (36%)
+      Number used as logic LUTs:        1600
       Number used as distributed RAM:     6
       Number used as ripple logic:      510
       Number used as shift registers:     0
@@ -57,7 +57,7 @@ Design Summary
       2. Number of logic LUT4s does not include count of distributed RAM and
      ripple logic.
    Number of clocks:  6
-     Net sys_clk_c: 397 loads, 397 rising, 0 falling (Driver: PIO sys_clk )
+     Net sys_clk_c: 390 loads, 390 rising, 0 falling (Driver: PIO sys_clk )
      Net u_top_iic/inst_i2c_drive/drive_clk: 34 loads, 34 rising, 0 falling
      (Driver: u_top_iic/inst_i2c_drive/drive_clk_259 )
 
@@ -66,39 +66,48 @@ Design Summary
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Design Summary (cont)
 ---------------------
-     Net csi_clk_byte_hs: 89 loads, 89 rising, 0 falling (Driver:
+     Net csi_clk_byte_hs: 225 loads, 225 rising, 0 falling (Driver:
      u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy )
-     Net csi_clk_byte: 173 loads, 173 rising, 0 falling (Driver:
+     Net csi_clk_byte: 36 loads, 36 rising, 0 falling (Driver:
      u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy )
      Net mipi_rcn_0: 0 loads, 0 rising, 0 falling (No Driver)
      Net mipi_rcp_0: 0 loads, 0 rising, 0 falling (No Driver)
    Number of Clock Enables:  56
      Net u_uart_tx/bit_flag: 1 loads, 1 LSLICEs
-     Net u_uart_tx/sys_clk_c_enable_233: 9 loads, 9 LSLICEs
-     Net sys_clk_c_enable_143: 3 loads, 3 LSLICEs
+     Net u_uart_tx/sys_clk_c_enable_236: 9 loads, 9 LSLICEs
      Net xshutdn_r: 1 loads, 1 LSLICEs
-     Net sys_clk_c_enable_157: 11 loads, 11 LSLICEs
-     Net sys_clk_c_enable_150: 11 loads, 11 LSLICEs
-     Net csi_long_packet_count_31__N_384: 28 loads, 28 LSLICEs
-     Net sys_clk_c_enable_229: 13 loads, 13 LSLICEs
+     Net sys_clk_c_enable_147: 11 loads, 11 LSLICEs
      Net csi_hs_sync_count_31__N_349: 17 loads, 17 LSLICEs
+     Net sys_clk_c_enable_123: 11 loads, 11 LSLICEs
+     Net csi_long_packet_count_31__N_384: 28 loads, 28 LSLICEs
+     Net sys_clk_c_enable_233: 13 loads, 13 LSLICEs
+     Net sys_clk_c_enable_188: 1 loads, 1 LSLICEs
      Net csi_dt_c_4: 17 loads, 17 LSLICEs
-     Net sys_clk_c_enable_187: 1 loads, 1 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_105: 4 loads, 4 LSLICEs
+     Net u_send_ctrl/tx_flag_N_1347: 4 loads, 4 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_145: 2 loads, 2 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_144: 1 loads, 1 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_143: 3 loads, 3 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_140: 3 loads, 3 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_135: 4 loads, 4 LSLICEs
+     Net u_send_ctrl/sys_clk_c_enable_193: 21 loads, 21 LSLICEs
+     Net u_uart_rx/rx_data_7__N_1455: 4 loads, 4 LSLICEs
+     Net u_uart_rx/rx_flag_adj_1502: 4 loads, 4 LSLICEs
+     Net u_uart_rx/bit_flag: 2 loads, 2 LSLICEs
      Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_98: 9 loads, 9 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_105: 4 loads, 4 LSLICEs
      Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_82: 12 loads, 12 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_218: 1 loads, 1 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_181: 7 loads, 7 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_119: 1 loads, 1 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_198: 6 loads, 6 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_217: 10 loads, 10 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_189: 1 loads, 1 LSLICEs
-     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_225: 8 loads, 8 LSLICEs
-     Net u_top_iic/sys_clk_c_enable_54: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_230: 9 loads, 9 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_229: 8 loads, 8 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_200: 6 loads, 6 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_219: 10 loads, 10 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_220: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_186: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_ov9734_ctrl/sys_clk_c_enable_191: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_9: 1 loads, 1 LSLICEs
      Net u_top_iic/inst_i2c_drive/cnt_scl_4: 4 loads, 4 LSLICEs
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_28: 4 loads, 4 LSLICEs
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_2: 1 loads, 1 LSLICEs
@@ -106,36 +115,30 @@ Design Summary (cont)
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_31: 2 loads, 2 LSLICEs
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_5: 1 loads, 1 LSLICEs
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_21: 4 loads, 4 LSLICEs
+     Net u_top_iic/inst_i2c_drive/drive_clk_enable_10: 1 loads, 1 LSLICEs
+     Net u_top_iic/inst_i2c_drive/sys_clk_c_enable_54: 1 loads, 1 LSLICEs
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_7: 1 loads, 1 LSLICEs
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_8: 1 loads, 1 LSLICEs
-     Net u_top_iic/inst_i2c_drive/drive_clk_enable_9: 1 loads, 1 LSLICEs
-     Net u_top_iic/inst_i2c_drive/drive_clk_enable_10: 1 loads, 1 LSLICEs
      Net u_top_iic/inst_i2c_drive/drive_clk_enable_14: 2 loads, 2 LSLICEs
-     Net u_send_ctrl/tx_flag_N_1355: 4 loads, 4 LSLICEs
-     Net u_send_ctrl/sys_clk_c_enable_145: 1 loads, 1 LSLICEs
-     Net u_send_ctrl/sys_clk_c_enable_144: 1 loads, 1 LSLICEs
-     Net u_send_ctrl/sys_clk_c_enable_140: 3 loads, 3 LSLICEs
-     Net u_send_ctrl/sys_clk_c_enable_135: 4 loads, 4 LSLICEs
-     Net u_send_ctrl/sys_clk_c_enable_191: 31 loads, 31 LSLICEs
      Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl
      /cycle_cnt_r_15__N_116: 11 loads, 11 LSLICEs
      Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl
      /clk_byte_i_enable_1: 1 loads, 1 LSLICEs
      Net u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl
      /clk_byte_i_enable_2: 1 loads, 1 LSLICEs
-     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/clk_byte_fr_i
-     _enable_1: 1 loads, 1 LSLICEs
-     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0
 
                                     Page 2
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Design Summary (cont)
 ---------------------
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/clk_byte_fr_i
+     _enable_1: 1 loads, 1 LSLICEs
+     Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0
      /lp11_ncr: 1 loads, 1 LSLICEs
      Net u_csi2dsi/dphy_rx_inst/term_d0_en_w: 1 loads, 0 LSLICEs
      Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/WORD_ALIGN_ON.w_align/c
@@ -154,17 +157,14 @@ Design Summary (cont)
      Net u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx
      _fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/
      rden_i: 10 loads, 9 LSLICEs
-     Net u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/d_sot_det_o_3__N_1134: 1 loads, 0
+     Net u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/d_sot_det_o_3__N_1126: 1 loads, 0
      LSLICEs
-     Net u_uart_rx/rx_data_7__N_1463: 4 loads, 4 LSLICEs
-     Net u_uart_rx/rx_flag_adj_1473: 4 loads, 4 LSLICEs
-     Net u_uart_rx/bit_flag: 2 loads, 2 LSLICEs
    Number of local set/reset loads for net sys_rst_n_N_472 merged into GSR:  664
      
    Number of LSRs:  6
-     Net reset_byte_sync_1: 243 loads, 241 LSLICEs
      Net sys_rstn_c: 52 loads, 52 LSLICEs
-     Net n19521: 12 loads, 12 LSLICEs
+     Net reset_byte_fr_sync_1: 243 loads, 241 LSLICEs
+     Net n19311: 12 loads, 12 LSLICEs
      Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0
      /lp11_reset_n: 1 loads, 1 LSLICEs
      Net u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0
@@ -173,21 +173,21 @@ Design Summary (cont)
      _fifo_queue.rx_fifo_queue_inst/reset_byte_stb_n_w: 2 loads, 2 LSLICEs
    Number of nets driven by tri-state buffers:  0
    Top 10 highest fanout non-clock nets:
-     Net reset_byte_sync_1: 243 loads
+     Net reset_byte_fr_sync_1: 243 loads
      Net reg_index_6: 238 loads
-     Net reg_index_3: 220 loads
-     Net reg_index_2: 216 loads
-     Net reg_index_1: 203 loads
-     Net reg_index_7: 152 loads
+     Net reg_index_3: 221 loads
+     Net reg_index_2: 217 loads
+     Net reg_index_1: 205 loads
+     Net reg_index_7: 153 loads
      Net u_send_ctrl/field_index_0: 106 loads
      Net reg_index_5: 97 loads
+     Net u_send_ctrl/field_index_2: 59 loads
      Net sys_rstn_c: 56 loads
-     Net u_top_iic/inst_i2c_drive/cnt_scl_2: 56 loads
 
 
 
 
-   Number of warnings:  2
+   Number of warnings:  1
    Number of errors:    0
      
 
@@ -198,15 +198,11 @@ Design Summary (cont)
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Design Errors/Warnings
 ----------------------
 
-WARNING - map: D:/project/crosslink-mipi/crosslink-mipi/CrossLink/mipi.lpf(49):
-     Semantic error in "LOCATE COMP "u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst" SITE
-     "MIPIDPHY0" ;": COMP "u_csi2dsi.dphy_rx_inst.MIPIDPHYA_inst" cannot be
-     found in design. This preference has been disabled.
 WARNING - map: Using local reset signal 'sys_rst_n_N_472' to infer global GSR
      net.
 
@@ -258,18 +254,20 @@ IO (PIO) Attributes
 | csi_dt[5]           | OUTPUT    | LVCMOS18  |            |
 +---------------------+-----------+-----------+------------+
 
+Removed logic
+-------------
+
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/i5 undriven or does not drive
 
                                     Page 4
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
-Removed logic
--------------
-
-Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/i5 undriven or does not drive
+Removed logic (cont)
+--------------------
      anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/i4 undriven or does not drive
      anything - clipped.
@@ -324,18 +322,18 @@ Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
      fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae_
      set_ctr_cia undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
 
                                     Page 5
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
-     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
      2 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
      fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/FF_
@@ -390,18 +388,18 @@ Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
      5 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
      fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/a3
+     undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
 
                                     Page 6
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     undriven or does not drive anything - clipped.
-Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
      fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_se
      t_cmp_1 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
@@ -456,18 +454,18 @@ Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
      fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
      1 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
+     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
+     2 undriven or does not drive anything - clipped.
 
                                     Page 7
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
-     2 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
      fo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/LUT4_
      3 undriven or does not drive anything - clipped.
@@ -522,18 +520,18 @@ Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
 Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
      _4d_r_i7 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
+     c_r_i0_i1 undriven or does not drive anything - clipped.
+Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
 
                                     Page 8
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     c_r_i0_i1 undriven or does not drive anything - clipped.
-Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
      c_r_i0_i2 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/ec
      c_r_i0_i3 undriven or does not drive anything - clipped.
@@ -579,8 +577,10 @@ Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/bd
      _4d_r_i0 undriven or does not drive anything - clipped.
 Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/pa
      yload_rdy_r_I_0_238_2_lut undriven or does not drive anything - clipped.
+Block reset_byte_sync_i1 undriven or does not drive anything - clipped.
+Block reset_byte_sync_i0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_n_i_N_45 was merged
-     into signal reset_byte_sync_1
+     into signal reset_byte_fr_sync_1
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/in
      vout_1 was merged into signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_
@@ -594,7 +594,7 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
@@ -623,18 +623,18 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      x/RX_FIFO_ON.u_rx_fifo/rx_fifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcL
      IFMDasyncnoreg13044411/wren_i
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_n_i_N_2 was merged
-     into signal n19521
+     into signal n19311
 Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/r
-     eset_n_i_N_41 was merged into signal n19521
+     eset_n_i_N_41 was merged into signal n19311
 Signal u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/reset_byte_fr_n
-     _i_N_18 was merged into signal reset_byte_sync_1
+     _i_N_18 was merged into signal reset_byte_fr_sync_1
 Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/r
-     eset_n_i_N_2 was merged into signal reset_byte_sync_1
-Signal u_top_iic/inst_i2c_drive/drive_clk_enable_30 was merged into signal
-     u_top_iic/inst_i2c_drive/cnt_scl_4
+     eset_n_i_N_2 was merged into signal reset_byte_fr_sync_1
 Signal sda_transmit_en_N_1061 was merged into signal
      u_top_iic/inst_i2c_drive/sda_transmit_en
-Signal reset_byte_fr_sync_1__N_129 was merged into signal reset_byte_sync_1
+Signal u_top_iic/inst_i2c_drive/drive_clk_enable_30 was merged into signal
+     u_top_iic/inst_i2c_drive/cnt_scl_4
+Signal reset_byte_fr_sync_1__N_129 was merged into signal reset_byte_fr_sync_1
 Signal VCC_net undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/sc
@@ -644,9 +644,6 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      a_vhi undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/VCC_net undriven or does not
      drive anything - clipped.
-Signal u_uart_rx/add_32_13/CO undriven or does not drive anything - clipped.
-Signal u_uart_rx/add_32_1/S0 undriven or does not drive anything - clipped.
-Signal u_uart_rx/add_32_1/CI undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/lp_clk_rx_n undriven or does not drive anything -
      clipped.
 Signal u_csi2dsi/dphy_rx_inst/lp_clk_rx_p undriven or does not drive anything -
@@ -654,19 +651,19 @@ Signal u_csi2dsi/dphy_rx_inst/lp_clk_rx_p undriven or does not drive anything -
 Signal u_csi2dsi/dphy_rx_inst/lp_d3_rx_n_o undriven or does not drive anything -
      clipped.
 Signal u_csi2dsi/dphy_rx_inst/lp_d3_rx_p_o undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/d_sote_det_w_3 undriven or does not drive anything
+     - clipped.
 
                                    Page 10
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     clipped.
-Signal u_csi2dsi/dphy_rx_inst/d_sote_det_w_3 undriven or does not drive anything
-     - clipped.
 Signal u_csi2dsi/dphy_rx_inst/d_sot_det_w_3 undriven or does not drive anything
      - clipped.
 Signal u_csi2dsi/dphy_rx_inst/bd3_w_7 undriven or does not drive anything -
@@ -720,19 +717,19 @@ Signal u_csi2dsi/dphy_rx_inst/d_sot_det_w_1 undriven or does not drive anything
 Signal u_csi2dsi/dphy_rx_inst/bd1_w_7 undriven or does not drive anything -
      clipped.
 Signal u_csi2dsi/dphy_rx_inst/bd1_w_6 undriven or does not drive anything -
+     clipped.
+Signal u_csi2dsi/dphy_rx_inst/bd1_w_5 undriven or does not drive anything -
+     clipped.
 
                                    Page 11
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     clipped.
-Signal u_csi2dsi/dphy_rx_inst/bd1_w_5 undriven or does not drive anything -
-     clipped.
 Signal u_csi2dsi/dphy_rx_inst/bd1_w_4 undriven or does not drive anything -
      clipped.
 Signal u_csi2dsi/dphy_rx_inst/bd1_w_3 undriven or does not drive anything -
@@ -786,19 +783,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
      _set_cmp_ci_a/CI undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
+     2_3 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 
                                    Page 12
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
-     2_3 undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
      1_6 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
@@ -852,19 +849,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
      _set_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
+     _set_cmp_ci_a/S0 undriven or does not drive anything - clipped.
 
                                    Page 13
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
-     _set_cmp_ci_a/S0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/cm
      p_ci_2 undriven or does not drive anything - clipped.
@@ -918,19 +915,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ll_cmp_0/S0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
+     ll_cmp_ci_a/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
 
                                    Page 14
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     ll_cmp_ci_a/S1 undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
      ll_cmp_ci_a/S0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/fu
@@ -984,19 +981,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/co
      2 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/w_
+     gctr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 
                                    Page 15
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/w_
-     gctr_cia/S1 undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/w_
      gctr_cia/S0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
@@ -1050,19 +1047,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
      _setcount_1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
+     e_setcount_1 undriven or does not drive anything - clipped.
 
                                    Page 16
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ia
-     e_setcount_1 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/ae
      _setcount_0 undriven or does not drive anything - clipped.
@@ -1116,19 +1113,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      /CO undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncreg131032323288/af
+     _set_c undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
 
                                    Page 17
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     _set_c undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
      et_cmp_1/S1 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/af_s
@@ -1182,19 +1179,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a2/C
      O undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
+     et_cmp_1/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 
                                    Page 18
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
-     et_cmp_1/S1 undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
      et_cmp_1/S0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
@@ -1248,19 +1245,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/a1/C
      O undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
+     _cmp_1/S1 undriven or does not drive anything - clipped.
 
                                    Page 19
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
-     _cmp_1/S1 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/full
      _cmp_1/S0 undriven or does not drive anything - clipped.
@@ -1314,19 +1311,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      1 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
+     tr_cia/S1 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
 
                                    Page 20
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     tr_cia/S1 undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
      tr_cia/S0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/r_gc
@@ -1380,19 +1377,19 @@ Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/ae_s
      etcount_2 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
+     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo
+     _pfu_0_0/DO2 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
 
                                    Page 21
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo
-     _pfu_0_0/DO2 undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
      ifo_queue.rx_fifo_queue_inst/pmi_genpmi_fifo_dcLIFMDasyncnoreg13044411/fifo
      _pfu_0_0/DO3 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_f
@@ -1446,19 +1443,19 @@ Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/c
      ycle_cnt_r_57_add_4_17/CO undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
      6_adj_174 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
+     1473 undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/b
 
                                    Page 22
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/n
-     1473 undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/b
      d0_i_7__I_0_1/S0 undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/b
      d0_i_7__I_0_1/CI undriven or does not drive anything - clipped.
@@ -1512,19 +1509,19 @@ Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[1]
      undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[2]
      undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[3]
+     undriven or does not drive anything - clipped.
+Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[4]
 
                                    Page 23
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[3]
-     undriven or does not drive anything - clipped.
-Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[4]
      undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/payload_o[5]
      undriven or does not drive anything - clipped.
@@ -1561,14 +1558,6 @@ Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/bd_o[0]
      undriven or does not drive anything - clipped.
 Signal u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/p
      ayload_o_7__N_134 undriven or does not drive anything - clipped.
-Signal u_send_ctrl/sec_cnt_2103_add_4_27/S1 undriven or does not drive anything
-     - clipped.
-Signal u_send_ctrl/sec_cnt_2103_add_4_27/CO undriven or does not drive anything
-     - clipped.
-Signal u_send_ctrl/sec_cnt_2103_add_4_1/S0 undriven or does not drive anything -
-     clipped.
-Signal u_send_ctrl/sec_cnt_2103_add_4_1/CI undriven or does not drive anything -
-     clipped.
 Signal u_top_iic/inst_i2c_drive/add_23_1/S0 undriven or does not drive anything
      - clipped.
 Signal u_top_iic/inst_i2c_drive/add_23_1/CI undriven or does not drive anything
@@ -1578,107 +1567,120 @@ Signal u_top_iic/inst_i2c_drive/add_23_15/CO undriven or does not drive anything
 Signal u_top_iic/inst_i2c_drive/add_47_1/S0 undriven or does not drive anything
      - clipped.
 Signal u_top_iic/inst_i2c_drive/add_47_1/CI undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_47_11/S1 undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_i2c_drive/add_47_11/CO undriven or does not drive anything
+     - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/add_65_23/CO undriven or does not drive
+     anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_2086_add_4_1/S0 undriven or does not
+     drive anything - clipped.
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_2086_add_4_1/CI undriven or does not
+     drive anything - clipped.
 
                                    Page 24
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
-     - clipped.
-Signal u_top_iic/inst_i2c_drive/add_47_11/S1 undriven or does not drive anything
-     - clipped.
-Signal u_top_iic/inst_i2c_drive/add_47_11/CO undriven or does not drive anything
-     - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/reg_index_2104_add_4_1/S0 undriven or does not
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_2086_add_4_9/S1 undriven or does not
      drive anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/reg_index_2104_add_4_1/CI undriven or does not
+Signal u_top_iic/inst_ov9734_ctrl/reg_index_2086_add_4_9/CO undriven or does not
      drive anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/reg_index_2104_add_4_9/S1 undriven or does not
+Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2088_add_4_1/S0 undriven or does not
      drive anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/reg_index_2104_add_4_9/CO undriven or does not
+Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2088_add_4_1/CI undriven or does not
      drive anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2106_add_4_1/S0 undriven or does not
-     drive anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2106_add_4_1/CI undriven or does not
-     drive anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2106_add_4_21/S1 undriven or does
+Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2088_add_4_21/S1 undriven or does
      not drive anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2106_add_4_21/CO undriven or does
+Signal u_top_iic/inst_ov9734_ctrl/final_cnt_2088_add_4_21/CO undriven or does
      not drive anything - clipped.
 Signal u_top_iic/inst_ov9734_ctrl/add_65_1/S0 undriven or does not drive
      anything - clipped.
 Signal u_top_iic/inst_ov9734_ctrl/add_65_1/CI undriven or does not drive
      anything - clipped.
-Signal u_top_iic/inst_ov9734_ctrl/add_65_23/CO undriven or does not drive
+Signal u_uart_rx/add_32_13/CO undriven or does not drive anything - clipped.
+Signal u_uart_rx/add_32_1/S0 undriven or does not drive anything - clipped.
+Signal u_uart_rx/add_32_1/CI undriven or does not drive anything - clipped.
+Signal u_send_ctrl/sec_cnt_2085_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal u_send_ctrl/sec_cnt_2085_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal u_send_ctrl/sec_cnt_2085_add_4_27/S1 undriven or does not drive anything
+     - clipped.
+Signal u_send_ctrl/sec_cnt_2085_add_4_27/CO undriven or does not drive anything
+     - clipped.
+Signal csi_long_packet_count_2083_add_4_33/S1 undriven or does not drive
      anything - clipped.
-Signal blink_cnt_2096_add_4_1/S0 undriven or does not drive anything - clipped.
-Signal blink_cnt_2096_add_4_1/CI undriven or does not drive anything - clipped.
-Signal csi_byte_clk_count_2099_add_4_33/S1 undriven or does not drive anything -
-     clipped.
-Signal csi_byte_clk_count_2099_add_4_33/CO undriven or does not drive anything -
-     clipped.
-Signal csi_hs_sync_count_2100_add_4_1/S0 undriven or does not drive anything -
-     clipped.
-Signal csi_hs_sync_count_2100_add_4_1/CI undriven or does not drive anything -
-     clipped.
-Signal add_94_27/S1 undriven or does not drive anything - clipped.
-Signal add_94_27/CO undriven or does not drive anything - clipped.
-Signal blink_cnt_2096_add_4_25/S1 undriven or does not drive anything - clipped.
-     
-Signal blink_cnt_2096_add_4_25/CO undriven or does not drive anything - clipped.
-     
+Signal csi_long_packet_count_2083_add_4_33/CO undriven or does not drive
+     anything - clipped.
+Signal csi_payload_byte_count_2084_add_4_1/S0 undriven or does not drive
+     anything - clipped.
+Signal csi_payload_byte_count_2084_add_4_1/CI undriven or does not drive
+     anything - clipped.
 Signal add_94_1/S0 undriven or does not drive anything - clipped.
 Signal add_94_1/CI undriven or does not drive anything - clipped.
-Signal xshutdn_cnt_2097_add_4_1/S0 undriven or does not drive anything -
+Signal cam_cnt_2080_add_4_21/S1 undriven or does not drive anything - clipped.
+Signal cam_cnt_2080_add_4_21/CO undriven or does not drive anything - clipped.
+Signal csi_byte_clk_count_2081_add_4_1/S0 undriven or does not drive anything -
      clipped.
-Signal xshutdn_cnt_2097_add_4_1/CI undriven or does not drive anything -
+Signal csi_byte_clk_count_2081_add_4_1/CI undriven or does not drive anything -
      clipped.
-Signal csi_hs_sync_count_2100_add_4_33/S1 undriven or does not drive anything -
-     clipped.
-Signal csi_hs_sync_count_2100_add_4_33/CO undriven or does not drive anything -
-     clipped.
-Signal csi_long_packet_count_2101_add_4_1/S0 undriven or does not drive anything
-     - clipped.
-Signal csi_long_packet_count_2101_add_4_1/CI undriven or does not drive anything
+Signal blink_cnt_2078_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal blink_cnt_2078_add_4_1/CI undriven or does not drive anything - clipped.
+Signal csi_payload_byte_count_2084_add_4_33/S1 undriven or does not drive
+     anything - clipped.
+Signal csi_payload_byte_count_2084_add_4_33/CO undriven or does not drive
+     anything - clipped.
+Signal add_94_27/S1 undriven or does not drive anything - clipped.
+Signal add_94_27/CO undriven or does not drive anything - clipped.
+Signal blink_cnt_2078_add_4_25/S1 undriven or does not drive anything - clipped.
+     
+Signal blink_cnt_2078_add_4_25/CO undriven or does not drive anything - clipped.
+     
+Signal xshutdn_cnt_2079_add_4_1/S0 undriven or does not drive anything -
 
                                    Page 25
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
+     clipped.
+Signal xshutdn_cnt_2079_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal csi_byte_clk_count_2081_add_4_33/S1 undriven or does not drive anything -
+     clipped.
+Signal csi_byte_clk_count_2081_add_4_33/CO undriven or does not drive anything -
+     clipped.
+Signal csi_hs_sync_count_2082_add_4_1/S0 undriven or does not drive anything -
+     clipped.
+Signal csi_hs_sync_count_2082_add_4_1/CI undriven or does not drive anything -
+     clipped.
+Signal reset_byte_sync_1 undriven or does not drive anything - clipped.
+Signal csi_hs_sync_count_2082_add_4_33/S1 undriven or does not drive anything -
+     clipped.
+Signal csi_hs_sync_count_2082_add_4_33/CO undriven or does not drive anything -
+     clipped.
+Signal csi_long_packet_count_2083_add_4_1/S0 undriven or does not drive anything
      - clipped.
-Signal csi_long_packet_count_2101_add_4_33/S1 undriven or does not drive
-     anything - clipped.
-Signal csi_long_packet_count_2101_add_4_33/CO undriven or does not drive
-     anything - clipped.
-Signal csi_payload_byte_count_2102_add_4_1/S0 undriven or does not drive
-     anything - clipped.
-Signal csi_payload_byte_count_2102_add_4_1/CI undriven or does not drive
-     anything - clipped.
-Signal xshutdn_cnt_2097_add_4_21/S1 undriven or does not drive anything -
+Signal csi_long_packet_count_2083_add_4_1/CI undriven or does not drive anything
+     - clipped.
+Signal xshutdn_cnt_2079_add_4_21/S1 undriven or does not drive anything -
      clipped.
-Signal xshutdn_cnt_2097_add_4_21/CO undriven or does not drive anything -
+Signal xshutdn_cnt_2079_add_4_21/CO undriven or does not drive anything -
      clipped.
-Signal cam_cnt_2098_add_4_1/S0 undriven or does not drive anything - clipped.
-Signal cam_cnt_2098_add_4_1/CI undriven or does not drive anything - clipped.
-Signal cam_cnt_2098_add_4_21/S1 undriven or does not drive anything - clipped.
-Signal cam_cnt_2098_add_4_21/CO undriven or does not drive anything - clipped.
-Signal csi_byte_clk_count_2099_add_4_1/S0 undriven or does not drive anything -
-     clipped.
-Signal csi_byte_clk_count_2099_add_4_1/CI undriven or does not drive anything -
-     clipped.
-Signal csi_payload_byte_count_2102_add_4_33/S1 undriven or does not drive
-     anything - clipped.
-Signal csi_payload_byte_count_2102_add_4_33/CO undriven or does not drive
-     anything - clipped.
+Signal cam_cnt_2080_add_4_1/S0 undriven or does not drive anything - clipped.
+Signal cam_cnt_2080_add_4_1/CI undriven or does not drive anything - clipped.
+Signal reset_byte_sync_0 undriven or does not drive anything - clipped.
 Signal u_uart_tx/add_18_1/S0 undriven or does not drive anything - clipped.
 Signal u_uart_tx/add_18_1/CI undriven or does not drive anything - clipped.
 Signal u_uart_tx/add_18_13/CO undriven or does not drive anything - clipped.
@@ -1708,23 +1710,23 @@ Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/reset_n_i_I_0_1_lut was
      optimized away.
 Block u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/lp_hs_ctrl_d0/re
-     set_n_i_I_0_83_1_lut was optimized away.
-Block u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/reset_byte_fr_n_
 
                                    Page 26
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 Removed logic (cont)
 --------------------
+     set_n_i_I_0_83_1_lut was optimized away.
+Block u_csi2dsi/dphy_rx_inst/rx_global_ctrl_inst/rx_global_ctrl/reset_byte_fr_n_
      i_I_0_1_lut was optimized away.
 Block u_csi2dsi/dphy_rx_inst/capture_ctrl_inst.capture_ctrl_inst/capture_ctrl/re
      set_n_i_I_0_1_lut was optimized away.
-Block u_top_iic/inst_i2c_drive/i5_1_lut_rep_311 was optimized away.
 Block u_top_iic/inst_i2c_drive/sda_transmit_en_I_0_1_lut was optimized away.
+Block u_top_iic/inst_i2c_drive/i6_1_lut was optimized away.
 Block reset_byte_fr_sync_1__I_0_1_lut was optimized away.
 Block i2 was optimized away.
 Block u_csi2dsi/dphy_rx_inst/dphy_rx_wrap_inst/dsi_rx/RX_FIFO_ON.u_rx_fifo/rx_fi
@@ -1775,14 +1777,12 @@ Instance Name: u_csi2dsi/dphy_rx_inst/u_dphy_wrapper/MIXEL.mixel_dphy
          Type: MIPIDPHYA
 
 
-
-
                                    Page 27
 
 
 
 
-Design:  mipi_3ch_top                                  Date:  08/12/26  18:20:15
+Design:  mipi_3ch_top                                  Date:  08/13/26  10:57:41
 
 GSR Usage
 ---------
@@ -1804,7 +1804,7 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs  
    Total REAL Time: 0 secs  
-   Peak Memory Usage: 74 MB
+   Peak Memory Usage: 72 MB
         
 
 
